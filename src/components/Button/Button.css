@@ -16,7 +16,7 @@
   font-weight: var(--igds-button-font-weight);
   line-height: var(--igds-button-line-height);
   letter-spacing: var(--igds-button-letter-spacing);
-  text-transform: var(--igds-button-text-transform);
+  text-transform: var(--igds-button-text-transform, none);
   white-space: nowrap;
 
   /* Appearance */
@@ -48,6 +48,14 @@
 
 .igds-button--small {
   padding: var(--igds-button-padding-y-small) var(--igds-button-padding-x-small);
+}
+
+.igds-button--medium:not(.igds-button--link) {
+  min-height: var(--igds-button-height-medium);
+}
+
+.igds-button--small:not(.igds-button--link) {
+  min-height: var(--igds-button-height-small);
 }
 
 /* Primary Variant (Primary brand colors) */
@@ -162,6 +170,137 @@
   border-color: var(--igds-button-border-secondary-outlined-disabled);
 }
 
+/* Neutral Variant (Grey colors) */
+.igds-button--neutral {
+  background-color: var(--igds-button-background-neutral-default);
+  color: var(--igds-button-text-neutral-default);
+  border-color: var(--igds-button-border-neutral-default);
+}
+
+.igds-button--neutral:hover:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-hover);
+  color: var(--igds-button-text-neutral-hover);
+  border-color: var(--igds-button-border-neutral-hover);
+}
+
+.igds-button--neutral:active:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-pressed);
+  color: var(--igds-button-text-neutral-pressed);
+  border-color: var(--igds-button-border-neutral-pressed);
+}
+
+/* Neutral Outlined */
+.igds-button--neutral.igds-button--outlined {
+  background-color: var(--igds-button-background-neutral-outlined-default);
+  color: var(--igds-button-text-neutral-outlined-default);
+  border-color: var(--igds-button-border-neutral-outlined-default);
+}
+
+.igds-button--neutral.igds-button--outlined:hover:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-outlined-hover);
+  color: var(--igds-button-text-neutral-outlined-hover);
+  border-color: var(--igds-button-border-neutral-outlined-hover);
+}
+
+.igds-button--neutral.igds-button--outlined:active:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-outlined-pressed);
+  color: var(--igds-button-text-neutral-outlined-pressed);
+  border-color: var(--igds-button-border-neutral-outlined-pressed);
+}
+
+/* Neutral Disabled */
+.igds-button--neutral:disabled,
+.igds-button--neutral.igds-button--disabled {
+  background-color: var(--igds-button-background-neutral-disabled);
+  color: var(--igds-button-text-neutral-disabled);
+  border-color: var(--igds-button-border-neutral-disabled);
+}
+
+.igds-button--neutral.igds-button--outlined:disabled,
+.igds-button--neutral.igds-button--outlined.igds-button--disabled {
+  background-color: var(--igds-button-background-neutral-outlined-disabled);
+  color: var(--igds-button-text-neutral-outlined-disabled);
+  border-color: var(--igds-button-border-neutral-outlined-disabled);
+}
+
+/* Ghost Variant - Primary */
+.igds-button--primary.igds-button--ghost {
+  background-color: var(--igds-button-background-primary-ghost-default);
+  color: var(--igds-button-text-primary-ghost-default);
+  border-color: var(--igds-button-border-primary-ghost-default);
+}
+
+.igds-button--primary.igds-button--ghost:hover:not(:disabled) {
+  background-color: var(--igds-button-background-primary-ghost-hover);
+  color: var(--igds-button-text-primary-ghost-hover);
+  border-color: var(--igds-button-border-primary-ghost-hover);
+}
+
+.igds-button--primary.igds-button--ghost:active:not(:disabled) {
+  background-color: var(--igds-button-background-primary-ghost-pressed);
+  color: var(--igds-button-text-primary-ghost-pressed);
+  border-color: var(--igds-button-border-primary-ghost-pressed);
+}
+
+.igds-button--primary.igds-button--ghost:disabled,
+.igds-button--primary.igds-button--ghost.igds-button--disabled {
+  background-color: var(--igds-button-background-primary-ghost-disabled);
+  color: var(--igds-button-text-primary-ghost-disabled);
+  border-color: var(--igds-button-border-primary-ghost-disabled);
+}
+
+/* Ghost Variant - Secondary */
+.igds-button--secondary.igds-button--ghost {
+  background-color: var(--igds-button-background-secondary-ghost-default);
+  color: var(--igds-button-text-secondary-ghost-default);
+  border-color: var(--igds-button-border-secondary-ghost-default);
+}
+
+.igds-button--secondary.igds-button--ghost:hover:not(:disabled) {
+  background-color: var(--igds-button-background-secondary-ghost-hover);
+  color: var(--igds-button-text-secondary-ghost-hover);
+  border-color: var(--igds-button-border-secondary-ghost-hover);
+}
+
+.igds-button--secondary.igds-button--ghost:active:not(:disabled) {
+  background-color: var(--igds-button-background-secondary-ghost-pressed);
+  color: var(--igds-button-text-secondary-ghost-pressed);
+  border-color: var(--igds-button-border-secondary-ghost-pressed);
+}
+
+.igds-button--secondary.igds-button--ghost:disabled,
+.igds-button--secondary.igds-button--ghost.igds-button--disabled {
+  background-color: var(--igds-button-background-secondary-ghost-disabled);
+  color: var(--igds-button-text-secondary-ghost-disabled);
+  border-color: var(--igds-button-border-secondary-ghost-disabled);
+}
+
+/* Ghost Variant - Neutral */
+.igds-button--neutral.igds-button--ghost {
+  background-color: var(--igds-button-background-neutral-ghost-default);
+  color: var(--igds-button-text-neutral-ghost-default);
+  border-color: var(--igds-button-border-neutral-ghost-default);
+}
+
+.igds-button--neutral.igds-button--ghost:hover:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-ghost-hover);
+  color: var(--igds-button-text-neutral-ghost-hover);
+  border-color: var(--igds-button-border-neutral-ghost-hover);
+}
+
+.igds-button--neutral.igds-button--ghost:active:not(:disabled) {
+  background-color: var(--igds-button-background-neutral-ghost-pressed);
+  color: var(--igds-button-text-neutral-ghost-pressed);
+  border-color: var(--igds-button-border-neutral-ghost-pressed);
+}
+
+.igds-button--neutral.igds-button--ghost:disabled,
+.igds-button--neutral.igds-button--ghost.igds-button--disabled {
+  background-color: var(--igds-button-background-neutral-ghost-disabled);
+  color: var(--igds-button-text-neutral-ghost-disabled);
+  border-color: var(--igds-button-border-neutral-ghost-disabled);
+}
+
 /* Button Icons */
 .igds-button__icon-lead,
 .igds-button__icon-end {
@@ -169,8 +308,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: var(--igds-space-24);
+  height: var(--igds-space-24);
 }
 
 /* Button Label */

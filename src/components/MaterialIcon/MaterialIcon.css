@@ -3,6 +3,7 @@
 /* Shared styles for both filled and outlined Material Icons */
 .material-icons,
 .material-icons-outlined {
+  font-family: 'Material Icons';
   /* Allow icon to inherit color from parent container */
   color: inherit;
   /* Standard Material Icons settings */
@@ -26,6 +27,10 @@
   font-feature-settings: 'liga';
   /* Better rendering */
   text-rendering: optimizeLegibility;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
 }
 
 /* Material Symbols Outlined - newer variable font system */

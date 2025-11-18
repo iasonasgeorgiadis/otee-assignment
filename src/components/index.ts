@@ -16,5 +16,7 @@ export * from './MaterialIcon';
 export * from './MenuItem';
 export * from './Modal';
 export * from './Pagination';
+export * from './PlainFilesList';
 export * from './RadioButton';
 export * from './Tabs';
+export * from './Tooltip';

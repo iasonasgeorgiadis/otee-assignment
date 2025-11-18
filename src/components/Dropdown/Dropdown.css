@@ -63,11 +63,6 @@
   flex-shrink: 0;
 }
 
-/* Focused item styling */
-.igds-dropdown__item--focused {
-  background-color: var(--igds-menu-item-background-hover);
-}
-
 /* Divider between items */
 .igds-dropdown__divider {
   height: 1px;

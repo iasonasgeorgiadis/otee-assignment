@@ -18,8 +18,8 @@
    Token Mapping from Figma:
    - Variant="Primary" → --igds-color-background-accent-primary (#123c80)
    - Variant="Secondary" → --igds-color-background-neutral-white (#ffffff)
-   - Size="Medium" → --igds-space-16 (x), --igds-space-12 (y)
-   - Size="Small" → --igds-space-12 (x), --igds-space-8 (y)
+   - Size="Medium" → --igds-space-24 (x), --igds-space-8 (y)
+   - Size="Small" → --igds-space-16 (x), --igds-space-4 (y)
    - Outlined=true → transparent backgrounds + border colors
    - Disabled=true → --igds-color-background-system-disabled (#b7b8b9)
 */
@@ -31,30 +31,32 @@
   --igds-button-font-weight: var(--igds-typography-button-weight);
   --igds-button-line-height: var(--igds-typography-button-line-height);
   --igds-button-letter-spacing: var(--igds-typography-button-letter-spacing);
-  --igds-button-text-transform: uppercase;
+  --igds-button-text-transform: none;
 
   /* Button Base Layout */
-  --igds-button-border-radius: var(--igds-radius-none);
+  --igds-button-border-radius: var(--igds-radius-full);
   --igds-button-border-width: 1px;
-  --igds-button-gap: var(--igds-space-4);
+  --igds-button-gap: var(--igds-space-8);
+  --igds-button-height-medium: var(--igds-space-40);
+  --igds-button-height-small: var(--igds-space-32);
 
   /* Button Size - Medium (Default) */
-  --igds-button-padding-x-medium: var(--igds-space-16);
-  --igds-button-padding-y-medium: var(--igds-space-12);
+  --igds-button-padding-x-medium: var(--igds-space-24);
+  --igds-button-padding-y-medium: var(--igds-space-8);
 
   /* Button Size - Small */
-  --igds-button-padding-x-small: var(--igds-space-12);
-  --igds-button-padding-y-small: var(--igds-space-8);
+  --igds-button-padding-x-small: var(--igds-space-16);
+  --igds-button-padding-y-small: var(--igds-space-4);
 
   /* Button Primary Variant - Filled */
-  --igds-button-background-primary-default: var(--igds-color-background-accent-primary);
-  --igds-button-background-primary-hover: var(--igds-color-background-accent-primary-darker);
-  --igds-button-background-primary-pressed: var(--igds-color-background-accent-primary-dark);
+  --igds-button-background-primary-default: var(--igds-color-background-accent-primary-light);
+  --igds-button-background-primary-hover: var(--igds-color-background-accent-primary-dark);
+  --igds-button-background-primary-pressed: var(--igds-color-background-accent-primary-light);
   --igds-button-background-primary-disabled: var(--igds-color-background-system-disabled);
 
-  --igds-button-text-primary-default: var(--igds-color-text-neutral-white-primary);
-  --igds-button-text-primary-hover: var(--igds-color-text-neutral-white-primary);
-  --igds-button-text-primary-pressed: var(--igds-color-text-neutral-white-primary);
+  --igds-button-text-primary-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-primary-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-primary-pressed: var(--igds-color-text-neutral-grey-primary);
   --igds-button-text-primary-disabled: var(--igds-color-text-system-disabled);
 
   --igds-button-border-primary-default: transparent;
@@ -63,30 +65,30 @@
   --igds-button-border-primary-disabled: transparent;
 
   /* Button Primary Variant - Outlined */
-  --igds-button-background-primary-outlined-default: var(--igds-color-background-accent-alpha-primary);
-  --igds-button-background-primary-outlined-hover: var(--igds-color-background-accent-alpha-primary-lighter);
-  --igds-button-background-primary-outlined-pressed: var(--igds-color-background-accent-alpha-primary-light);
+  --igds-button-background-primary-outlined-default: transparent;
+  --igds-button-background-primary-outlined-hover: transparent;
+  --igds-button-background-primary-outlined-pressed: transparent;
   --igds-button-background-primary-outlined-disabled: transparent;
 
-  --igds-button-text-primary-outlined-default: var(--igds-color-text-accent-primary);
-  --igds-button-text-primary-outlined-hover: var(--igds-color-text-accent-primary);
-  --igds-button-text-primary-outlined-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-primary-outlined-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-primary-outlined-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-primary-outlined-pressed: var(--igds-color-text-neutral-grey-primary);
   --igds-button-text-primary-outlined-disabled: var(--igds-color-text-system-disabled);
 
-  --igds-button-border-primary-outlined-default: var(--igds-color-border-accent-alpha-primary);
-  --igds-button-border-primary-outlined-hover: var(--igds-color-border-accent-primary-darker);
-  --igds-button-border-primary-outlined-pressed: var(--igds-color-border-accent-primary-dark);
+  --igds-button-border-primary-outlined-default: var(--igds-color-border-accent-primary-light);
+  --igds-button-border-primary-outlined-hover: var(--igds-color-border-accent-primary-dark);
+  --igds-button-border-primary-outlined-pressed: var(--igds-color-border-accent-primary-darker);
   --igds-button-border-primary-outlined-disabled: var(--igds-color-border-system-disabled);
 
   /* Button Secondary Variant - Filled */
-  --igds-button-background-secondary-default: var(--igds-color-background-neutral-white);
-  --igds-button-background-secondary-hover: var(--igds-color-background-neutral-white-light);
-  --igds-button-background-secondary-pressed: var(--igds-color-background-neutral-grey-light);
-  --igds-button-background-secondary-disabled: var(--igds-color-background-system-disabled);
+  --igds-button-background-secondary-default: var(--igds-color-background-accent-primary-lighter);
+  --igds-button-background-secondary-hover: var(--igds-color-background-accent-primary-light);
+  --igds-button-background-secondary-pressed: var(--igds-color-background-accent-primary-lighter);
+  --igds-button-background-secondary-disabled: var(--igds-color-background-system-disabled-light);
 
-  --igds-button-text-secondary-default: var(--igds-color-text-accent-primary);
-  --igds-button-text-secondary-hover: var(--igds-color-text-accent-primary);
-  --igds-button-text-secondary-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-secondary-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-secondary-pressed: var(--igds-color-text-neutral-grey-primary);
   --igds-button-text-secondary-disabled: var(--igds-color-text-system-disabled);
 
   --igds-button-border-secondary-default: transparent;
@@ -95,20 +97,100 @@
   --igds-button-border-secondary-disabled: transparent;
 
   /* Button Secondary Variant - Outlined */
-  --igds-button-background-secondary-outlined-default: var(--igds-color-background-accent-alpha-secondary);
-  --igds-button-background-secondary-outlined-hover: var(--igds-color-background-accent-alpha-secondary-dark);
-  --igds-button-background-secondary-outlined-pressed: var(--igds-color-background-accent-alpha-secondary);
+  --igds-button-background-secondary-outlined-default: transparent;
+  --igds-button-background-secondary-outlined-hover: transparent;
+  --igds-button-background-secondary-outlined-pressed: transparent;
   --igds-button-background-secondary-outlined-disabled: transparent;
 
-  --igds-button-text-secondary-outlined-default: var(--igds-color-text-accent-primary);
-  --igds-button-text-secondary-outlined-hover: var(--igds-color-text-accent-primary);
-  --igds-button-text-secondary-outlined-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-outlined-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-secondary-outlined-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-secondary-outlined-pressed: var(--igds-color-text-neutral-grey-primary);
   --igds-button-text-secondary-outlined-disabled: var(--igds-color-text-system-disabled);
 
-  --igds-button-border-secondary-outlined-default: var(--igds-color-border-accent-secondary);
-  --igds-button-border-secondary-outlined-hover: var(--igds-color-border-accent-secondary);
-  --igds-button-border-secondary-outlined-pressed: var(--igds-color-border-accent-secondary-light);
+  --igds-button-border-secondary-outlined-default: var(--igds-color-border-accent-primary-lighter);
+  --igds-button-border-secondary-outlined-hover: var(--igds-color-border-accent-primary-light);
+  --igds-button-border-secondary-outlined-pressed: var(--igds-color-border-accent-primary);
   --igds-button-border-secondary-outlined-disabled: var(--igds-color-border-system-disabled);
+
+  /* Button Neutral Variant - Filled */
+  --igds-button-background-neutral-default: var(--igds-color-background-neutral-grey-light);
+  --igds-button-background-neutral-hover: var(--igds-color-background-neutral-grey-light);
+  --igds-button-background-neutral-pressed: var(--igds-color-background-neutral-grey-dark);
+  --igds-button-background-neutral-disabled: var(--igds-color-background-system-disabled);
+
+  --igds-button-text-neutral-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-pressed: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-neutral-default: transparent;
+  --igds-button-border-neutral-hover: transparent;
+  --igds-button-border-neutral-pressed: transparent;
+  --igds-button-border-neutral-disabled: transparent;
+
+  /* Button Neutral Variant - Outlined */
+  --igds-button-background-neutral-outlined-default: transparent;
+  --igds-button-background-neutral-outlined-hover: transparent;
+  --igds-button-background-neutral-outlined-pressed: transparent;
+  --igds-button-background-neutral-outlined-disabled: transparent;
+
+  --igds-button-text-neutral-outlined-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-outlined-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-outlined-pressed: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-outlined-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-neutral-outlined-default: var(--igds-color-border-neutral-grey);
+  --igds-button-border-neutral-outlined-hover: var(--igds-color-border-neutral-grey-light);
+  --igds-button-border-neutral-outlined-pressed: var(--igds-color-border-neutral-grey-lighter);
+  --igds-button-border-neutral-outlined-disabled: var(--igds-color-border-system-disabled);
+
+  /* Button Ghost Variant - Primary */
+  --igds-button-background-primary-ghost-default: transparent;
+  --igds-button-background-primary-ghost-hover: var(--igds-color-background-accent-primary-lighter);
+  --igds-button-background-primary-ghost-pressed: var(--igds-color-background-accent-primary-light);
+  --igds-button-background-primary-ghost-disabled: transparent;
+
+  --igds-button-text-primary-ghost-default: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-primary-ghost-hover: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-primary-ghost-pressed: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-primary-ghost-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-primary-ghost-default: transparent;
+  --igds-button-border-primary-ghost-hover: transparent;
+  --igds-button-border-primary-ghost-pressed: transparent;
+  --igds-button-border-primary-ghost-disabled: transparent;
+
+  /* Button Ghost Variant - Secondary */
+  --igds-button-background-secondary-ghost-default: transparent;
+  --igds-button-background-secondary-ghost-hover: var(--igds-color-background-accent-primary-lighter);
+  --igds-button-background-secondary-ghost-pressed: var(--igds-color-background-accent-primary-light);
+  --igds-button-background-secondary-ghost-disabled: transparent;
+
+  --igds-button-text-secondary-ghost-default: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-secondary-ghost-hover: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-secondary-ghost-pressed: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-secondary-ghost-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-secondary-ghost-default: transparent;
+  --igds-button-border-secondary-ghost-hover: transparent;
+  --igds-button-border-secondary-ghost-pressed: transparent;
+  --igds-button-border-secondary-ghost-disabled: transparent;
+
+  /* Button Ghost Variant - Neutral */
+  --igds-button-background-neutral-ghost-default: transparent;
+  --igds-button-background-neutral-ghost-hover: var(--igds-color-background-neutral-grey-lighter);
+  --igds-button-background-neutral-ghost-pressed: var(--igds-color-background-neutral-grey-light);
+  --igds-button-background-neutral-ghost-disabled: transparent;
+
+  --igds-button-text-neutral-ghost-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-ghost-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-ghost-pressed: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-neutral-ghost-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-neutral-ghost-default: transparent;
+  --igds-button-border-neutral-ghost-hover: transparent;
+  --igds-button-border-neutral-ghost-pressed: transparent;
+  --igds-button-border-neutral-ghost-disabled: transparent;
 
   /* Button Link Variant */
   --igds-button-background-link-default: transparent;
@@ -1116,6 +1198,82 @@
   --igds-pagination-transition-duration: 200ms;
   --igds-pagination-transition-timing-function: ease;
   --igds-pagination-transition-properties: background-color, color, transform;
+}
+
+
+/* =============================================================================
+   TOOLTIP COMPONENT TOKENS
+   ============================================================================= */
+
+/* Tooltip Component - From Figma MCP Analysis
+   Figma Component: "Tooltip" (Node ID: 40016945-7370)
+   Last Extracted: 2025-01-21 via #get_design_context
+
+   Key visual specs:
+   - Background → #1c1d1e (Neutral/Black)
+   - Border → #3c3e3f at 1px
+   - Border radius → 4px (sm)
+   - Padding → 12px horizontal, 8px vertical
+   - Title typography → Body Strong (16px / 1.5 / 700)
+   - Body typography → Body Small Medium (14px / 1.4 / 500)
+   - Text color → Neutral/White/Primary (#ffffff)
+   - Arrow ("beak") size → 8px square rotated 45°
+*/
+
+:root {
+  --igds-tooltip-background: var(--igds-color-background-neutral-black);
+  --igds-tooltip-border-color: var(--igds-color-border-neutral-grey-darker);
+  --igds-tooltip-border-width: 1px;
+  --igds-tooltip-border-radius: var(--igds-radius-sm);
+  --igds-tooltip-padding-x: var(--igds-space-12);
+  --igds-tooltip-padding-y: var(--igds-space-8);
+  --igds-tooltip-content-gap: var(--igds-space-0);
+  --igds-tooltip-text-color: var(--igds-color-text-neutral-white-primary);
+  --igds-tooltip-title-font-family: var(--igds-typography-body-family);
+  --igds-tooltip-title-font-size: var(--igds-typography-body-size);
+  --igds-tooltip-title-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-tooltip-title-line-height: 1.5;
+  --igds-tooltip-body-font-family: var(--igds-typography-body-family);
+  --igds-tooltip-body-font-size: var(--igds-typography-body-size-small);
+  --igds-tooltip-body-font-weight: var(--igds-typography-weight-medium);
+  --igds-tooltip-body-line-height: var(--igds-typography-body-line-height-small);
+  --igds-tooltip-beak-size: 8px;
+  --igds-tooltip-beak-overlap: calc((var(--igds-tooltip-beak-size) / -2) + var(--igds-tooltip-border-width));
+  --igds-tooltip-beak-border-radius: 0;
+}
+
+/* =============================================================================
+   PLAIN FILES LIST COMPONENT TOKENS
+   ============================================================================= */
+
+/* Plain Files List Component - From Figma MCP Analysis
+   Figma Component: "plain-files-list" (Node ID: 40016946-4373)
+   Last Extracted: 2025-01-21 via #get_design_context
+
+   Key visual specs:
+   - Default row background → #f8f9fb (Neutral/White/Lighter)
+   - Hover row background → #f2f3f5 (Neutral/White/Light)
+   - Text color → Neutral/Grey/Primary (#3c3e3f) using Body Small Strong
+   - Row height → 32px content with 8px vertical padding (total 48px)
+   - Action icon button → 32px circle, neutral grey icon, only visible on hover
+*/
+
+:root {
+  --igds-plain-files-list-item-padding-x: var(--igds-space-16);
+  --igds-plain-files-list-item-padding-y: var(--igds-space-8);
+  --igds-plain-files-list-item-radius: var(--igds-radius-sm);
+  --igds-plain-files-list-background-default: var(--igds-color-background-neutral-white-lighter);
+  --igds-plain-files-list-background-hover: var(--igds-color-background-neutral-white-light);
+  --igds-plain-files-list-text-color: var(--igds-color-text-neutral-grey-primary);
+  --igds-plain-files-list-font-family: var(--igds-typography-body-family);
+  --igds-plain-files-list-font-size: var(--igds-typography-body-size-small);
+  --igds-plain-files-list-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-plain-files-list-line-height: var(--igds-typography-body-line-height-small);
+  --igds-plain-files-list-icon-color: var(--igds-color-icon-neutral-grey-secondary);
+  --igds-plain-files-list-action-size: var(--igds-space-32);
+  --igds-plain-files-list-max-width: 44.7rem; /* 715px from Figma spec */
+  --igds-plain-files-list-transition-duration: 150ms;
+  --igds-plain-files-list-transition-easing: ease-in-out;
 }
 
 

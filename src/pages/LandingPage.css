@@ -1,0 +1,74 @@
+@import '../styles/tokens.css';
+
+.landing-page {
+  min-height: 100vh;
+  background: var(--igds-color-background-neutral-grey-lighter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--igds-space-48) var(--igds-space-24);
+}
+
+.landing-page__panel {
+  width: min(100%, 860px);
+  background: var(--igds-color-background-neutral-white);
+  border-radius: var(--igds-radius-xl);
+  border: 1px solid var(--igds-color-border-neutral-grey-lighter);
+  padding: var(--igds-space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-space-16);
+}
+
+.landing-page__eyebrow {
+  margin: 0;
+  font-family: var(--igds-typography-body-family);
+  font-size: var(--igds-typography-body-size-small);
+  font-weight: var(--igds-typography-body-weight-strong);
+  text-transform: uppercase;
+  color: var(--igds-color-text-neutral-grey-secondary);
+}
+
+.landing-page__title {
+  margin: 0;
+  font-family: var(--igds-typography-title-page-family);
+  font-size: var(--igds-typography-title-page-size);
+  font-weight: var(--igds-typography-title-page-weight);
+  line-height: var(--igds-typography-title-page-line-height);
+  letter-spacing: var(--igds-typography-title-page-letter-spacing);
+  color: var(--igds-color-text-neutral-grey-primary);
+}
+
+.landing-page__description {
+  margin: 0;
+  max-width: 560px;
+  font-family: var(--igds-typography-body-family);
+  font-size: var(--igds-typography-body-size);
+  font-weight: var(--igds-typography-body-weight);
+  line-height: var(--igds-typography-body-line-height);
+  color: var(--igds-color-text-neutral-grey-secondary);
+}
+
+.landing-page__list-wrapper {
+  padding-top: var(--igds-space-8);
+}
+
+@media (max-width: 768px) {
+  .landing-page {
+    padding: var(--igds-space-32) var(--igds-space-16);
+  }
+
+  .landing-page__panel {
+    padding: var(--igds-space-24);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-page {
+    padding: var(--igds-space-24) var(--igds-space-16);
+  }
+
+  .landing-page__panel {
+    border-radius: var(--igds-radius-md);
+  }
+}

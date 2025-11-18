@@ -1,181 +1,93 @@
 /* MenuItem Component Styles */
 
 .igds-menu-item {
-  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--igds-menu-item-gap);
-  padding: var(--igds-menu-item-padding-y) var(--igds-menu-item-padding-x);
-  height: var(--igds-menu-item-height);
-  box-sizing: border-box;
-
-  font-family: var(--igds-menu-item-font-family);
-  font-size: var(--igds-menu-item-font-size);
-  font-weight: var(--igds-menu-item-font-weight);
-  line-height: var(--igds-menu-item-line-height);
-
-  background-color: var(--igds-menu-item-background-default);
-  border-bottom: var(--igds-menu-item-border-width) var(--igds-menu-item-border-style) var(--igds-menu-item-border-color);
-
+  width: 100%;
+  gap: var(--igds-space-8);
+  padding: var(--igds-space-8) var(--igds-space-16);
+  border-radius: var(--igds-radius-sm);
+  background-color: var(--igds-color-background-neutral-white);
+  color: var(--igds-color-text-neutral-grey-primary);
   cursor: pointer;
   user-select: none;
-
-  transition: var(--igds-menu-item-transition-properties)
-              var(--igds-menu-item-transition-duration)
-              var(--igds-menu-item-transition-timing-function);
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
-/* Hover State */
-.igds-menu-item--hover:not(.igds-menu-item--disabled) {
-  background-color: var(--igds-menu-item-background-hover);
+.igds-menu-item--with-icon {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* Disabled State */
-.igds-menu-item--disabled {
-  cursor: not-allowed;
-  background-color: var(--igds-menu-item-background-disabled);
+.igds-menu-item--text-only {
+  padding-left: var(--igds-space-16);
+  padding-right: var(--igds-space-16);
 }
 
-/* Text Content */
-.igds-menu-item__text {
+.igds-menu-item--medium {
+  min-height: 56px;
+}
+
+.igds-menu-item--small {
+  min-height: 40px;
+  padding-top: var(--igds-space-8);
+  padding-bottom: var(--igds-space-8);
+}
+
+.igds-menu-item--small.igds-menu-item--with-icon {
+  padding-top: var(--igds-space-4);
+  padding-bottom: var(--igds-space-4);
+}
+
+.igds-menu-item__label {
   flex: 1;
-  color: var(--igds-menu-item-text-default);
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  transition: inherit;
+  font-family: 'Manrope', var(--igds-typography-subheading-family, 'Open Sans', sans-serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-.igds-menu-item--hover:not(.igds-menu-item--disabled) .igds-menu-item__text {
-  color: var(--igds-menu-item-text-hover);
+.igds-menu-item--small .igds-menu-item__label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
-.igds-menu-item__text--disabled {
-  color: var(--igds-menu-item-text-disabled);
-}
-
-/* Selected Icon Container */
 .igds-menu-item__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--igds-menu-item-icon-size);
-  height: var(--igds-menu-item-icon-size);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--igds-radius-full);
   flex-shrink: 0;
 }
 
-.igds-menu-item__checkmark {
-  color: var(--igds-menu-item-icon-color);
+.igds-menu-item__icon--small {
+  width: 32px;
+  height: 32px;
 }
 
-/* Variant-specific styles */
-
-/* Text Variant (default) */
-.igds-menu-item--text {
-  justify-content: flex-start;
+.igds-menu-item__icon-glyph {
+  color: var(--igds-color-text-neutral-grey-primary);
 }
 
-.igds-menu-item--text.igds-menu-item--selected .igds-menu-item__text {
-  flex: 1;
+.igds-menu-item:hover:not(.igds-menu-item--disabled),
+.igds-menu-item--hover:not(.igds-menu-item--disabled),
+.igds-menu-item:focus-visible:not(.igds-menu-item--disabled) {
+  background-color: var(--igds-color-background-neutral-white-light);
 }
 
-/* Checkbox Variants */
-.igds-menu-item--checkbox-left,
-.igds-menu-item--checkbox-right {
-  padding: var(--igds-menu-item-padding-y) var(--igds-menu-item-padding-x);
+.igds-menu-item--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-/* Remove checkbox-specific hover styles since Checkbox handles its own states */
-.igds-menu-item--checkbox-left .igds-checkbox,
-.igds-menu-item--checkbox-right .igds-checkbox {
-  width: 100%;
-}
-
-/* For checkbox-right variant, push checkbox to the far right */
-.igds-menu-item--checkbox-right .igds-checkbox {
-  justify-content: space-between;
-}
-
-.igds-menu-item--checkbox-right .igds-checkbox__label {
-  flex: 1;
-}
-
-/* Ensure checkbox variants don't show extra hover styles */
-.igds-menu-item--checkbox-left .igds-checkbox__label,
-.igds-menu-item--checkbox-right .igds-checkbox__label {
-  color: inherit;
-}
-
-/* Override checkbox label color to match menu item hover */
-.igds-menu-item--hover:not(.igds-menu-item--disabled) .igds-checkbox__label {
-  color: var(--igds-menu-item-text-hover) !important;
-}
-
-/* Prevent checkbox box from showing its own hover state when menu item is hovered */
-.igds-menu-item--hover .igds-checkbox__box--hover::before {
-  /* Reset to default state appearance, preventing checkbox hover */
-  background-color: var(--igds-checkbox-background-unchecked-default) !important;
-  border-color: var(--igds-checkbox-border-unchecked-default) !important;
-}
-
-.igds-menu-item--hover .igds-checkbox__box--checked.igds-checkbox__box--hover::before {
-  background-color: var(--igds-checkbox-background-checked-default) !important;
-  border-color: var(--igds-checkbox-border-checked-default) !important;
-}
-
-.igds-menu-item--hover .igds-checkbox__box--intermediate.igds-checkbox__box--hover::before {
-  background-color: var(--igds-checkbox-background-intermediate-default) !important;
-  border-color: var(--igds-checkbox-border-intermediate-default) !important;
-}
-
-.igds-menu-item--hover .igds-checkbox__box--plus.igds-checkbox__box--hover::before {
-  background-color: var(--igds-checkbox-background-plus-default) !important;
-  border-color: var(--igds-checkbox-border-plus-default) !important;
-}
-
-/* Focus states for accessibility */
 .igds-menu-item:focus-visible {
   outline: 2px solid var(--igds-color-border-accent-primary);
-  outline-offset: -2px;
-}
-
-/* Remove focus outline from nested checkbox input when menu item has focus */
-.igds-menu-item:focus-visible .igds-checkbox__input {
-  outline: none;
-}
-
-/* Keyboard navigation states */
-.igds-menu-item:focus:not(.igds-menu-item--disabled) {
-  background-color: var(--igds-menu-item-background-hover);
-}
-
-.igds-menu-item:focus:not(.igds-menu-item--disabled) .igds-menu-item__text {
-  color: var(--igds-menu-item-text-hover);
-}
-
-.igds-menu-item:focus:not(.igds-menu-item--disabled) .igds-checkbox__label {
-  color: var(--igds-menu-item-text-hover) !important;
-}
-
-/* Active/pressed state */
-.igds-menu-item:active:not(.igds-menu-item--disabled) {
-  background-color: var(--igds-menu-item-background-hover);
-  transform: none; /* Prevent any transform effects */
-}
-
-/* Ensure consistent height regardless of content */
-.igds-menu-item {
-  min-height: var(--igds-menu-item-height);
-  max-height: var(--igds-menu-item-height);
-}
-
-/* Handle long text gracefully */
-.igds-menu-item__text {
-  min-width: 0; /* Allows text to shrink below its natural width */
-}
-
-/* Icon alignment for text variant */
-.igds-menu-item--text .igds-menu-item__icon {
-  margin-left: auto; /* Push icon to the right */
+  outline-offset: 2px;
 }

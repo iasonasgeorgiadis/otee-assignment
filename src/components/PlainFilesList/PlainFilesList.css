@@ -1,0 +1,52 @@
+@import '../../styles/tokens.css';
+
+.plain-files-list {
+  width: 100%;
+  max-width: var(--igds-plain-files-list-max-width);
+  align-items: center;
+  background: var(--igds-plain-files-list-background-default);
+  border-radius: var(--igds-plain-files-list-item-radius);
+  color: var(--igds-plain-files-list-text-color);
+  display: flex;
+  gap: var(--igds-space-8);
+  min-height: var(--igds-space-48);
+  padding: var(--igds-plain-files-list-item-padding-y) var(--igds-plain-files-list-item-padding-x);
+  font-family: var(--igds-plain-files-list-font-family);
+  font-size: var(--igds-plain-files-list-font-size);
+  font-weight: var(--igds-plain-files-list-font-weight);
+  line-height: var(--igds-plain-files-list-line-height);
+  transition: background-color var(--igds-plain-files-list-transition-duration)
+      var(--igds-plain-files-list-transition-easing);
+}
+
+.plain-files-list:hover,
+.plain-files-list:focus-within,
+.plain-files-list--hover {
+  background: var(--igds-plain-files-list-background-hover);
+}
+
+.plain-files-list__name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plain-files-list__action {
+  color: var(--igds-plain-files-list-icon-color);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+  transition:
+    opacity var(--igds-plain-files-list-transition-duration) var(--igds-plain-files-list-transition-easing),
+    transform var(--igds-plain-files-list-transition-duration) var(--igds-plain-files-list-transition-easing);
+}
+
+.plain-files-list:hover .plain-files-list__action,
+.plain-files-list:focus-within .plain-files-list__action,
+.plain-files-list--hover .plain-files-list__action {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}

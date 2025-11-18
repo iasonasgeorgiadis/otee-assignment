@@ -1,19 +1,21 @@
 import React from 'react';
 import './Button.css';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonVariant = 'primary' | 'secondary' | 'neutral' | 'link';
+type ButtonSize = 'medium' | 'small';
+type LinkColor = 'primary' | 'secondary';
+
+type SharedButtonProps = {
   /** Button text content */
   label?: string;
-  /** The visual style variant of the button */
-  variant?: 'primary' | 'secondary' | 'link';
   /** The size of the button */
-  size?: 'medium' | 'small';
+  size?: ButtonSize;
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Whether the button has an outlined style */
   outlined?: boolean;
-  /** Link color scheme when variant is 'link' */
-  linkColor?: 'primary' | 'secondary';
+  /** Whether the button has a ghost style (transparent background) */
+  ghost?: boolean;
   /** Icon to display (maps to iconLead for compatibility) */
   icon?: React.ReactNode;
   /** Optional icon to display at the start */
@@ -22,9 +24,28 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   iconEnd?: React.ReactNode;
   /** Custom class name */
   className?: string;
-  /** Click handler */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-}
+};
+
+type NonLinkProps = SharedButtonProps & {
+  /** The visual style variant of the button */
+  variant?: Exclude<ButtonVariant, 'link'>;
+  linkColor?: never;
+};
+
+type LinkProps = SharedButtonProps & {
+  variant: 'link';
+  /** Link color scheme when variant is 'link' */
+  linkColor?: LinkColor;
+};
+
+type NativeButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'children'
+>;
+
+export type ButtonProps = (NonLinkProps | LinkProps) &
+  NativeButtonProps &
+  React.PropsWithChildren;
 
 /**
  * Button component that matches the Figma design system
@@ -35,20 +56,22 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * - Animation tokens: --igds-button-link-transition-duration (300ms)
  * - Animation tokens: --igds-button-link-transition-timing (ease-in-out)
  */
-export const Button: React.FC<ButtonProps> = ({
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   label = 'Button',
   variant = 'primary',
   size = 'medium',
   disabled = false,
   outlined = false,
-  linkColor = 'primary',
+  ghost = false,
   icon,
   iconLead,
   iconEnd,
   className = '',
   children,
+  type = 'button',
+  linkColor,
   ...props
-}) => {
+}, ref) => {
   // Support legacy Figma export prop name `icon` by mapping it to the lead slot.
   const leadIcon = iconLead ?? icon;
 
@@ -60,13 +83,17 @@ export const Button: React.FC<ButtonProps> = ({
     console.warn('Icon-only buttons should have aria-label or aria-labelledby for accessibility');
   }
 
+  const resolvedLinkColor =
+    variant === 'link' ? (linkColor ?? 'primary') : undefined;
+
   const classNames = [
     'igds-button',
     `igds-button--${variant}`,
     `igds-button--${size}`,
     // For link variant, add linkColor class for backwards compatibility
-    variant === 'link' && `igds-button--link-${linkColor}`,
+    resolvedLinkColor && `igds-button--link-${resolvedLinkColor}`,
     outlined && 'igds-button--outlined',
+    ghost && 'igds-button--ghost',
     disabled && 'igds-button--disabled',
     isIconOnly && 'igds-button--icon-only',
     className
@@ -74,6 +101,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      ref={ref}
+      type={type}
       className={classNames}
       disabled={disabled}
       {...props}
@@ -83,4 +112,6 @@ export const Button: React.FC<ButtonProps> = ({
       {iconEnd && <span className="igds-button__icon-end">{iconEnd}</span>}
     </button>
   );
-}; 
+});
+
+Button.displayName = 'Button';

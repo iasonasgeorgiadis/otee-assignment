@@ -1,0 +1,86 @@
+@import '../../styles/tokens.css';
+
+.igds-tooltip {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--igds-tooltip-padding-y) var(--igds-tooltip-padding-x);
+  border-radius: var(--igds-tooltip-border-radius);
+  border: var(--igds-tooltip-border-width) solid var(--igds-tooltip-border-color);
+  background-color: var(--igds-tooltip-background);
+  color: var(--igds-tooltip-text-color);
+  gap: var(--igds-tooltip-content-gap);
+  text-align: center;
+  font-family: var(--igds-tooltip-title-font-family);
+}
+
+.igds-tooltip__title,
+.igds-tooltip__body {
+  margin: 0;
+  width: 100%;
+  color: var(--igds-tooltip-text-color);
+}
+
+.igds-tooltip__title {
+  font-size: var(--igds-tooltip-title-font-size);
+  font-weight: var(--igds-tooltip-title-font-weight);
+  line-height: var(--igds-tooltip-title-line-height);
+}
+
+.igds-tooltip__body {
+  font-family: var(--igds-tooltip-body-font-family);
+  font-size: var(--igds-tooltip-body-font-size);
+  font-weight: var(--igds-tooltip-body-font-weight);
+  line-height: var(--igds-tooltip-body-line-height);
+}
+
+.igds-tooltip__arrow {
+  position: absolute;
+  width: var(--igds-tooltip-beak-size);
+  height: var(--igds-tooltip-beak-size);
+  pointer-events: none;
+}
+
+.igds-tooltip__arrow::before,
+.igds-tooltip__arrow::after {
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: var(--igds-tooltip-beak-border-radius);
+}
+
+.igds-tooltip__arrow::before {
+  inset: 0;
+  background: var(--igds-tooltip-border-color);
+}
+
+.igds-tooltip__arrow::after {
+  inset: var(--igds-tooltip-border-width);
+  background: var(--igds-tooltip-background);
+}
+
+.igds-tooltip--placement-top .igds-tooltip__arrow {
+  bottom: var(--igds-tooltip-beak-overlap);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.igds-tooltip--placement-bottom .igds-tooltip__arrow {
+  top: var(--igds-tooltip-beak-overlap);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.igds-tooltip--placement-left .igds-tooltip__arrow {
+  right: var(--igds-tooltip-beak-overlap);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.igds-tooltip--placement-right .igds-tooltip__arrow {
+  left: var(--igds-tooltip-beak-overlap);
+  top: 50%;
+  transform: translateY(-50%);
+}

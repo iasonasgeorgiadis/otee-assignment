@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
 import './Dropdown.css';
 import { MenuItem } from '../MenuItem/MenuItem';
-import { Checkbox } from '../Checkbox/Checkbox';
 
 export interface DropdownItem {
   /** Unique identifier for the item */
@@ -166,7 +165,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     }
   };
 
-  // Handle checkbox variants
+  // Handle multi-select variants
   const handleCheckboxChange = (item: DropdownItem, index: number, selected: boolean) => {
     if (item.disabled) return;
 
@@ -185,21 +184,19 @@ export const Dropdown: React.FC<DropdownProps> = ({
     .filter(Boolean)
     .join(' ');
 
-  // Get the appropriate MenuItem variant based on dropdown variant
-  const getMenuItemVariant = () => {
+  const getMenuItemVisuals = () => {
     switch (variant) {
-      case 'selected':
-        return 'text';
       case 'checkbox-left':
-        return 'checkbox-left';
       case 'checkbox-right':
-        return 'checkbox-right';
+        return { size: 'small' as const, withIcon: true };
+      case 'selected':
+        return { size: 'medium' as const, withIcon: true };
       default:
-        return 'text';
+        return { size: 'medium' as const, withIcon: false };
     }
   };
 
-  const menuItemVariant = getMenuItemVariant();
+  const menuItemVisuals = getMenuItemVisuals();
 
   return (
     <div className={containerClass} ref={dropdownRef}>
@@ -242,30 +239,20 @@ export const Dropdown: React.FC<DropdownProps> = ({
                   ref={el => (itemsRef.current[index] = el)}
                   className={`igds-dropdown__item ${isFocused ? 'igds-dropdown__item--focused' : ''}`}
                 >
-                  {variant === 'text' || variant === 'selected' ? (
-                    <MenuItem
-                      label={item.label}
-                      variant={menuItemVariant}
-                      selected={item.selected}
-                      disabled={item.disabled}
-                      showCheckmark={variant === 'selected'}
-                      onChange={() => handleItemSelect(item, index)}
-                    />
-                  ) : (
-                    <MenuItem
-                      label={item.label}
-                      variant={menuItemVariant}
-                      selected={item.selected}
-                      disabled={item.disabled}
-                      onChange={(selected) => handleCheckboxChange(item, index, selected)}
-                      checkboxProps={{
-                        variant: item.selected ? 'checked' : 'unchecked',
-                        disabled: item.disabled,
-                        checkboxPosition: variant === 'checkbox-left' ? 'left' : 'right',
-                        size: 'small',
-                      }}
-                    />
-                  )}
+                  <MenuItem
+                    label={item.label}
+                    size={menuItemVisuals.size}
+                    withIcon={menuItemVisuals.withIcon}
+                    hover={isFocused}
+                    disabled={item.disabled}
+                    onClick={() => {
+                      if (variant === 'checkbox-left' || variant === 'checkbox-right') {
+                        handleCheckboxChange(item, index, !item.selected);
+                      } else {
+                        handleItemSelect(item, index);
+                      }
+                    }}
+                  />
                   {item.divider && <div className="igds-dropdown__divider" />}
                 </div>
               );

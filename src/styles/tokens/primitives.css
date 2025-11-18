@@ -38,14 +38,14 @@
   /* Orange Palette */
   --igds-color-orange-50: #fff3e0;
   --igds-color-orange-100: #ffdfb1;
-  --igds-color-orange-200: #ffcb7f;
-  --igds-color-orange-300: #ffb54c;
+  --igds-color-orange-200: #ffc384;
+  --igds-color-orange-300: #ffaC56;
   --igds-color-orange-400: #ffa524;
   --igds-color-orange-500: #ff9500;
-  --igds-color-orange-600: #ff8900;
-  --igds-color-orange-700: #fa7900;
-  --igds-color-orange-800: #cc4e00;
-  --igds-color-orange-900: #942f00;
+  --igds-color-orange-600: #faa143;
+  --igds-color-orange-700: #da7800;
+  --igds-color-orange-800: #a35a00;
+  --igds-color-orange-900: #844901;
 
   /* Grey Palette */
   --igds-color-grey-50: #f8f9fb;

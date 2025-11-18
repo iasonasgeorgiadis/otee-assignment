@@ -2,23 +2,23 @@
 
 /* Branding and System Colors */
 :root {
-  /* Brand Primary Colors */
-  --igds-color-brand-primary-darkest: var(--igds-color-blue-900);
-  --igds-color-brand-primary-darker: var(--igds-color-blue-800);
-  --igds-color-brand-primary-dark: var(--igds-color-blue-700);
-  --igds-color-brand-primary-medium: var(--igds-color-blue-500);
-  --igds-color-brand-primary-light: var(--igds-color-blue-200);
-  --igds-color-brand-primary-lighter: var(--igds-color-blue-100);
-  --igds-color-brand-primary-lightest: var(--igds-color-blue-50);
+  /* Brand Primary Colors - Updated to Orange per Figma Design System */
+  --igds-color-brand-primary-darkest: var(--igds-color-orange-900);
+  --igds-color-brand-primary-darker: var(--igds-color-orange-800);
+  --igds-color-brand-primary-dark: var(--igds-color-orange-600);
+  --igds-color-brand-primary-medium: var(--igds-color-orange-500);
+  --igds-color-brand-primary-light: var(--igds-color-orange-300);
+  --igds-color-brand-primary-lighter: var(--igds-color-orange-200);
+  --igds-color-brand-primary-lightest: var(--igds-color-orange-50);
 
-  /* Brand Alpha Primary Colors */
-  --igds-color-brand-alpha-primary-darkest: rgba(12, 40, 85, 0.30);
-  --igds-color-brand-alpha-primary-darker: rgba(12, 40, 85, 0.20);
-  --igds-color-brand-alpha-primary-dark: rgba(30, 88, 159, 0.20);
-  --igds-color-brand-alpha-primary-medium: rgba(18, 60, 128, 0.20);
-  --igds-color-brand-alpha-primary-light: rgba(103, 168, 220, 0.20);
-  --igds-color-brand-alpha-primary-lighter: rgba(185, 216, 240, 0.30);
-  --igds-color-brand-alpha-primary-lightest: rgba(226, 240, 249, 0.30);
+  /* Brand Alpha Primary Colors - Updated to Orange per Figma Design System */
+  --igds-color-brand-alpha-primary-darkest: rgba(148, 47, 0, 0.30);
+  --igds-color-brand-alpha-primary-darker: rgba(204, 78, 0, 0.20);
+  --igds-color-brand-alpha-primary-dark: rgba(250, 121, 0, 0.20);
+  --igds-color-brand-alpha-primary-medium: rgba(255, 149, 0, 0.20);
+  --igds-color-brand-alpha-primary-light: rgba(255, 203, 127, 0.20);
+  --igds-color-brand-alpha-primary-lighter: rgba(255, 243, 224, 0.30);
+  --igds-color-brand-alpha-primary-lightest: rgba(255, 243, 224, 0.30);
 
   /* Brand Secondary Colors */
   --igds-color-brand-secondary-darkest: var(--igds-color-grey-900);
@@ -578,7 +578,7 @@
   /* Button */
   --igds-typography-button-family: var(--igds-typography-family-sans);
   --igds-typography-button-size: var(--igds-typography-size-sm);
-  --igds-typography-button-weight: var(--igds-typography-weight-bold);
+  --igds-typography-button-weight: var(--igds-typography-weight-medium);
   --igds-typography-button-line-height: var(--igds-typography-line-height-normal);
   --igds-typography-button-letter-spacing: var(--igds-typography-letter-spacing-normal);
 

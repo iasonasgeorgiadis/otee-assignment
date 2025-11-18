@@ -24,7 +24,7 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'link'],
+      options: ['primary', 'secondary', 'neutral', 'link'],
       description: 'The visual style variant of the button',
     },
     linkColor: {
@@ -40,6 +40,10 @@ const meta = {
     outlined: {
       control: { type: 'boolean' },
       description: 'Whether the button has an outlined style',
+    },
+    ghost: {
+      control: { type: 'boolean' },
+      description: 'Whether the button has a ghost style (transparent background)',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -183,6 +187,145 @@ export const SecondaryOutlinedDisabled: Story = {
     variant: 'secondary',
     size: 'medium',
     outlined: true,
+    disabled: true,
+  },
+};
+
+// Neutral Button Stories
+export const Neutral: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+  },
+};
+
+export const NeutralSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'small',
+  },
+};
+
+export const NeutralOutlined: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+    outlined: true,
+  },
+};
+
+export const NeutralOutlinedSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'small',
+    outlined: true,
+  },
+};
+
+export const NeutralDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+    disabled: true,
+  },
+};
+
+export const NeutralOutlinedDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+    outlined: true,
+    disabled: true,
+  },
+};
+
+// Ghost Button Stories
+export const PrimaryGhost: Story = {
+  args: {
+    label: 'Button',
+    variant: 'primary',
+    size: 'medium',
+    ghost: true,
+  },
+};
+
+export const PrimaryGhostSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'primary',
+    size: 'small',
+    ghost: true,
+  },
+};
+
+export const PrimaryGhostDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'primary',
+    size: 'medium',
+    ghost: true,
+    disabled: true,
+  },
+};
+
+export const SecondaryGhost: Story = {
+  args: {
+    label: 'Button',
+    variant: 'secondary',
+    size: 'medium',
+    ghost: true,
+  },
+};
+
+export const SecondaryGhostSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'secondary',
+    size: 'small',
+    ghost: true,
+  },
+};
+
+export const SecondaryGhostDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'secondary',
+    size: 'medium',
+    ghost: true,
+    disabled: true,
+  },
+};
+
+export const NeutralGhost: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+    ghost: true,
+  },
+};
+
+export const NeutralGhostSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'small',
+    ghost: true,
+  },
+};
+
+export const NeutralGhostDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'neutral',
+    size: 'medium',
+    ghost: true,
     disabled: true,
   },
 };
@@ -372,7 +515,7 @@ export const LinkSecondaryDisabled: Story = {
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {/* Branded Buttons */}
+      {/* Primary Buttons */}
       <div>
         <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Primary Buttons</h3>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -384,8 +527,8 @@ export const AllVariants: Story = {
           <Button variant="primary" size="medium" outlined disabled label="Button" />
         </div>
       </div>
-      
-      {/* Neutral Buttons */}
+
+      {/* Secondary Buttons */}
       <div>
         <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Secondary Buttons</h3>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -395,6 +538,32 @@ export const AllVariants: Story = {
           <Button variant="secondary" size="small" outlined label="Button" />
           <Button variant="secondary" size="medium" disabled label="Button" />
           <Button variant="secondary" size="medium" outlined disabled label="Button" />
+        </div>
+      </div>
+
+      {/* Neutral Buttons */}
+      <div>
+        <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Neutral Buttons</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <Button variant="neutral" size="medium" label="Button" />
+          <Button variant="neutral" size="small" label="Button" />
+          <Button variant="neutral" size="medium" outlined label="Button" />
+          <Button variant="neutral" size="small" outlined label="Button" />
+          <Button variant="neutral" size="medium" disabled label="Button" />
+          <Button variant="neutral" size="medium" outlined disabled label="Button" />
+        </div>
+      </div>
+
+      {/* Ghost Buttons */}
+      <div>
+        <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Ghost Buttons</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <Button variant="primary" size="medium" ghost label="Button" />
+          <Button variant="primary" size="small" ghost label="Button" />
+          <Button variant="secondary" size="medium" ghost label="Button" />
+          <Button variant="secondary" size="small" ghost label="Button" />
+          <Button variant="neutral" size="medium" ghost label="Button" />
+          <Button variant="neutral" size="small" ghost label="Button" />
         </div>
       </div>
 

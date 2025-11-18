@@ -1,153 +1,91 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
 import './MenuItem.css';
-import { Checkbox } from '../Checkbox/Checkbox';
 import { MaterialIcon } from '../MaterialIcon/MaterialIcon';
 
 export interface MenuItemProps {
-  /** The text label to display */
+  /** Displayed label */
   label?: string;
-  /** The variant of the menu item */
-  variant?: 'text' | 'checkbox-left' | 'checkbox-right';
-  /** Whether the menu item is selected */
-  selected?: boolean;
-  /** Whether the menu item is disabled */
+  /** Visual size of the item */
+  size?: 'medium' | 'small';
+  /** Whether to render the leading icon */
+  withIcon?: boolean;
+  /** Force the hover treatment (helpful for docs) */
+  hover?: boolean;
+  /** Prevent interaction */
   disabled?: boolean;
-  /** Whether to show a checkmark icon when selected */
-  showCheckmark?: boolean;
-  /** Callback when the menu item is clicked or selection changes */
-  onChange?: (selected: boolean) => void;
-  /** Additional CSS class names */
+  /** Optional custom class */
   className?: string;
-  /** Props to pass to the Checkbox component (only for checkbox variants) */
-  checkboxProps?: Partial<React.ComponentProps<typeof Checkbox>>;
+  /** Override the icon glyph */
+  iconName?: string;
+  /** Override the Material icon set */
+  iconVariant?: React.ComponentProps<typeof MaterialIcon>['variant'];
+  /** Callback when the item is activated */
+  onClick?: () => void;
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({
   label = 'Label',
-  variant = 'text',
-  selected = false,
+  size = 'medium',
+  withIcon = true,
+  hover = false,
   disabled = false,
-  showCheckmark = false,
-  onChange,
   className = '',
-  checkboxProps = {},
+  iconName = 'play_arrow',
+  iconVariant = 'outlined',
+  onClick,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const isCheckboxVariant = variant === 'checkbox-left' || variant === 'checkbox-right';
-
-  const { onChange: checkboxOnChange, ...restCheckboxProps } = checkboxProps;
-
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     if (disabled) {
+      event.preventDefault();
       return;
     }
 
-    if (isCheckboxVariant) {
-      const target = event.target as HTMLElement;
-      if (target.closest('.igds-checkbox')) {
-        return;
-      }
-    }
-
-    onChange?.(!selected);
+    onClick?.();
   };
 
-  const handleMouseEnter = () => {
-    if (!disabled) {
-      setIsHovered(true);
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.();
     }
   };
 
-  const handleMouseLeave = () => {
-    if (!disabled) {
-      setIsHovered(false);
-    }
-  };
-
-  // Build container class names
   const containerClass = [
     'igds-menu-item',
-    `igds-menu-item--${variant}`,
-    selected ? 'igds-menu-item--selected' : '',
-    isHovered ? 'igds-menu-item--hover' : '',
+    `igds-menu-item--${size}`,
+    withIcon ? 'igds-menu-item--with-icon' : 'igds-menu-item--text-only',
+    hover && !disabled ? 'igds-menu-item--hover' : '',
     disabled ? 'igds-menu-item--disabled' : '',
     className,
   ]
     .filter(Boolean)
     .join(' ');
 
-  const textClass = `igds-menu-item__text ${
-    disabled ? 'igds-menu-item__text--disabled' : ''
-  }`.trim();
+  const iconSize = size === 'medium' ? 24 : 20;
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (disabled || (event.key !== 'Enter' && event.key !== ' ')) {
-      return;
-    }
-
-    event.preventDefault();
-    onChange?.(!selected);
-  };
-
-  const role = 'menuitemcheckbox';
-  const ariaChecked = selected;
-
-  // For checkbox variants, render with Checkbox component
-  if (isCheckboxVariant) {
-    return (
-      <div
-        className={containerClass}
-        onClick={handleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onKeyDown={handleKeyDown}
-        role={role}
-        tabIndex={disabled ? -1 : 0}
-        aria-disabled={disabled}
-        aria-checked={ariaChecked}
-      >
-        <Checkbox
-          {...restCheckboxProps}
-          label={label}
-          variant={selected ? 'checked' : 'unchecked'}
-          disabled={disabled}
-          checkboxPosition={variant === 'checkbox-left' ? 'left' : 'right'}
-          size="small"
-          onChange={(checkboxVariant) => {
-            const nextSelected = checkboxVariant === 'checked';
-            onChange?.(nextSelected);
-            checkboxOnChange?.(checkboxVariant);
-          }}
-        />
-      </div>
-    );
-  }
-
-  // For text variant, render with optional checkmark icon
   return (
     <div
       className={containerClass}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onKeyDown={handleKeyDown}
-      role={role}
+      role="menuitem"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
-      aria-checked={ariaChecked}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
-      <span className={textClass}>{label}</span>
-      {selected && showCheckmark && (
-        <div className="igds-menu-item__icon">
+      {withIcon && (
+        <span className={`igds-menu-item__icon igds-menu-item__icon--${size}`}>
           <MaterialIcon
-            name="check"
-            size={16}
-            className="igds-menu-item__checkmark"
+            name={iconName}
+            size={iconSize}
+            variant={iconVariant}
+            className="igds-menu-item__icon-glyph"
           />
-        </div>
+        </span>
       )}
+      <span className="igds-menu-item__label">{label}</span>
     </div>
   );
 };
