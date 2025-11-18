@@ -1,0 +1,1141 @@
+/* Component Tokens */
+
+/* =============================================================================
+   BUTTON COMPONENT TOKENS
+   ============================================================================= */
+
+/* Button Component - From Figma MCP Analysis
+   Figma Component: "Button" (Node ID: 40001166-402)
+   Last Extracted: 2025-09-22 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - Variant: "primary" | "secondary"
+   - Size: "small" | "medium"
+   - Outlined: true | false
+   - State: "active" | "hover" | "pressed"
+   - Disabled: "false" | "true"
+
+   Token Mapping from Figma:
+   - Variant="Primary" → --igds-color-background-accent-primary (#123c80)
+   - Variant="Secondary" → --igds-color-background-neutral-white (#ffffff)
+   - Size="Medium" → --igds-space-16 (x), --igds-space-12 (y)
+   - Size="Small" → --igds-space-12 (x), --igds-space-8 (y)
+   - Outlined=true → transparent backgrounds + border colors
+   - Disabled=true → --igds-color-background-system-disabled (#b7b8b9)
+*/
+
+:root {
+  /* Button Base Typography */
+  --igds-button-font-family: var(--igds-typography-button-family);
+  --igds-button-font-size: var(--igds-typography-button-size);
+  --igds-button-font-weight: var(--igds-typography-button-weight);
+  --igds-button-line-height: var(--igds-typography-button-line-height);
+  --igds-button-letter-spacing: var(--igds-typography-button-letter-spacing);
+  --igds-button-text-transform: uppercase;
+
+  /* Button Base Layout */
+  --igds-button-border-radius: var(--igds-radius-none);
+  --igds-button-border-width: 1px;
+  --igds-button-gap: var(--igds-space-4);
+
+  /* Button Size - Medium (Default) */
+  --igds-button-padding-x-medium: var(--igds-space-16);
+  --igds-button-padding-y-medium: var(--igds-space-12);
+
+  /* Button Size - Small */
+  --igds-button-padding-x-small: var(--igds-space-12);
+  --igds-button-padding-y-small: var(--igds-space-8);
+
+  /* Button Primary Variant - Filled */
+  --igds-button-background-primary-default: var(--igds-color-background-accent-primary);
+  --igds-button-background-primary-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-button-background-primary-pressed: var(--igds-color-background-accent-primary-dark);
+  --igds-button-background-primary-disabled: var(--igds-color-background-system-disabled);
+
+  --igds-button-text-primary-default: var(--igds-color-text-neutral-white-primary);
+  --igds-button-text-primary-hover: var(--igds-color-text-neutral-white-primary);
+  --igds-button-text-primary-pressed: var(--igds-color-text-neutral-white-primary);
+  --igds-button-text-primary-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-primary-default: transparent;
+  --igds-button-border-primary-hover: transparent;
+  --igds-button-border-primary-pressed: transparent;
+  --igds-button-border-primary-disabled: transparent;
+
+  /* Button Primary Variant - Outlined */
+  --igds-button-background-primary-outlined-default: var(--igds-color-background-accent-alpha-primary);
+  --igds-button-background-primary-outlined-hover: var(--igds-color-background-accent-alpha-primary-lighter);
+  --igds-button-background-primary-outlined-pressed: var(--igds-color-background-accent-alpha-primary-light);
+  --igds-button-background-primary-outlined-disabled: transparent;
+
+  --igds-button-text-primary-outlined-default: var(--igds-color-text-accent-primary);
+  --igds-button-text-primary-outlined-hover: var(--igds-color-text-accent-primary);
+  --igds-button-text-primary-outlined-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-primary-outlined-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-primary-outlined-default: var(--igds-color-border-accent-alpha-primary);
+  --igds-button-border-primary-outlined-hover: var(--igds-color-border-accent-primary-darker);
+  --igds-button-border-primary-outlined-pressed: var(--igds-color-border-accent-primary-dark);
+  --igds-button-border-primary-outlined-disabled: var(--igds-color-border-system-disabled);
+
+  /* Button Secondary Variant - Filled */
+  --igds-button-background-secondary-default: var(--igds-color-background-neutral-white);
+  --igds-button-background-secondary-hover: var(--igds-color-background-neutral-white-light);
+  --igds-button-background-secondary-pressed: var(--igds-color-background-neutral-grey-light);
+  --igds-button-background-secondary-disabled: var(--igds-color-background-system-disabled);
+
+  --igds-button-text-secondary-default: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-hover: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-secondary-default: transparent;
+  --igds-button-border-secondary-hover: transparent;
+  --igds-button-border-secondary-pressed: transparent;
+  --igds-button-border-secondary-disabled: transparent;
+
+  /* Button Secondary Variant - Outlined */
+  --igds-button-background-secondary-outlined-default: var(--igds-color-background-accent-alpha-secondary);
+  --igds-button-background-secondary-outlined-hover: var(--igds-color-background-accent-alpha-secondary-dark);
+  --igds-button-background-secondary-outlined-pressed: var(--igds-color-background-accent-alpha-secondary);
+  --igds-button-background-secondary-outlined-disabled: transparent;
+
+  --igds-button-text-secondary-outlined-default: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-outlined-hover: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-outlined-pressed: var(--igds-color-text-accent-primary);
+  --igds-button-text-secondary-outlined-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-secondary-outlined-default: var(--igds-color-border-accent-secondary);
+  --igds-button-border-secondary-outlined-hover: var(--igds-color-border-accent-secondary);
+  --igds-button-border-secondary-outlined-pressed: var(--igds-color-border-accent-secondary-light);
+  --igds-button-border-secondary-outlined-disabled: var(--igds-color-border-system-disabled);
+
+  /* Button Link Variant */
+  --igds-button-background-link-default: transparent;
+  --igds-button-background-link-hover: transparent;
+  --igds-button-background-link-pressed: transparent;
+  --igds-button-background-link-disabled: transparent;
+
+  /* Button Link Variant - Primary Pressed State Background */
+  --igds-button-background-link-primary-pressed: transparent;
+
+  /* Button Link Variant - Secondary Pressed State Background */
+  --igds-button-background-link-secondary-pressed: transparent;
+
+  --igds-button-text-link-default: var(--igds-color-text-accent-primary);
+  --igds-button-text-link-hover: var(--igds-color-text-accent-primary);
+  --igds-button-text-link-pressed: var(--igds-color-text-accent-primary-darker);
+  --igds-button-text-link-disabled: var(--igds-color-text-system-disabled);
+
+  --igds-button-border-link-default: transparent;
+  --igds-button-border-link-hover: transparent;
+  --igds-button-border-link-pressed: transparent;
+  --igds-button-border-link-disabled: transparent;
+
+  /* Button Link Variant - Border Bottom for Hover/Active States (3px border) */
+  --igds-button-border-bottom-link-primary-hover: 3px solid var(--igds-color-border-accent-primary);
+  --igds-button-border-bottom-link-primary-pressed: 3px solid var(--igds-color-border-accent-primary);
+  --igds-button-border-bottom-link-secondary-hover: 3px solid var(--igds-color-border-accent-secondary);
+  --igds-button-border-bottom-link-secondary-pressed: 3px solid var(--igds-color-border-accent-secondary);
+
+  --igds-button-text-decoration-link-default: underline;
+  --igds-button-text-decoration-link-hover: underline;
+  --igds-button-text-decoration-link-pressed: underline;
+  --igds-button-text-decoration-link-disabled: none;
+
+  /* Button Focus States (for accessibility) */
+  --igds-button-focus-outline-color: var(--igds-color-border-accent-primary);
+  --igds-button-focus-outline-width: 2px;
+  --igds-button-focus-outline-offset: 2px;
+  --igds-button-focus-outline-style: solid;
+
+  /* Button Link Animation Tokens */
+  --igds-button-link-underline-height: 3px;
+  --igds-button-link-transition-duration: 300ms;
+  --igds-button-link-transition-timing: ease-in-out;
+
+  /* Button Transition Properties */
+  --igds-button-transition-duration: 150ms;
+  --igds-button-transition-timing-function: ease-in-out;
+  --igds-button-transition-properties: background-color, border-color, color, opacity;
+
+  /* Button Icon-Only Variant - From Figma MCP Analysis
+     Figma Component: "button-icon" (Node ID: 40001318-3016)
+     Last Extracted: 2025-09-27 via #get_code and #get_variable_defs
+
+     Icon-only circular buttons with same variants as regular buttons
+     - Primary/Secondary variants
+     - Outlined true/false
+     - Medium: 40x40px with 12px padding
+     - Small: 32x32px with 8px padding
+     - Full circular shape (360px radius)
+  */
+  --igds-button-icon-border-radius: var(--igds-radius-full); /* 360px = full circle */
+  --igds-button-icon-size-medium: 40px;
+  --igds-button-icon-size-small: 32px;
+  --igds-button-icon-padding-medium: var(--igds-space-12);
+  --igds-button-icon-padding-small: var(--igds-space-8);
+}
+
+
+/* =============================================================================
+   INPUT FIELD COMPONENT TOKENS
+   ============================================================================= */
+
+/* InputField Component - From Figma MCP Analysis
+   Figma Component: "input-field" (Node ID: 40001249-247)
+   Last Extracted: 2025-09-23 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - Size: "medium" | "small"
+   - State: "idle" | "hover" | "active" | "filled" | "error" | "success" | "disabled" | "default"
+   - showIconLead: true | false
+   - showIconEnd: true | false
+
+   Token Mapping from Figma:
+   - Default background → --igds-color-background-neutral-white (#ffffff)
+   - Hover background → --igds-color-background-neutral-white-lighter (#f8f9fb)
+   - Default border → --igds-color-border-neutral-grey (#b7b8b9)
+   - Hover border → --igds-color-border-neutral-grey-dark (#6f7071)
+   - Active border → --igds-color-border-accent-primary-dark (#1e589f)
+   - Error border → --igds-color-border-system-danger (#d40000)
+   - Success border → --igds-color-border-system-success (#3a7f3b)
+   - Text color → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Placeholder color → --igds-color-text-neutral-grey-tertiary (#6f7071)
+   - Icon colors → --igds-color-icon-neutral-grey-secondary (#5b5c5d)
+   - Size="Medium" → 56px height, 16px padding
+   - Size="Small" → 40px height, 8px padding
+*/
+
+:root {
+  /* InputField Base Layout */
+  --igds-input-field-border-radius: var(--igds-radius-none);
+  --igds-input-field-border-width: 1px;
+  --igds-input-field-border-width-active: 2px;
+  --igds-input-field-gap-medium: var(--igds-space-8);
+  --igds-input-field-gap-small: var(--igds-space-4);
+
+  /* InputField Typography */
+  --igds-input-field-font-family: var(--igds-typography-body-family);
+  --igds-input-field-font-weight: var(--igds-typography-body-weight);
+  --igds-input-field-letter-spacing: var(--igds-typography-body-letter-spacing);
+
+  /* InputField Size - Medium (Default) */
+  /* Note: Uses fixed height approach rather than vertical padding */
+  --igds-input-field-padding-x-medium: var(--igds-space-16);
+  --igds-input-field-height-medium: 48px;
+  --igds-input-field-font-size-medium: var(--igds-typography-body-size);
+  --igds-input-field-line-height-medium: var(--igds-typography-body-line-height);
+  --igds-input-field-icon-size-medium: 24px;
+
+  /* InputField Size - Small */
+  /* Note: Uses fixed height approach rather than vertical padding */
+  --igds-input-field-padding-x-small: var(--igds-space-12);
+  --igds-input-field-height-small: 40px;
+  --igds-input-field-font-size-small: var(--igds-typography-body-size-small);
+  --igds-input-field-line-height-small: var(--igds-typography-body-line-height-small);
+  --igds-input-field-icon-size-small: 16px;
+
+  /* InputField Background Colors */
+  --igds-input-field-background-default: var(--igds-color-background-neutral-white);
+  --igds-input-field-background-hover: var(--igds-color-background-neutral-white-lighter);
+  --igds-input-field-background-active: var(--igds-color-background-neutral-white);
+  --igds-input-field-background-disabled: var(--igds-color-background-system-disabled-light);
+
+  /* InputField Border Colors */
+  --igds-input-field-border-default: var(--igds-color-border-neutral-grey);
+  --igds-input-field-border-hover: var(--igds-color-border-neutral-grey-dark);
+  --igds-input-field-border-active: var(--igds-color-border-accent-primary-dark);
+  --igds-input-field-border-error: var(--igds-color-border-system-danger);
+  --igds-input-field-border-success: var(--igds-color-border-system-success);
+  --igds-input-field-border-disabled: var(--igds-color-border-system-disabled);
+
+  /* InputField Text Colors */
+  --igds-input-field-text-default: var(--igds-color-text-neutral-grey-tertiary); /* Lighter for idle/default */
+  --igds-input-field-text-active: var(--igds-color-text-neutral-grey-primary); /* Darker for active/focus */
+  --igds-input-field-text-filled: var(--igds-color-text-neutral-grey-primary); /* Dark for filled state */
+  --igds-input-field-placeholder: var(--igds-color-text-neutral-grey-tertiary);
+  --igds-input-field-text-disabled: var(--igds-color-text-system-disabled);
+
+  /* InputField Icon Colors */
+  --igds-input-field-icon-default: var(--igds-color-icon-neutral-grey-secondary);
+  --igds-input-field-icon-filled: var(--igds-color-icon-neutral-grey-primary);
+  --igds-input-field-icon-error: var(--igds-color-icon-system-danger);
+  --igds-input-field-icon-success: var(--igds-color-icon-system-success);
+  --igds-input-field-icon-disabled: var(--igds-color-icon-system-disabled);
+
+  /* InputField Transition Properties */
+  --igds-input-field-transition-duration: 300ms;
+  --igds-input-field-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --igds-input-field-transition-properties: background-color, border-color, box-shadow, color;
+}
+
+
+/* =============================================================================
+   CHECKBOX COMPONENT TOKENS
+   ============================================================================= */
+
+/* Checkbox Component - From Figma MCP Analysis
+   Figma Component: "Checkbox" (Node ID: 40001257:2030)
+   Last Extracted: 2025-09-24 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - variant: "unchecked" | "checked" | "intermediate" | "plus"
+   - state: "Default" | "Hover" | "Disabled"
+   - checkboxPosition: "Left" | "Right"
+   - disabled: "false" | "true"
+
+   Token Mapping from Figma:
+   - Default box background → --igds-color-background-neutral-white (#ffffff)
+   - Default box border → --igds-color-border-neutral-grey-light (#dadcdd)
+   - Hover box border → --igds-color-border-neutral-grey (#b7b8b9)
+   - Checked background → --igds-color-background-accent-primary (#123c80)
+   - Hover checked background → --igds-color-background-accent-primary-darker (#0c2855)
+   - Disabled background → --igds-color-background-system-disabled-light (#e9ebec)
+   - Text color → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Disabled text color → --igds-color-text-system-disabled (#6f7071)
+   - Icon color → --igds-color-icon-neutral-white-primary (#ffffff)
+   - Disabled icon color → --igds-color-icon-system-disabled (#6f7071)
+   - Container gap → --igds-space-8 (8px)
+   - Box radius → --igds-radius-xs (2px)
+   - Typography → Body (16px, Open Sans, 400, 1.4 line-height)
+*/
+
+:root {
+  /* Checkbox Base Layout */
+  --igds-checkbox-box-size: 24px;
+  --igds-checkbox-inner-size: 16px;
+  --igds-checkbox-border-radius: var(--igds-radius-xs);
+  --igds-checkbox-border-width: 2px;
+  --igds-checkbox-gap: var(--igds-space-8);
+
+  /* Checkbox Typography */
+  --igds-checkbox-font-family: var(--igds-typography-body-family);
+  --igds-checkbox-font-size: var(--igds-typography-body-size);
+  --igds-checkbox-font-weight: var(--igds-typography-body-weight);
+  --igds-checkbox-line-height: var(--igds-typography-line-height-normal);
+
+  /* Checkbox Icon Size */
+  --igds-checkbox-icon-size: 16px;
+
+  /* Checkbox Unchecked State */
+  --igds-checkbox-background-unchecked-default: var(--igds-color-background-neutral-white);
+  --igds-checkbox-background-unchecked-hover: var(--igds-color-background-neutral-white);
+  --igds-checkbox-background-unchecked-disabled: var(--igds-color-background-system-disabled-light);
+
+  --igds-checkbox-border-unchecked-default: var(--igds-color-border-neutral-grey-light);
+  --igds-checkbox-border-unchecked-hover: var(--igds-color-border-neutral-grey);
+  --igds-checkbox-border-unchecked-disabled: transparent;
+
+  /* Checkbox Checked State */
+  --igds-checkbox-background-checked-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-background-checked-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-background-checked-disabled: var(--igds-color-background-system-disabled-light);
+
+  --igds-checkbox-border-checked-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-border-checked-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-border-checked-disabled: var(--igds-color-background-system-disabled-light);
+
+  /* Checkbox Intermediate State */
+  --igds-checkbox-background-intermediate-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-background-intermediate-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-background-intermediate-disabled: var(--igds-color-background-system-disabled-light);
+
+  --igds-checkbox-border-intermediate-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-border-intermediate-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-border-intermediate-disabled: var(--igds-color-background-system-disabled-light);
+
+  /* Checkbox Plus State */
+  --igds-checkbox-background-plus-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-background-plus-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-background-plus-disabled: var(--igds-color-background-system-disabled-light);
+
+  --igds-checkbox-border-plus-default: var(--igds-color-background-accent-primary);
+  --igds-checkbox-border-plus-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-checkbox-border-plus-disabled: var(--igds-color-background-system-disabled-light);
+
+  /* Checkbox Text Colors */
+  --igds-checkbox-text-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-checkbox-text-disabled: var(--igds-color-text-system-disabled);
+
+  /* Checkbox Icon Colors */
+  --igds-checkbox-icon-default: var(--igds-color-icon-neutral-white-primary);
+  --igds-checkbox-icon-disabled: var(--igds-color-icon-system-disabled);
+
+  /* Checkbox Transition Properties */
+  --igds-checkbox-transition-duration: 200ms;
+  --igds-checkbox-transition-timing-function: ease-in-out;
+  --igds-checkbox-transition-properties: background-color, border-color, color, opacity;
+}
+
+
+/* =============================================================================
+   ACCESS TAG COMPONENT TOKENS
+   ============================================================================= */
+
+/* AccessTag Component - From Figma MCP Analysis
+   Figma Component: "access-tags" (Node ID: 40001258-1458)
+   Last Extracted: 2025-09-24 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - type: "open access" | "free access" | "full access"
+
+   Token Mapping from Figma:
+   - Open Access → --igds-color-access-open (#b92d80)
+   - Free Access → --igds-color-access-free (#cc4e00)
+   - Full Access (Free to Read) → --igds-color-access-full (#008945)
+   - Typography → Body Small Strong (Open Sans Bold, 14px, 1.4 line-height)
+   - Gap between icon and text → --igds-space-4 (4px)
+   - Icon size → 20px
+*/
+
+:root {
+  /* AccessTag Base Layout */
+  --igds-access-tag-gap: var(--igds-space-4);
+  --igds-access-tag-icon-size: 20px;
+
+  /* AccessTag Typography */
+  --igds-access-tag-font-family: var(--igds-typography-body-family);
+  --igds-access-tag-font-size: var(--igds-typography-body-size-small);
+  --igds-access-tag-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-access-tag-line-height: var(--igds-typography-line-height-normal);
+
+  /* AccessTag Open Access Variant */
+  --igds-access-tag-text-open: var(--igds-color-access-open);
+  --igds-access-tag-icon-open: var(--igds-color-access-open);
+
+  /* AccessTag Free Access Variant */
+  --igds-access-tag-text-free: var(--igds-color-access-free);
+  --igds-access-tag-icon-free: var(--igds-color-access-free);
+
+  /* AccessTag Full Access (Free to Read) Variant */
+  --igds-access-tag-text-full: var(--igds-color-access-full);
+  --igds-access-tag-icon-full: var(--igds-color-access-full);
+}
+
+
+/* =============================================================================
+   ARTICLE COMPONENT TOKENS
+   ============================================================================= */
+
+/* Article Component - From Figma MCP Analysis
+   Figma Component: "article" (Node ID: 40000534-3961)
+   Last Extracted: 2025-09-24 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - size: "xlarge" | "large" | "medium"
+   - hasDetails, hasAuthors, hasJournalInformation, hasButtonRow: conditional sections
+
+   Token Mapping from Figma:
+   - xlarge title → --igds-typography-subtitle-size (32px), --igds-typography-subtitle-weight (700)
+   - large title → --igds-typography-heading-size (24px), --igds-typography-heading-weight (600)
+   - medium title → --igds-typography-subheading-size (20px), --igds-typography-subheading-weight (600)
+   - details text (xlarge) → --igds-color-text-neutral-grey-tertiary (#6f7071)
+   - details text (large/medium) → --igds-color-text-neutral-grey-secondary (#5b5c5d)
+   - body text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - spacing → --igds-space-8, --igds-space-4, --igds-space-12
+   - dividers → --igds-color-border-neutral-grey (#b7b8b9)
+*/
+
+:root {
+  /* Article Base Layout */
+  --igds-article-gap: var(--igds-space-12);
+  --igds-article-gap-small: var(--igds-space-4);
+  --igds-article-section-gap: var(--igds-space-12);
+
+  /* Article Title Typography - Size Variants */
+  --igds-article-title-size-large: var(--igds-typography-subtitle-size);
+  --igds-article-title-family-large: var(--igds-typography-subtitle-family);
+  --igds-article-title-weight-large: var(--igds-typography-subtitle-weight); /* SemiBold (600) per Figma design */
+  --igds-article-title-line-height-large: var(--igds-typography-line-height-tight);
+  --igds-article-title-letter-spacing-large: -0.64px; /* Figma-specific value, no matching semantic token */
+
+  --igds-article-title-size-medium: var(--igds-typography-heading-size);
+  --igds-article-title-family-medium: var(--igds-typography-heading-family);
+  --igds-article-title-weight-medium: var(--igds-typography-heading-weight);
+  --igds-article-title-line-height-medium: var(--igds-typography-line-height-normal);
+
+  --igds-article-title-size-small: var(--igds-typography-subheading-size);
+  --igds-article-title-family-small: var(--igds-typography-subheading-family);
+  --igds-article-title-weight-small: var(--igds-typography-subheading-weight);
+  --igds-article-title-line-height-small: var(--igds-typography-line-height-normal);
+
+  /* Article Title Color (same for all sizes) */
+  --igds-article-title-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* Article Details Typography and Colors */
+  --igds-article-details-font-family: var(--igds-typography-body-family);
+  --igds-article-details-font-size: var(--igds-typography-body-size-small);
+  --igds-article-details-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-article-details-line-height: var(--igds-typography-line-height-normal);
+
+  /* Article Details Colors - Colors per size as per Figma design */
+  --igds-article-details-color-large: var(--igds-color-text-neutral-grey-tertiary); /* #6f7071 - lighter grey from Figma */
+  --igds-article-details-color-medium: var(--igds-color-text-neutral-grey-tertiary); /* #6f7071 - lighter grey from Figma */
+  --igds-article-details-color-small: var(--igds-color-text-neutral-grey-secondary); /* #5b5c5d - darker grey from Figma */
+
+  /* Article Authors Typography */
+  --igds-article-authors-font-family: var(--igds-typography-body-family);
+  --igds-article-authors-font-size: var(--igds-typography-body-size-small);
+  --igds-article-authors-font-weight: var(--igds-typography-body-weight);
+  --igds-article-authors-line-height: var(--igds-typography-line-height-normal);
+  --igds-article-authors-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* Article Journal Information Typography */
+  --igds-article-journal-font-family: var(--igds-typography-body-family);
+  --igds-article-journal-font-size: var(--igds-typography-body-size-small);
+  --igds-article-journal-font-weight: var(--igds-typography-body-weight);
+  --igds-article-journal-font-weight-strong: var(--igds-typography-body-weight-strong);
+  --igds-article-journal-line-height: var(--igds-typography-line-height-normal);
+  --igds-article-journal-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* Article Divider Styling */
+  --igds-article-divider-color: var(--igds-color-border-neutral-grey);
+  --igds-article-divider-width: 1px;
+  --igds-article-divider-height: 16px;
+
+  /* Article Section Padding */
+  --igds-article-padding-y-large: var(--igds-space-8);
+  --igds-article-padding-y-medium: var(--igds-space-4);
+  --igds-article-padding-y-small: var(--igds-space-4);
+  --igds-article-padding-title-large: var(--igds-space-8);
+  --igds-article-padding-title-medium: var(--igds-space-8);
+  --igds-article-padding-title-small: var(--igds-space-8);
+}
+
+
+/* =============================================================================
+   ARTICLE CARD COMPONENT - USES SEMANTIC TOKENS DIRECTLY
+   ============================================================================= */
+
+/* Article Card Component - From Figma MCP Analysis
+   Figma Component: "article-card" (Node ID: 40001260-15030)
+   Last Extracted: 2025-09-24 via #get_code and #get_variable_defs
+
+   Design Decision: Following token-analyzer recommendation to use semantic tokens
+   directly instead of creating unnecessary component-specific abstraction layer.
+
+   Direct Token Usage in CSS:
+   - Container background → --igds-color-background-neutral-white (#ffffff)
+   - Container padding → --igds-space-24 (24px)
+   - Container border radius → --igds-radius-xs (2px)
+   - Container border → 1px solid --igds-color-border-neutral-white-lighter (#f8f9fb)
+
+   Rationale: ArticleCard is a simple container with no variants or independent
+   theming requirements, making component tokens unnecessary overhead.
+*/
+
+/* =============================================================================
+   MENU ITEM COMPONENT TOKENS
+   ============================================================================= */
+
+/* MenuItem Component - From Figma MCP Analysis
+   Figma Component: "menu-item" (Node ID: 40001276-849)
+   Figma URL: https://www.figma.com/design/QVHF2yNzWi3ZeZhW1QAQJD/WOL---Design-System-Discovery?node-id=40001276-849
+   Last Extracted: 2025-09-25 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - variant: "text" | "checkbox Left" | "checkbox Right"
+   - hover: "false" | "true"
+   - selected: "false" | "true"
+
+   FIGMA TOKEN MAPPING:
+   - --igds-menu-item-background-default: Maps to var(--igds-color-background-neutral-white) (#ffffff)
+   - --igds-menu-item-background-hover: Maps to var(--igds-color-background-accent-primary-lighter) (#e2f0f9)
+   - --igds-menu-item-background-disabled: Maps to var(--igds-color-background-system-disabled-light) (#e9ebec)
+   - --igds-menu-item-text-default: Maps to var(--igds-color-text-neutral-grey-primary) (#3c3e3f)
+   - --igds-menu-item-text-hover: Maps to var(--igds-color-text-accent-secondary) (#1c1d1e)
+   - --igds-menu-item-text-disabled: Maps to var(--igds-color-text-system-disabled) (#6f7071)
+   - --igds-menu-item-border-color: Maps to var(--igds-color-border-neutral-grey-lighter) (#f2f3f5)
+   - --igds-menu-item-icon-color: Maps to var(--igds-color-icon-neutral-grey-primary) (#3c3e3f)
+   - --igds-menu-item-padding-x: Maps to var(--igds-space-16) (16px)
+   - --igds-menu-item-gap: Maps to var(--igds-space-8) (8px)
+   - --igds-menu-item-font-size: Maps to var(--igds-typography-body-size-small) (14px)
+   - --igds-menu-item-font-family: Maps to var(--igds-typography-body-family) (Open Sans)
+   - --igds-menu-item-font-weight: Maps to var(--igds-typography-body-weight) (400)
+   - --igds-menu-item-line-height: Maps to var(--igds-typography-body-line-height-small) (1.4)
+
+   Token Mapping from Figma:
+   - Container padding → --igds-space-16 (horizontal), no vertical padding
+   - Container gap → --igds-space-8 (8px)
+   - Container height → 48px (fixed height)
+   - Default background → --igds-color-background-neutral-white (#ffffff)
+   - Hover background → --igds-color-background-accent-primary-lighter (#e2f0f9)
+   - Default text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Hover text → --igds-color-text-accent-secondary (#1c1d1e)
+   - Border → --igds-color-border-neutral-grey-lighter (#f2f3f5)
+   - Selected icon → 16px checkmark icon
+   - Typography → Body Small (14px, Open Sans, 400, 1.4 line-height)
+*/
+
+:root {
+  /* MenuItem Base Layout */
+  --igds-menu-item-padding-x: var(--igds-space-16);
+  --igds-menu-item-padding-y: 0;
+  --igds-menu-item-gap: var(--igds-space-8);
+  --igds-menu-item-height: 48px;
+  --igds-menu-item-border-width: 1px;
+
+  /* MenuItem Typography */
+  --igds-menu-item-font-family: var(--igds-typography-body-family);
+  --igds-menu-item-font-size: var(--igds-typography-body-size-small);
+  --igds-menu-item-font-weight: var(--igds-typography-body-weight);
+  --igds-menu-item-line-height: var(--igds-typography-body-line-height-small);
+
+  /* MenuItem Background Colors */
+  --igds-menu-item-background-default: var(--igds-color-background-neutral-white);
+  --igds-menu-item-background-hover: var(--igds-color-background-accent-primary-lighter);
+  --igds-menu-item-background-disabled: var(--igds-color-background-neutral-white);
+
+  /* MenuItem Text Colors */
+  --igds-menu-item-text-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-menu-item-text-hover: var(--igds-color-text-accent-secondary);
+  --igds-menu-item-text-disabled: var(--igds-color-text-system-disabled);
+
+  /* MenuItem Border */
+  --igds-menu-item-border-color: var(--igds-color-border-neutral-grey-lighter);
+  --igds-menu-item-border-style: solid;
+
+  /* MenuItem Selected Icon */
+  --igds-menu-item-icon-size: 16px;
+  --igds-menu-item-icon-color: var(--igds-color-icon-neutral-grey-primary);
+
+  /* MenuItem Transition Properties */
+  --igds-menu-item-transition-duration: 150ms;
+  --igds-menu-item-transition-timing-function: ease-in-out;
+  --igds-menu-item-transition-properties: background-color, color;
+}
+
+
+/* =============================================================================
+   DROPDOWN COMPONENT TOKENS
+   ============================================================================= */
+
+/* Dropdown Component - From Figma MCP Analysis
+   Figma Component: "Dropdown Menu" (Node ID: 40001275-669)
+   Last Extracted: 2025-09-25 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - variant: "text" | "checkbox left" | "checkbox right"
+   - show: true | false (visibility controls)
+
+   Token Mapping from Figma:
+   - Container background → --igds-color-background-neutral-white (#ffffff)
+   - Container border → --igds-color-border-accent-primary (#123c80)
+   - Container shadow → 0px 0px 24px -4px rgba(12,12,13,0.4) [maps to --igds-elevation-400]
+   - Container dimensions → 280px width (fixed), 432px max height
+   - MenuItem uses existing MenuItem component tokens
+   - Checkbox uses existing Checkbox component tokens
+*/
+
+:root {
+  /* Dropdown Base Layout */
+  --igds-dropdown-width: 280px;
+  --igds-dropdown-max-height: 432px;
+  --igds-dropdown-border-radius: var(--igds-radius-none);
+  --igds-dropdown-border-width: 1px;
+
+  /* Dropdown Background Colors */
+  --igds-dropdown-background: var(--igds-color-background-neutral-white);
+
+  /* Dropdown Border Colors */
+  --igds-dropdown-border-color: var(--igds-color-border-accent-primary);
+
+  /* Dropdown Elevation */
+  --igds-dropdown-shadow: var(--igds-elevation-400);
+
+  /* Dropdown Positioning */
+  --igds-dropdown-z-index: 1000;
+
+  /* Dropdown Transition Properties */
+  --igds-dropdown-transition-duration: 200ms;
+  --igds-dropdown-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --igds-dropdown-transition-properties: opacity, transform, box-shadow;
+
+  /* Dropdown Transform States */
+  --igds-dropdown-transform-closed: translateY(-8px);
+  --igds-dropdown-transform-open: translateY(0);
+  --igds-dropdown-opacity-closed: 0;
+  --igds-dropdown-opacity-open: 1;
+}
+
+
+/* =============================================================================
+   COVER CARD COMPONENT - USES SEMANTIC TOKENS DIRECTLY
+   ============================================================================= */
+
+/* CoverCard Component - From Figma MCP Analysis
+   Figma Component: "cover-card" (Node ID: 40001261:783)
+   Last Extracted: 2025-09-25 via #get_code and #get_variable_defs
+
+   Design Decision: Following token-analyzer recommendation to use semantic tokens
+   directly instead of creating unnecessary component-specific abstraction layer.
+
+   Direct Token Usage in CSS:
+   - Layout gap → --igds-space-24 (24px)
+   - Light mode title (default) → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Light mode title (hover) → --igds-color-text-neutral-grey-secondary (#5b5c5d)
+   - Dark mode title (default) → --igds-color-text-neutral-white-primary (#ffffff)
+   - Dark mode title (hover) → --igds-color-text-neutral-white-secondary (#f2f3f5)
+   - Light mode image border → --igds-color-border-neutral-grey-light (#dadcdd)
+   - Dark mode image border → --igds-color-border-neutral-white-lighter (#f8f9fb)
+   - Title typography → --igds-typography-subheading (20px, Open Sans SemiBold, 1.4 line-height)
+
+   Rationale: CoverCard is a simple display component with no variants or independent
+   theming requirements, making component tokens unnecessary overhead.
+*/
+
+
+/* =============================================================================
+   HEADER COMPONENT TOKENS
+   ============================================================================= */
+
+/* Header Component - From Figma MCP Analysis
+   Figma Component: "header" (Node ID: 40001261-6846)
+   Last Extracted: 2025-09-26 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - viewport: "desktop" | "viewport2" | "mobile"
+   - hasInstitution: true | false
+   - hasCart: true | false
+   - hasSearch: true | false
+
+   Token Mapping from Figma:
+   - Container background → --igds-color-background-neutral-white (#ffffff)
+   - Container shadow → 0px 0px 4px 0px rgba(12,12,13,0.2)
+   - Desktop padding → --igds-space-80 (80px horizontal), --igds-space-12 (12px vertical)
+   - Tablet padding → 40px horizontal, --igds-space-12 (12px vertical)
+   - Mobile padding → 24px horizontal, --igds-space-12 (12px vertical)
+   - Divider color → --igds-color-border-neutral-grey (#b7b8b9)
+   - Institution text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Login text → --igds-color-text-accent-primary (#123c80)
+   - Icon colors → --igds-color-icon-neutral-grey-secondary (#5b5c5d)
+   - Institution logo border → --igds-color-border-neutral-grey-light (#dadcdd)
+   - Container gap → --igds-space-80, --igds-space-32, --igds-space-16 (context dependent)
+*/
+
+:root {
+  /* Header Base Layout */
+  --igds-header-border-radius: var(--igds-radius-none);
+  --igds-header-border-width: 0;
+  --igds-header-shadow: 0px 0px 4px 0px rgba(12,12,13,0.2);
+
+  /* Header Background */
+  --igds-header-background: var(--igds-color-background-neutral-white);
+
+  /* Header Spacing - Desktop Variant */
+  --igds-header-padding-x-desktop: var(--igds-space-40);
+  --igds-header-padding-y-desktop: var(--igds-space-12);
+  --igds-header-gap-desktop: var(--igds-space-40);
+  --igds-header-section-gap-desktop: var(--igds-space-24);
+
+  /* Header Spacing - Tablet Variant */
+  --igds-header-padding-x-tablet: 40px;
+  --igds-header-padding-y-tablet: var(--igds-space-12);
+  --igds-header-gap-tablet: var(--igds-space-16);
+
+  /* Header Spacing - Mobile Variant */
+  --igds-header-padding-x-mobile: 24px;
+  --igds-header-padding-y-mobile: var(--igds-space-12);
+  --igds-header-gap-mobile: var(--igds-space-16);
+
+  /* Header Institution Section */
+  --igds-header-institution-gap: var(--igds-space-16);
+  --igds-header-institution-logo-padding-x: var(--igds-space-12);
+  --igds-header-institution-logo-padding-y: var(--igds-space-4);
+  --igds-header-institution-logo-border-radius: var(--igds-radius-xs);
+  --igds-header-institution-logo-border-color: var(--igds-color-border-neutral-grey-light);
+  --igds-header-institution-logo-border-width: 1px;
+  --igds-header-institution-logo-max-width: 300px;
+  --igds-header-institution-logo-height: 40px;
+  --igds-header-institution-logo-background: var(--igds-color-background-primary-white-default);
+
+  /* Header Institution Text */
+  --igds-header-institution-text-font-family: var(--igds-typography-body-family);
+  --igds-header-institution-text-font-size: var(--igds-typography-body-size-small);
+  --igds-header-institution-text-font-weight: var(--igds-typography-body-weight);
+  --igds-header-institution-text-line-height: var(--igds-typography-line-height-normal);
+  --igds-header-institution-text-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* Header Divider */
+  --igds-header-divider-width: 1px;
+  --igds-header-divider-height: var(--igds-space-24);
+  --igds-header-divider-color: var(--igds-color-border-neutral-grey);
+
+  /* Header Actions */
+  --igds-header-actions-gap: var(--igds-space-16);
+  --igds-header-action-button-background: transparent;
+  --igds-header-action-button-border: none;
+  --igds-header-action-button-padding: 0;
+  --igds-header-action-button-cursor: pointer;
+
+  /* Header Login Text */
+  --igds-header-login-text-font-family: var(--igds-typography-body-family);
+  --igds-header-login-text-font-size: var(--igds-typography-body-size-small);
+  --igds-header-login-text-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-header-login-text-line-height: var(--igds-typography-line-height-normal);
+  --igds-header-login-text-color: var(--igds-color-text-accent-primary);
+  --igds-header-login-text-color-hover: var(--igds-color-text-accent-primary-darker);
+
+  /* Header Icon Colors */
+  --igds-header-icon-color: var(--igds-color-icon-neutral-grey-secondary);
+  --igds-header-icon-color-hover: var(--igds-color-icon-neutral-grey-primary);
+
+  /* Cart Icon - Blue on desktop */
+  --igds-header-cart-icon-color: var(--igds-color-icon-accent-primary);
+  --igds-header-cart-icon-color-hover: var(--igds-color-icon-accent-primary-bold);
+
+  /* Header Search Section */
+  --igds-header-search-flex-grow: 1;
+  --igds-header-search-min-width: 200px;
+
+  /* Header Transition Properties */
+  --igds-header-transition-duration: 150ms;
+  --igds-header-transition-timing-function: ease-in-out;
+  --igds-header-transition-properties: color, background-color, border-color;
+}
+
+
+/* =============================================================================
+   FOOTER COMPONENT TOKENS
+   ============================================================================= */
+
+/* Footer Component - From Figma MCP Analysis
+   Figma Component: "Footer" (Node ID: 40001265-3339)
+   Last Extracted: 2025-09-27 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - viewport: "desktop" | "tablet" | "mobile"
+
+   Token Mapping from Figma:
+   - Container background → --igds-color-background-neutral-black (#1c1d1e)
+   - Column title text → --igds-color-text-neutral-white-secondary (#f2f3f5)
+   - Link text → --igds-color-text-neutral-white-primary (#ffffff)
+   - Copyright text → --igds-color-text-neutral-white-primary (#ffffff)
+   - Border color → Border/Dark/Primary (#302f2f)
+   - Desktop padding → --igds-space-80 (80px horizontal), --igds-space-40 (40px vertical)
+   - Tablet padding → --igds-space-40 (40px horizontal and vertical)
+   - Mobile padding → --igds-space-24 (24px horizontal), --igds-space-40 (40px top), --igds-space-32 (32px bottom)
+   - Column gap → --igds-space-32 (32px)
+   - Item gap within columns → --igds-space-16 (16px)
+   - Footnotes gap → --igds-space-24 (24px)
+   - Title typography → Body Strong (Open Sans Bold, 16px, 1.5 line-height)
+   - Link typography → Body Small (Open Sans, 14px, 1.4 line-height)
+   - Copyright typography → Body/Desktop/sm/regular (Inter, 14px, 24px line-height, -0.28px letter-spacing)
+*/
+
+:root {
+  /* Footer Base Layout */
+  --footer-column-gap: var(--igds-space-32);
+  --footer-column-item-gap: var(--igds-space-24);
+  --footer-link-gap: var(--igds-space-16);
+  --footer-footnotes-gap: var(--igds-space-24);
+  --footer-footnotes-padding-top: var(--igds-space-32);
+
+  /* Footer Background */
+  --footer-background: var(--igds-color-background-neutral-black);
+
+  /* Footer Spacing - Mobile */
+  --footer-padding-x-mobile: var(--igds-space-24);
+  --footer-padding-top-mobile: var(--igds-space-40);
+  --footer-padding-bottom-mobile: var(--igds-space-32);
+
+  /* Footer Spacing - Tablet */
+  --footer-padding-x-tablet: var(--igds-space-40);
+  --footer-padding-top-tablet: var(--igds-space-40);
+  --footer-padding-bottom-tablet: var(--igds-space-32);
+
+  /* Footer Spacing - Desktop */
+  --footer-padding-x-desktop: var(--igds-space-80);
+  --footer-padding-top-desktop: var(--igds-space-40);
+  --footer-padding-bottom-desktop: var(--igds-space-32);
+
+  /* Footer Typography - Column Title */
+  --footer-title-font-family: var(--igds-typography-body-family);
+  --footer-title-size: var(--igds-typography-body-size);
+  --footer-title-weight: var(--igds-typography-body-weight-strong);
+  --footer-title-line-height: 1.5;
+  --footer-title-color: var(--igds-color-text-neutral-white-secondary);
+
+  /* Footer Typography - Links */
+  --footer-link-font-family: var(--igds-typography-body-family);
+  --footer-link-size: var(--igds-typography-body-size-small);
+  --footer-link-weight: var(--igds-typography-body-weight);
+  --footer-link-line-height: 1.4;
+  --footer-link-color: var(--igds-color-text-neutral-white-primary);
+  --footer-link-padding-bottom: 2px;
+
+  /* Footer Typography - Copyright */
+  --footer-copyright-font-family: 'Inter', sans-serif;
+  --footer-copyright-size: var(--igds-typography-body-size-small);
+  --footer-copyright-weight: 400; /* Regular weight from Figma Body/Desktop/sm/regular */
+  --footer-copyright-line-height: 1.71429; /* 24px/14px */
+  --footer-copyright-letter-spacing: -0.28px;
+  --footer-copyright-color: var(--igds-color-text-neutral-white-primary);
+
+  /* Footer Font Family fallback */
+  --footer-font-family: var(--igds-typography-body-family);
+
+  /* Footer Link States */
+  --footer-link-color-hover: var(--igds-color-text-neutral-white-tertiary); /* #dadcdd from Figma */
+  --footer-link-color-pressed: var(--igds-color-text-neutral-white-secondary); /* #f2f3f5 from Figma */
+  --footer-link-underline-thickness: 1px;
+  --footer-link-underline-offset: 2px;
+  --footer-link-transition: 150ms ease-in-out;
+  --footer-link-animation-duration: 300ms;
+  --footer-link-animation-timing: ease-out;
+
+  /* Footer Logo Interaction */
+  --footer-logo-hover-opacity: 0.7;
+  --footer-logo-transition-duration: 200ms;
+  --footer-logo-transition-timing: ease;
+  --footer-logo-focus-radius: 4px;
+
+  /* Footer Focus States */
+  --footer-link-focus-outline: 2px solid var(--igds-color-border-accent-primary);
+  --footer-link-focus-outline-offset: 2px;
+
+  /* Footer Border */
+  --footer-border-color: #302f2f; /* Border/Dark/Primary from Figma */
+  --footer-border-width: 1px;
+
+  /* Footer Text Colors (general fallback) */
+  --footer-text-primary: var(--igds-color-text-neutral-white-primary);
+}
+
+
+/* =============================================================================
+   TABS COMPONENT TOKENS
+   ============================================================================= */
+
+/* Tabs Component - From Figma MCP Analysis
+   Figma Component: "tab" (Node ID: 40001322-77)
+   Last Extracted: 2025-09-28 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - state: "selected" | "active" | "disabled"
+   - hover: "true" | "false"
+   - size: "medium" | "small"
+
+   Token Mapping from Figma:
+   - Selected state background → --igds-color-background-accent-primary (#123c80)
+   - Selected+Hover background → --igds-color-background-accent-primary-darker (#0c2855)
+   - Active state background → --igds-color-background-neutral-white-light (#f2f3f5)
+   - Active+Hover background → --igds-color-background-neutral-grey-light (#e9ebec)
+   - Disabled background → --igds-color-background-system-disabled-light (#e9ebec)
+   - Selected text → --igds-color-text-neutral-white-primary (#ffffff)
+   - Active text → --igds-color-text-accent-primary (#123c80)
+   - Disabled text → --igds-color-text-system-disabled (#6f7071)
+   - Medium size → 16px font, 1.5 line-height
+   - Small size → 14px font, 1.4 line-height
+   - Padding → 8px vertical, 16px horizontal (both sizes)
+*/
+
+:root {
+  /* Tabs Base Layout */
+  --igds-tabs-border-radius: var(--igds-radius-none);
+  --igds-tabs-gap: 0; /* No gap between tabs per Figma design */
+
+  /* Tabs Typography */
+  --igds-tabs-font-family: var(--igds-typography-body-family);
+  --igds-tabs-font-weight: var(--igds-typography-body-weight);
+
+  /* Tabs Size - Medium */
+  --igds-tabs-font-size-medium: var(--igds-typography-body-size);
+  --igds-tabs-line-height-medium: 1.5;
+  --igds-tabs-padding-medium: var(--igds-space-8) var(--igds-space-16);
+
+  /* Tabs Size - Small */
+  --igds-tabs-font-size-small: var(--igds-typography-body-size-small);
+  --igds-tabs-line-height-small: 1.4;
+  --igds-tabs-padding-small: var(--igds-space-8) var(--igds-space-16);
+
+  /* Tabs Selected State Colors */
+  --igds-tabs-background-selected: var(--igds-color-background-accent-primary);
+  --igds-tabs-background-selected-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-tabs-text-selected: var(--igds-color-text-neutral-white-primary);
+
+  /* Tabs Active (Unselected) State Colors */
+  --igds-tabs-background-active: var(--igds-color-background-neutral-white-light);
+  --igds-tabs-background-active-hover: var(--igds-color-background-neutral-grey-light);
+  --igds-tabs-text-active: var(--igds-color-text-accent-primary);
+
+  /* Tabs Disabled State Colors */
+  --igds-tabs-background-disabled: var(--igds-color-background-system-disabled-light);
+  --igds-tabs-text-disabled: var(--igds-color-text-system-disabled);
+
+  /* Tabs Focus States */
+  --igds-tabs-focus-outline-width: 2px;
+  --igds-tabs-focus-outline-style: solid;
+  --igds-tabs-focus-outline-color: var(--igds-color-border-accent-primary);
+  --igds-tabs-focus-outline-offset: 2px;
+
+  /* Tabs Panel */
+  --igds-tabs-panel-padding: var(--igds-space-24);
+
+  /* Tabs Transition Properties */
+  --igds-tabs-transition-duration: 200ms;
+  --igds-tabs-transition-timing-function: ease;
+}
+
+
+/* =============================================================================
+   RADIO BUTTON COMPONENT TOKENS
+   ============================================================================= */
+
+/* RadioButton Component - From Figma MCP Analysis
+   Figma Component: "radio-button" (Node ID: 40001318-2683)
+   Last Extracted: 2025-09-27 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - state: "Default" | "Hover" | "Disabled"
+   - selected: "True" | "False"
+   - size: "medium" | "small"
+
+   Token Mapping from Figma:
+   - Default radio circle background → --igds-color-background-neutral-white (#ffffff)
+   - Default radio circle border → --igds-color-border-neutral-grey (#b7b8b9)
+   - Hover radio circle border → --igds-color-border-accent-primary-darker (#0c2855)
+   - Selected radio circle border → --igds-color-border-accent-primary (#123c80)
+   - Selected+Hover radio circle border → --igds-color-border-accent-primary-darker (#0c2855)
+   - Selected radio dot color → --igds-color-icon-accent-primary (#123c80)
+   - Selected+Hover radio dot color → --igds-color-icon-accent-primary-darker (#0c2855)
+   - Disabled radio circle background → --igds-color-background-system-disabled-light (#e9ebec)
+   - Disabled radio dot color → --igds-color-icon-system-disabled (#6f7071)
+   - Text color → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Size="Medium" → 16px text, 24px radio, 4px gap
+   - Size="Small" → 14px text, 24px radio, 4px gap
+*/
+
+:root {
+  /* RadioButton Base Layout */
+  --igds-radio-button-radio-size: 16px;
+  --igds-radio-button-gap: 4px; /* Fixed 4px gap per Figma design */
+  --igds-radio-button-border-radius: 50%; /* Circular radio buttons */
+  --igds-radio-button-border-width: 1px;
+
+  /* RadioButton Typography */
+  --igds-radio-button-font-family: var(--igds-typography-body-family);
+  --igds-radio-button-font-weight: var(--igds-typography-body-weight);
+  --igds-radio-button-line-height-medium: var(--igds-typography-body-line-height);
+  --igds-radio-button-line-height-small: var(--igds-typography-body-line-height-small);
+
+  /* RadioButton Size - Medium */
+  --igds-radio-button-font-size-medium: var(--igds-typography-body-size);
+
+  /* RadioButton Size - Small */
+  --igds-radio-button-font-size-small: var(--igds-typography-body-size-small);
+
+  /* RadioButton Unselected State Colors */
+  --igds-radio-button-color-unselected-default: var(--igds-color-border-neutral-grey-light);
+  --igds-radio-button-color-unselected-hover: var(--igds-color-border-neutral-grey);
+  --igds-radio-button-color-unselected-disabled: var(--igds-color-background-system-disabled);
+
+  /* RadioButton Selected State Colors */
+  --igds-radio-button-color-selected-default: var(--igds-color-background-accent-primary);
+  --igds-radio-button-color-selected-hover: var(--igds-color-background-accent-primary-darker);
+  --igds-radio-button-color-selected-disabled: var(--igds-color-background-system-disabled);
+
+  /* RadioButton Icon Size */
+  --igds-radio-button-icon-size: 16px;
+
+  /* RadioButton Text Colors */
+  --igds-radio-button-text-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-radio-button-text-disabled: var(--igds-color-text-neutral-grey-primary); /* Text color stays same when disabled per Figma */
+
+  /* RadioButton Transition Properties */
+  --igds-radio-button-transition-duration: 200ms;
+  --igds-radio-button-transition-timing-function: ease-in-out;
+  --igds-radio-button-transition-properties: background-color, border-color, color, opacity;
+}
+
+
+/* =============================================================================
+   PAGINATION COMPONENT TOKENS
+   ============================================================================= */
+
+/* Pagination Component - From Figma MCP Analysis
+   Figma Component: "pagination" (Node ID: 40001323-54)
+   Last Extracted: 2025-09-28 via #get_code and #get_variable_defs
+
+   Figma Properties:
+   - viewport: "mobile" | "desktop/tablet"
+
+   Token Mapping from Figma:
+   - Results text color → --igds-color-text-neutral-grey-secondary (#5b5c5d)
+   - Page number default → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Active page background → --igds-color-background-accent-primary (#123c80)
+   - Active page text → --igds-color-text-neutral-white-primary (#ffffff)
+   - Navigation gap → --igds-space-8 (8px)
+   - Page button size → 32px fixed
+   - Typography → Body Small Strong (14px, Open Sans Bold, 1.4 line-height)
+   - Mobile layout → vertical stack with 8px gap
+   - Desktop layout → horizontal with space-between
+*/
+
+:root {
+  /* Pagination Base Layout */
+  --igds-pagination-gap: var(--igds-space-8);
+  --igds-pagination-button-size: 32px;
+  --igds-pagination-button-radius: var(--igds-radius-xs);
+
+  /* Pagination Typography */
+  --igds-pagination-font-family: var(--igds-typography-body-family);
+  --igds-pagination-font-size: var(--igds-typography-body-size-small);
+  --igds-pagination-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-pagination-line-height: 1.4;
+
+  /* Pagination Results Text */
+  --igds-pagination-results-color: var(--igds-color-text-neutral-grey-secondary);
+
+  /* Pagination Page Numbers - Default State */
+  --igds-pagination-page-color-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-pagination-page-background-default: transparent;
+  --igds-pagination-page-color-hover: var(--igds-color-text-neutral-grey-primary);
+  --igds-pagination-page-background-hover: var(--igds-color-background-neutral-grey-lighter);
+
+  /* Pagination Page Numbers - Active/Selected State */
+  --igds-pagination-page-color-active: var(--igds-color-text-neutral-white-primary);
+  --igds-pagination-page-background-active: var(--igds-color-background-accent-primary);
+  --igds-pagination-page-background-active-hover: var(--igds-color-background-accent-primary-darker);
+
+  /* Pagination Navigation Buttons (Prev/Next) */
+  --igds-pagination-nav-color-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-pagination-nav-color-hover: var(--igds-color-text-accent-primary);
+  --igds-pagination-nav-color-disabled: var(--igds-color-text-neutral-grey-tertiary);
+  --igds-pagination-nav-icon-size: 16px;
+  --igds-pagination-nav-gap: var(--igds-space-4);
+
+  /* Pagination Focus States */
+  --igds-pagination-focus-outline-width: 2px;
+  --igds-pagination-focus-outline-style: solid;
+  --igds-pagination-focus-outline-color: var(--igds-color-border-accent-primary);
+  --igds-pagination-focus-outline-offset: 2px;
+
+  /* Pagination Transition Properties */
+  --igds-pagination-transition-duration: 200ms;
+  --igds-pagination-transition-timing-function: ease;
+  --igds-pagination-transition-properties: background-color, color, transform;
+}
+
+
+/* =============================================================================
+   FUTURE COMPONENT TOKENS
+   ============================================================================= */
+
+/* Add additional component tokens here following the same pattern:
+
+   Example structure for new components:
+
+   :root {
+     --igds-{component-name}-{property}-{variant}-{state}: value;
+   }
+
+   Guidelines:
+   - Use semantic tokens from semantic.css as values
+   - Follow consistent naming patterns
+   - Group related tokens together
+   - Include variants, states, and sizes as needed
+   - Add clear section comments with Figma property mappings
+   - Component tokens serve as code-side translation layer from Figma
+*/

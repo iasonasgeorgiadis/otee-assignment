@@ -1,0 +1,191 @@
+@import '../../styles/tokens.css';
+
+/* InputField Container */
+.igds-input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--igds-input-field-background-default);
+  border: var(--igds-input-field-border-width) solid var(--igds-input-field-border-default);
+  border-radius: var(--igds-input-field-border-radius);
+  box-shadow: 0 0 0 0 transparent;
+  transition: var(--igds-input-field-transition-properties) var(--igds-input-field-transition-duration) var(--igds-input-field-transition-timing-function);
+  overflow: hidden;
+}
+
+/* Size Variants */
+.igds-input-field--medium {
+  height: var(--igds-input-field-height-medium);
+  padding: 0 var(--igds-input-field-padding-x-medium);
+  gap: var(--igds-input-field-gap-medium);
+}
+
+.igds-input-field--small {
+  height: var(--igds-input-field-height-small);
+  padding: 0 var(--igds-input-field-padding-x-small);
+  gap: var(--igds-input-field-gap-small);
+}
+
+/* Hover State (CSS pseudo-class) */
+.igds-input-field:hover:not(.igds-input-field--disabled) {
+  background: var(--igds-input-field-background-hover);
+  border-color: var(--igds-input-field-border-hover);
+  transform: translateZ(0); /* Force GPU acceleration for smoother transitions */
+}
+
+/* Focus State (CSS pseudo-class) */
+.igds-input-field:focus-within:not(.igds-input-field--disabled) {
+  background: var(--igds-input-field-background-active);
+  border-color: var(--igds-input-field-border-active);
+  box-shadow: 0 0 0 1px var(--igds-input-field-border-active);
+  transform: translateZ(0); /* Force GPU acceleration for smoother transitions */
+}
+
+/* Status Variants */
+.igds-input-field--error {
+  border-color: var(--igds-input-field-border-error);
+  box-shadow: 0 0 0 1px var(--igds-input-field-border-error);
+}
+
+.igds-input-field--error:focus-within:not(.igds-input-field--disabled) {
+  border-color: var(--igds-input-field-border-error);
+  box-shadow: 0 0 0 1px var(--igds-input-field-border-error);
+}
+
+.igds-input-field--success {
+  border-color: var(--igds-input-field-border-success);
+  box-shadow: 0 0 0 1px var(--igds-input-field-border-success);
+}
+
+.igds-input-field--success:focus-within:not(.igds-input-field--disabled) {
+  border-color: var(--igds-input-field-border-success);
+  box-shadow: 0 0 0 1px var(--igds-input-field-border-success);
+}
+
+/* Disabled State */
+.igds-input-field--disabled {
+  background: var(--igds-input-field-background-disabled);
+  border-color: var(--igds-input-field-border-disabled);
+  cursor: not-allowed;
+}
+
+.igds-input-field--disabled:hover,
+.igds-input-field--disabled:focus-within {
+  background: var(--igds-input-field-background-disabled);
+  border-color: var(--igds-input-field-border-disabled);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+/* Input Element */
+.igds-input-field__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--igds-input-field-font-family);
+  font-weight: var(--igds-input-field-font-weight);
+  letter-spacing: var(--igds-input-field-letter-spacing);
+  color: var(--igds-input-field-text-default);
+  padding: 0;
+  min-width: 0;
+  transition: color var(--igds-input-field-transition-duration) var(--igds-input-field-transition-timing-function);
+}
+
+/* Medium size input typography */
+.igds-input-field--medium .igds-input-field__input {
+  font-size: var(--igds-input-field-font-size-medium);
+  line-height: var(--igds-input-field-line-height-medium);
+}
+
+/* Small size input typography */
+.igds-input-field--small .igds-input-field__input {
+  font-size: var(--igds-input-field-font-size-small);
+  line-height: var(--igds-input-field-line-height-small);
+}
+
+/* Placeholder styling */
+.igds-input-field__input::placeholder {
+  color: var(--igds-input-field-placeholder);
+  opacity: 1;
+}
+
+/* State-based text colors */
+.igds-input-field:focus-within .igds-input-field__input {
+  color: var(--igds-input-field-text-active);
+}
+
+.igds-input-field:focus-within .igds-input-field__input::placeholder {
+  color: var(--igds-input-field-text-active);
+}
+
+.igds-input-field--filled .igds-input-field__input {
+  color: var(--igds-input-field-text-filled);
+}
+
+/* Disabled input styling */
+.igds-input-field--disabled .igds-input-field__input {
+  color: var(--igds-input-field-text-disabled);
+  cursor: not-allowed;
+}
+
+.igds-input-field--disabled .igds-input-field__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: transparent;
+  color: var(--igds-input-field-text-disabled);
+}
+
+/* Icon Container */
+.igds-input-field__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--igds-input-field-icon-default);
+  transition: color var(--igds-input-field-transition-duration) var(--igds-input-field-transition-timing-function);
+}
+
+/* Icon state colors */
+/* Only apply filled color when NOT in error/success state */
+.igds-input-field--filled .igds-input-field__icon:not(.igds-input-field__icon--error):not(.igds-input-field__icon--success) {
+  color: var(--igds-input-field-icon-filled);
+}
+
+.igds-input-field--disabled .igds-input-field__icon {
+  color: var(--igds-input-field-icon-disabled);
+}
+
+/* Error/Success states - increased specificity to ensure they always apply */
+.igds-input-field .igds-input-field__icon--error {
+  color: var(--igds-input-field-icon-error);
+}
+
+.igds-input-field .igds-input-field__icon--success {
+  color: var(--igds-input-field-icon-success);
+}
+
+/* Focus styles for accessibility */
+.igds-input-field__input:focus {
+  outline: none;
+}
+
+/* Remove default autofill styles */
+.igds-input-field__input:-webkit-autofill,
+.igds-input-field__input:-webkit-autofill:hover,
+.igds-input-field__input:-webkit-autofill:focus {
+  -webkit-box-shadow: inset 0 0 0 1000px var(--igds-input-field-background-default);
+  -webkit-text-fill-color: var(--igds-input-field-text-default);
+  caret-color: var(--igds-input-field-text-default);
+}
+
+.igds-input-field__status-message {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,210 @@
+/* Import design tokens */
+@import '../../styles/tokens.css';
+
+/* Pagination Component Styles - Mobile First Responsive Design */
+
+/* Base container - Mobile first */
+.igds-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--igds-pagination-gap);
+  font-family: var(--igds-pagination-font-family);
+  font-size: var(--igds-pagination-font-size);
+  font-weight: var(--igds-pagination-font-weight);
+  line-height: var(--igds-pagination-line-height);
+}
+
+/* Results text */
+.igds-pagination__results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.igds-pagination__results-text {
+  color: var(--igds-pagination-results-color);
+  text-align: center;
+}
+
+/* Navigation container */
+.igds-pagination__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-pagination-gap);
+  flex-wrap: nowrap;
+}
+
+/* Pages container */
+.igds-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 0; /* No gap per Figma design */
+}
+
+/* Base button styles */
+.igds-pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--igds-pagination-button-size);
+  height: var(--igds-pagination-button-size);
+  padding: 0;
+  border: none;
+  border-radius: var(--igds-pagination-button-radius);
+  background: transparent;
+  color: var(--igds-pagination-page-color-default);
+  cursor: pointer;
+  transition: var(--igds-pagination-transition-properties) var(--igds-pagination-transition-duration) var(--igds-pagination-transition-timing-function);
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Page number button */
+.igds-pagination__button--page {
+  min-width: var(--igds-pagination-button-size);
+  background: var(--igds-pagination-page-background-default);
+  color: var(--igds-pagination-page-color-default);
+}
+
+/* Page button hover state */
+.igds-pagination__button--page:hover:not(:disabled):not(.igds-pagination__button--active) {
+  background: var(--igds-pagination-page-background-hover);
+  color: var(--igds-pagination-page-color-hover);
+}
+
+/* Active page state */
+.igds-pagination__button--active {
+  background: var(--igds-pagination-page-background-active);
+  color: var(--igds-pagination-page-color-active);
+  cursor: default;
+}
+
+/* Active page hover */
+.igds-pagination__button--active:hover {
+  background: var(--igds-pagination-page-background-active-hover);
+  color: var(--igds-pagination-page-color-active);
+}
+
+/* Navigation buttons (Prev/Next) */
+.igds-pagination__button--nav {
+  gap: var(--igds-pagination-nav-gap);
+  background: transparent;
+  color: var(--igds-pagination-nav-color-default);
+  padding: 0 var(--igds-pagination-nav-gap);
+  min-width: auto;
+}
+
+/* Navigation text */
+.igds-pagination__nav-text {
+  display: inline-block;
+}
+
+/* Navigation button hover */
+.igds-pagination__button--nav:hover:not(:disabled) {
+  color: var(--igds-pagination-nav-color-hover);
+}
+
+/* Navigation button hover - transform icon slightly */
+.igds-pagination__button--nav:hover:not(:disabled) .material-icon {
+  transform: translateX(2px);
+}
+
+.igds-pagination__button--nav:first-child:hover:not(:disabled) .material-icon {
+  transform: translateX(-2px);
+}
+
+/* Disabled state for navigation buttons */
+.igds-pagination__button--nav:disabled {
+  color: var(--igds-pagination-nav-color-disabled);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Focus states for accessibility */
+.igds-pagination__button:focus-visible {
+  outline: var(--igds-pagination-focus-outline-width) var(--igds-pagination-focus-outline-style) var(--igds-pagination-focus-outline-color);
+  outline-offset: var(--igds-pagination-focus-outline-offset);
+}
+
+/* Ellipsis */
+.igds-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--igds-pagination-button-size);
+  height: var(--igds-pagination-button-size);
+  color: var(--igds-pagination-page-color-default);
+  user-select: none;
+}
+
+/* Mobile viewport specific */
+.igds-pagination--mobile {
+  flex-direction: column;
+  align-items: center;
+}
+
+.igds-pagination--mobile .igds-pagination__results {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Desktop/Tablet viewport specific */
+.igds-pagination--desktop,
+.igds-pagination--tablet {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.igds-pagination--desktop .igds-pagination__results,
+.igds-pagination--tablet .igds-pagination__results {
+  justify-content: flex-start;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.igds-pagination--desktop .igds-pagination__nav,
+.igds-pagination--tablet .igds-pagination__nav {
+  margin-left: auto;
+}
+
+/* Auto viewport - responsive based on media queries */
+@media (max-width: 767px) {
+  .igds-pagination--auto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .igds-pagination--auto .igds-pagination__results {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .igds-pagination--auto {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .igds-pagination--auto .igds-pagination__results {
+    justify-content: flex-start;
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  .igds-pagination--auto .igds-pagination__nav {
+    margin-left: auto;
+  }
+}
+
+/* Icon alignment within buttons */
+.igds-pagination__button .material-icon {
+  display: inline-flex;
+  transition: transform var(--igds-pagination-transition-duration) var(--igds-pagination-transition-timing-function);
+}

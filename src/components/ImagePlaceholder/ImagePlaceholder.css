@@ -1,0 +1,36 @@
+/* Base Component */
+.igds-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--igds-color-background-neutral-white-light);
+}
+
+/* Aspect Ratio Variants */
+.igds-image-placeholder--1\:1 {
+  aspect-ratio: 1 / 1;
+}
+
+.igds-image-placeholder--4\:5 {
+  aspect-ratio: 4 / 5;
+}
+
+.igds-image-placeholder--16\:9 {
+  aspect-ratio: 16 / 9;
+}
+
+.igds-image-placeholder--21\:9 {
+  aspect-ratio: 21 / 9;
+}
+
+.igds-image-placeholder--6\:4 {
+  aspect-ratio: 6 / 4;
+}
+
+/* Icon Styling */
+.igds-image-placeholder__icon {
+  color: var(--igds-color-icon-neutral-grey-tertiary);
+  line-height: 1;
+  user-select: none;
+  transition: font-size 200ms ease-in-out;
+}

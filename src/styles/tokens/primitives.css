@@ -1,0 +1,263 @@
+/* Primitive Tokens - Design System Foundation */
+
+/* Spacing Values */
+:root {
+  --igds-space-0: 0;
+  --igds-space-2: 0.125rem;   /* 2px */
+  --igds-space-4: 0.25rem;    /* 4px */
+  --igds-space-8: 0.5rem;     /* 8px */
+  --igds-space-12: 0.75rem;   /* 12px */
+  --igds-space-16: 1rem;      /* 16px */
+  --igds-space-20: 1.25rem;   /* 20px */
+  --igds-space-24: 1.5rem;    /* 24px */
+  --igds-space-32: 2rem;      /* 32px */
+  --igds-space-40: 2.5rem;    /* 40px */
+  --igds-space-48: 3rem;      /* 48px */
+  --igds-space-56: 3.5rem;    /* 56px */
+  --igds-space-64: 4rem;      /* 64px */
+  --igds-space-72: 4.5rem;    /* 72px */
+  --igds-space-80: 5rem;      /* 80px */
+  --igds-space-88: 5.5rem;    /* 88px */
+  --igds-space-96: 6rem;      /* 96px */
+  --igds-space-104: 6.5rem;   /* 104px */
+  --igds-space-360: 22.5rem;  /* 360px */
+}
+
+/* Radius */
+:root {
+  --igds-radius-none: 0;
+  --igds-radius-xs: 0.125rem;  /* 2px */
+  --igds-radius-sm: 0.25rem;   /* 4px */
+  --igds-radius-md: 0.5rem;    /* 8px */
+  --igds-radius-xl: 1rem;      /* 16px */
+  --igds-radius-full: 22.5rem; /* 360px - circular */
+}
+
+/* Colors */
+:root {
+  /* Orange Palette */
+  --igds-color-orange-50: #fff3e0;
+  --igds-color-orange-100: #ffdfb1;
+  --igds-color-orange-200: #ffcb7f;
+  --igds-color-orange-300: #ffb54c;
+  --igds-color-orange-400: #ffa524;
+  --igds-color-orange-500: #ff9500;
+  --igds-color-orange-600: #ff8900;
+  --igds-color-orange-700: #fa7900;
+  --igds-color-orange-800: #cc4e00;
+  --igds-color-orange-900: #942f00;
+
+  /* Grey Palette */
+  --igds-color-grey-50: #f8f9fb;
+  --igds-color-grey-100: #f2f3f5;
+  --igds-color-grey-200: #e9ebec;
+  --igds-color-grey-300: #dadcdd;
+  --igds-color-grey-400: #b7b8b9;
+  --igds-color-grey-500: #97989a;
+  --igds-color-grey-600: #6f7071;
+  --igds-color-grey-700: #5b5c5d;
+  --igds-color-grey-800: #3c3e3f;
+  --igds-color-grey-900: #1c1d1e;
+
+  /* Blue Palette */
+  --igds-color-blue-50: #e2f0f9;
+  --igds-color-blue-100: #b9d8f0;
+  --igds-color-blue-200: #67a8dc;
+  --igds-color-blue-300: #4b97d6;
+  --igds-color-blue-400: #3287d0;
+  --igds-color-blue-500: #2c7ac3;
+  --igds-color-blue-600: #2469b1;
+  --igds-color-blue-700: #1e589f;
+  --igds-color-blue-800: #123c80;
+  --igds-color-blue-900: #0c2855;
+
+  /* Purple Palette */
+  --igds-color-purple-50: #f5f6ff;
+  --igds-color-purple-100: #e6e8ff;
+  --igds-color-purple-200: #a0a6db;
+  --igds-color-purple-300: #7a83cd;
+  --igds-color-purple-400: #5e67c2;
+  --igds-color-purple-500: #424cb7;
+  --igds-color-purple-600: #3d44ad;
+  --igds-color-purple-700: #343aa1;
+  --igds-color-purple-800: #2c3095;
+  --igds-color-purple-900: #1e1c80;
+
+  /* Red Palette */
+  --igds-color-red-50: #ffe7e6;
+  --igds-color-red-100: #ffc7b8;
+  --igds-color-red-200: #ffa28b;
+  --igds-color-red-300: #ff7a5c;
+  --igds-color-red-400: #ff5838;
+  --igds-color-red-500: #ff2a12;
+  --igds-color-red-600: #f91606;
+  --igds-color-red-700: #eb0000;
+  --igds-color-red-800: #d40000;
+  --igds-color-red-900: #660000;
+
+  /* Green Palette */
+  --igds-color-green-50: #f4fcf3;
+  --igds-color-green-100: #daf5d6;
+  --igds-color-green-200: #a2e59c;
+  --igds-color-green-300: #61d463;
+  --igds-color-green-400: #4eba52;
+  --igds-color-green-500: #459d47;
+  --igds-color-green-600: #008945;
+  --igds-color-green-700: #336b33;
+  --igds-color-green-800: #30602f;
+  --igds-color-green-900: #223f21;
+
+  /* Ciel Palette */
+  --igds-color-ciel-700: #027bb5;
+
+  /* Navy Palette */
+  --igds-color-navy-900: #3c5997;
+
+   /* Pink Palette */ 
+  --igds-color-pink-500: #f00075;
+  --igds-color-pink-800: #b92d80;
+
+  /* Brown Palette */
+  --igds-color-brown-50: #fff4e5;
+  --igds-color-brown-100: #f3ddc9;
+  --igds-color-brown-200: #e4cdb9;
+  --igds-color-brown-300: #c6a88a;
+  --igds-color-brown-400: #a37a52;
+  --igds-color-brown-500: #8e6437;
+  --igds-color-brown-600: #825931;
+  --igds-color-brown-700: #724c27;
+  --igds-color-brown-800: #653f20;
+  --igds-color-brown-900: #563016;
+
+  /* White with Alpha */
+  --igds-color-white-50: rgba(255, 255, 255, 0.10);
+  --igds-color-white-100: rgba(255, 255, 255, 0.15);
+  --igds-color-white-200: rgba(255, 255, 255, 0.25);
+  --igds-color-white-300: rgba(255, 255, 255, 0.35);
+  --igds-color-white-400: rgba(255, 255, 255, 0.45);
+  --igds-color-white-500: rgba(255, 255, 255, 0.55);
+  --igds-color-white-600: rgba(255, 255, 255, 0.65);
+  --igds-color-white-700: rgba(255, 255, 255, 0.75);
+  --igds-color-white-800: rgba(255, 255, 255, 0.85);
+  --igds-color-white-900: #ffffff;
+
+  /* Black with Alpha */
+  --igds-color-black-50: rgba(0, 0, 0, 0.02);
+  --igds-color-black-100: rgba(0, 0, 0, 0.05);
+  --igds-color-black-200: rgba(0, 0, 0, 0.10);
+  --igds-color-black-300: rgba(0, 0, 0, 0.20);
+  --igds-color-black-400: rgba(0, 0, 0, 0.25);
+  --igds-color-black-500: rgba(0, 0, 0, 0.35);
+  --igds-color-black-600: rgba(0, 0, 0, 0.45);
+  --igds-color-black-700: rgba(0, 0, 0, 0.75);
+  --igds-color-black-800: rgba(0, 0, 0, 0.85);
+  --igds-color-black-900: #000000;
+
+  /* Social Media Colors */
+  --igds-color-instagram: var(--igds-color-pink-500);
+  --igds-color-x: var(--igds-color-grey-900);
+  --igds-color-mail: var(--igds-color-grey-900);
+  --igds-color-linkedin: var(--igds-color-ciel-700);
+  --igds-color-facebook: var(--igds-color-navy-900);
+}
+
+/* Typography */
+:root {
+  /* Font Sizes */
+  --igds-typography-size-xs: 0.75rem;   /* 12px */
+  --igds-typography-size-sm: 0.875rem;  /* 14px */
+  --igds-typography-size-md: 1rem;      /* 16px */
+  --igds-typography-size-lg: 1.25rem;   /* 20px */
+  --igds-typography-size-xl: 1.5rem;    /* 24px */
+  --igds-typography-size-2xl: 2rem;     /* 32px */
+  --igds-typography-size-3xl: 2.5rem;   /* 40px */
+  --igds-typography-size-4xl: 3rem;     /* 48px */
+  --igds-typography-size-5xl: 4.5rem;   /* 72px */
+
+  /* Line Heights */
+  --igds-typography-line-height-tighter: 1;
+  --igds-typography-line-height-tight: 1.2;
+  --igds-typography-line-height-normal: 1.4;
+  --igds-typography-line-height-relaxed: 1.5;
+
+  /* Font Weights */
+  --igds-typography-weight-light: 300;
+  --igds-typography-weight-regular: 400;
+  --igds-typography-weight-medium: 500;
+  --igds-typography-weight-semibold: 600;
+  --igds-typography-weight-bold: 700;
+  --igds-typography-weight-extrabold: 800;
+
+  /* Font Styles */
+  --igds-typography-style-italic: Italic;
+  --igds-typography-style-bold-italic: Bold Italic;
+  --igds-typography-style-medium-italic: Medium Italic;
+
+  /* Letter Spacing */
+  --igds-typography-letter-spacing-tighter: -3;
+  --igds-typography-letter-spacing-tight: -2;
+  --igds-typography-letter-spacing-normal: 0;
+  --igds-typography-letter-spacing-wide: 1;
+
+  /* Font Families */
+  --igds-typography-family-sans: "Open Sans", sans-serif;
+  --igds-typography-family-serif: "Source Serif Pro", serif;
+  --igds-typography-family-mono: "Fira Code", monospace;
+}
+
+
+/* Breakpoints */
+/* Desktop Large */
+@media (min-width: 1440px) {
+  :root {
+    --page-gutter: 48px;
+    --page-columns: 12;
+    --page-max-width: 2560px;
+    --page-margin: 80px;
+    --page-min-width: 1440px;
+  }
+}
+
+/* Desktop Small */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  :root {
+    --page-gutter: 40px;
+    --page-columns: 12;
+    --page-max-width: 1439px;
+    --page-margin: 64px;
+    --page-min-width: 1200px;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  :root {
+    --page-gutter: 24px;
+    --page-columns: 12;
+    --page-max-width: 1199px;
+    --page-margin: 40px;
+    --page-min-width: 1024px;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --page-gutter: 24px;
+    --page-columns: 12;
+    --page-max-width: 1023px;
+    --page-margin: 40px;
+    --page-min-width: 768px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  :root {
+    --page-gutter: 24px;
+    --page-columns: 12;
+    --page-max-width: 767px;
+    --page-margin: 24px;
+    --page-min-width: 375px;
+  }
+}

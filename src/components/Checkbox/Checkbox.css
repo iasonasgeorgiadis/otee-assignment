@@ -1,0 +1,237 @@
+@import "../../styles/tokens.css";
+
+/* =============================================================================
+   CHECKBOX COMPONENT STYLES
+   ============================================================================= */
+
+.igds-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--igds-checkbox-gap);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  font-family: var(--igds-checkbox-font-family);
+  font-size: var(--igds-checkbox-font-size);
+  font-weight: var(--igds-checkbox-font-weight);
+  line-height: var(--igds-checkbox-line-height);
+  /* Prevent click/press from nudging layout */
+  vertical-align: top;
+}
+
+/* Position variants */
+.igds-checkbox--left {
+  flex-direction: row;
+}
+
+.igds-checkbox--right {
+  flex-direction: row;
+}
+
+/* Size variants */
+.igds-checkbox--size-small {
+  --igds-checkbox-gap: var(--igds-space-4);
+  --igds-checkbox-font-size: var(--igds-typography-body-size-small);
+}
+
+.igds-checkbox--size-medium {
+  --igds-checkbox-gap: var(--igds-space-8);
+  --igds-checkbox-font-size: var(--igds-typography-body-size);
+}
+
+/* Disabled state */
+.igds-checkbox--disabled {
+  cursor: not-allowed;
+}
+
+/* Hidden input */
+.igds-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Checkbox box container */
+.igds-checkbox__box {
+  position: relative;
+  width: var(--igds-checkbox-box-size);
+  height: var(--igds-checkbox-box-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--igds-checkbox-transition-properties) var(--igds-checkbox-transition-duration) var(--igds-checkbox-transition-timing-function);
+}
+
+/* Checkbox box background and border (pseudo-element for better control) */
+.igds-checkbox__box::before {
+  content: '';
+  position: absolute;
+  width: var(--igds-checkbox-inner-size);
+  height: var(--igds-checkbox-inner-size);
+  border-radius: var(--igds-checkbox-border-radius);
+  border: var(--igds-checkbox-border-width) solid;
+  transition: var(--igds-checkbox-transition-properties) var(--igds-checkbox-transition-duration) var(--igds-checkbox-transition-timing-function);
+}
+
+/* =============================================================================
+   UNCHECKED STATE
+   ============================================================================= */
+
+/* Default unchecked state */
+.igds-checkbox__box--unchecked::before {
+  background-color: var(--igds-checkbox-background-unchecked-default);
+  border-color: var(--igds-checkbox-border-unchecked-default);
+}
+
+/* Hover unchecked state */
+.igds-checkbox__box--unchecked.igds-checkbox__box--hover::before {
+  background-color: var(--igds-checkbox-background-unchecked-hover);
+  border-color: var(--igds-checkbox-border-unchecked-hover);
+}
+
+/* Disabled unchecked state */
+.igds-checkbox__box--unchecked.igds-checkbox__box--disabled::before {
+  background-color: var(--igds-checkbox-background-unchecked-disabled);
+  border-color: var(--igds-checkbox-border-unchecked-disabled);
+}
+
+/* =============================================================================
+   CHECKED STATE
+   ============================================================================= */
+
+/* Default checked state */
+.igds-checkbox__box--checked::before {
+  background-color: var(--igds-checkbox-background-checked-default);
+  border-color: var(--igds-checkbox-border-checked-default);
+}
+
+/* Hover checked state */
+.igds-checkbox__box--checked.igds-checkbox__box--hover::before {
+  background-color: var(--igds-checkbox-background-checked-hover);
+  border-color: var(--igds-checkbox-border-checked-hover);
+}
+
+/* Disabled checked state */
+.igds-checkbox__box--checked.igds-checkbox__box--disabled::before {
+  background-color: var(--igds-checkbox-background-checked-disabled);
+  border-color: var(--igds-checkbox-border-checked-disabled);
+}
+
+/* =============================================================================
+   INTERMEDIATE STATE
+   ============================================================================= */
+
+/* Default intermediate state */
+.igds-checkbox__box--intermediate::before {
+  background-color: var(--igds-checkbox-background-intermediate-default);
+  border-color: var(--igds-checkbox-border-intermediate-default);
+}
+
+/* Hover intermediate state */
+.igds-checkbox__box--intermediate.igds-checkbox__box--hover::before {
+  background-color: var(--igds-checkbox-background-intermediate-hover);
+  border-color: var(--igds-checkbox-border-intermediate-hover);
+}
+
+/* Disabled intermediate state */
+.igds-checkbox__box--intermediate.igds-checkbox__box--disabled::before {
+  background-color: var(--igds-checkbox-background-intermediate-disabled);
+  border-color: var(--igds-checkbox-border-intermediate-disabled);
+}
+
+/* =============================================================================
+   PLUS STATE
+   ============================================================================= */
+
+/* Default plus state */
+.igds-checkbox__box--plus::before {
+  background-color: var(--igds-checkbox-background-plus-default);
+  border-color: var(--igds-checkbox-border-plus-default);
+}
+
+/* Hover plus state */
+.igds-checkbox__box--plus.igds-checkbox__box--hover::before {
+  background-color: var(--igds-checkbox-background-plus-hover);
+  border-color: var(--igds-checkbox-border-plus-hover);
+}
+
+/* Disabled plus state */
+.igds-checkbox__box--plus.igds-checkbox__box--disabled::before {
+  background-color: var(--igds-checkbox-background-plus-disabled);
+  border-color: var(--igds-checkbox-border-plus-disabled);
+}
+
+/* =============================================================================
+   ICON STYLES
+   ============================================================================= */
+
+/* Base icon styles */
+.igds-checkbox__box .igds-checkbox__icon {
+  position: relative;
+  z-index: 1;
+  color: var(--igds-checkbox-icon-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--igds-checkbox-transition-duration) var(--igds-checkbox-transition-timing-function);
+}
+
+/* Hide icons for unchecked state */
+.igds-checkbox__box--unchecked .igds-checkbox__icon {
+  display: none;
+}
+
+/* Disabled icon color */
+.igds-checkbox__box--disabled .igds-checkbox__icon {
+  color: var(--igds-checkbox-icon-disabled);
+}
+
+/* =============================================================================
+   LABEL STYLES
+   ============================================================================= */
+
+/* Base label styles */
+.igds-checkbox__label {
+  color: var(--igds-checkbox-text-default);
+  white-space: nowrap;
+  transition: color var(--igds-checkbox-transition-duration) var(--igds-checkbox-transition-timing-function);
+}
+
+/* Disabled label */
+.igds-checkbox__label--disabled {
+  color: var(--igds-checkbox-text-disabled);
+}
+
+/* =============================================================================
+   FOCUS STATES (ACCESSIBILITY)
+   ============================================================================= */
+
+/* Focus indicator for keyboard navigation */
+.igds-checkbox__input:focus-visible + .igds-checkbox__label + .igds-checkbox__box::after,
+.igds-checkbox__input:focus-visible ~ .igds-checkbox__box::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid var(--igds-color-border-accent-primary);
+  border-radius: calc(var(--igds-checkbox-border-radius) + 2px);
+  pointer-events: none;
+}
+
+/* Focus indicator when checkbox is after label (right position) */
+.igds-checkbox--right .igds-checkbox__input:focus-visible ~ .igds-checkbox__box::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid var(--igds-color-border-accent-primary);
+  border-radius: calc(var(--igds-checkbox-border-radius) + 2px);
+  pointer-events: none;
+}

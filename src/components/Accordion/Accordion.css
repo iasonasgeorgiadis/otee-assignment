@@ -1,0 +1,204 @@
+/* Import our design tokens */
+@import '../../styles/tokens.css';
+
+/* Accordion Component Styles */
+.igds-accordion {
+  /* Display and Layout */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--igds-radius-none);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Accordion Header (Button) */
+.igds-accordion__header {
+  /* Display and Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--igds-space-8);
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  /* Typography */
+  font-family: var(--igds-typography-body-family);
+  text-align: left;
+
+  /* Appearance */
+  background-color: var(--igds-color-background-accent-primary);
+  color: var(--igds-color-text-neutral-white-primary);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out, transform 150ms ease-in-out;
+
+  /* Remove default button styles */
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Header Hover State */
+.igds-accordion__header:hover:not(:disabled) {
+  background-color: var(--igds-color-background-accent-primary-darker);
+}
+
+/* Header Focus State for Accessibility */
+.igds-accordion__header:focus-visible {
+  outline: 2px solid var(--igds-color-text-neutral-white-primary);
+  outline-offset: 2px;
+}
+
+/* Header Disabled State */
+.igds-accordion__header:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Accordion Title */
+.igds-accordion__title {
+  flex: 1;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Accordion Icon */
+.igds-accordion__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--igds-color-icon-neutral-white-primary);
+  transition: transform 150ms ease-in-out;
+}
+
+/* Icon rotation for expanded state (handled via icon change in React) */
+.igds-accordion--expanded .igds-accordion__icon {
+  transform: rotate(0deg);
+}
+
+/* Accordion Content */
+.igds-accordion__content {
+  /* Display and Layout */
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-space-24);
+  position: relative;
+  z-index: 1;
+
+  /* Appearance */
+  background-color: var(--igds-color-background-neutral-white);
+  color: var(--igds-color-text-neutral-grey-primary);
+
+  /* Animation */
+  animation: slideDown 300ms ease-in-out;
+}
+
+/* Accordion Description */
+.igds-accordion__description {
+  font-family: var(--igds-typography-body-family);
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 100%;
+}
+
+/* Size Variants */
+
+/* Small Size */
+.igds-accordion--small .igds-accordion__header {
+  padding: var(--igds-space-8) var(--igds-space-16);
+  font-size: var(--igds-typography-body-size);
+  font-weight: var(--igds-typography-body-weight-strong);
+  line-height: 1.5;
+}
+
+.igds-accordion--small .igds-accordion__content {
+  padding: var(--igds-space-16);
+}
+
+.igds-accordion--small .igds-accordion__description {
+  font-size: var(--igds-typography-body-size-small);
+  font-weight: var(--igds-typography-body-weight);
+  line-height: 1.4;
+}
+
+/* Medium Size */
+.igds-accordion--medium .igds-accordion__header {
+  padding: var(--igds-space-8) var(--igds-space-16);
+  font-size: var(--igds-typography-subheading-size);
+  font-weight: var(--igds-typography-subheading-weight);
+  line-height: 1.4;
+  font-variation-settings: 'wdth' 100;
+}
+
+.igds-accordion--medium .igds-accordion__content {
+  padding: var(--igds-space-16);
+}
+
+.igds-accordion--medium .igds-accordion__description {
+  font-size: var(--igds-typography-body-size);
+  font-weight: var(--igds-typography-body-weight);
+  line-height: 1.5;
+}
+
+/* Large Size */
+.igds-accordion--large .igds-accordion__header {
+  padding: var(--igds-space-16);
+  font-size: var(--igds-typography-heading-size);
+  font-weight: var(--igds-typography-heading-weight);
+  line-height: 1.4;
+  font-variation-settings: 'wdth' 100;
+}
+
+.igds-accordion--large .igds-accordion__content {
+  padding: var(--igds-space-24);
+}
+
+.igds-accordion--large .igds-accordion__description {
+  font-size: var(--igds-typography-body-size);
+  font-weight: var(--igds-typography-body-weight);
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disabled State */
+.igds-accordion--disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .igds-accordion__content {
+    animation: none;
+  }
+
+  .igds-accordion__icon {
+    transition: none;
+  }
+
+  .igds-accordion__header {
+    transition: none;
+  }
+}

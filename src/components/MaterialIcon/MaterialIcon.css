@@ -1,0 +1,52 @@
+/* Material Icon Component Styles */
+
+/* Shared styles for both filled and outlined Material Icons */
+.material-icons,
+.material-icons-outlined {
+  /* Allow icon to inherit color from parent container */
+  color: inherit;
+  /* Standard Material Icons settings */
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  /* Support for all WebKit browsers */
+  -webkit-font-feature-settings: 'liga';
+  /* Support for Safari and Chrome */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Firefox */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE and Edge */
+  font-feature-settings: 'liga';
+  /* Better rendering */
+  text-rendering: optimizeLegibility;
+}
+
+/* Material Symbols Outlined - newer variable font system */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}

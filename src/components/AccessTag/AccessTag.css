@@ -1,0 +1,69 @@
+/* AccessTag Component Styles */
+
+.igds-access-tag {
+  /* Base Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--igds-access-tag-gap);
+
+  /* Typography */
+  font-family: var(--igds-access-tag-font-family);
+  font-size: var(--igds-access-tag-font-size);
+  font-weight: var(--igds-access-tag-font-weight);
+  line-height: var(--igds-access-tag-line-height);
+
+  /* Base colors - will be overridden by variant classes */
+  color: currentColor;
+}
+
+.igds-access-tag__icon {
+  /* Icon container */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--igds-access-tag-icon-size);
+  height: var(--igds-access-tag-icon-size);
+  flex-shrink: 0;
+
+  /* Inherit color from parent for Material Icons */
+  color: currentColor;
+}
+
+.igds-access-tag__icon .material-icons {
+  /* Ensure Material Icon inherits color and is properly sized */
+  color: inherit;
+  font-size: var(--igds-access-tag-icon-size);
+}
+
+.igds-access-tag__label {
+  /* Label styling */
+  white-space: nowrap;
+  color: currentColor;
+}
+
+/* Variant: Open Access */
+.igds-access-tag--open {
+  color: var(--igds-access-tag-text-open);
+}
+
+.igds-access-tag--open .igds-access-tag__icon {
+  color: var(--igds-access-tag-icon-open);
+}
+
+/* Variant: Free Access */
+.igds-access-tag--free {
+  color: var(--igds-access-tag-text-free);
+}
+
+.igds-access-tag--free .igds-access-tag__icon {
+  color: var(--igds-access-tag-icon-free);
+}
+
+/* Variant: Full Access (Free to Read) */
+.igds-access-tag--full {
+  color: var(--igds-access-tag-text-full);
+}
+
+.igds-access-tag--full .igds-access-tag__icon {
+  color: var(--igds-access-tag-icon-full);
+}

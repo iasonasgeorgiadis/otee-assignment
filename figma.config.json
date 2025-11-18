@@ -1,0 +1,10 @@
+{
+  "codeConnect": {
+    "include": [
+      "src/figma/**/*.{tsx,jsx}", 
+      "src/components/**/*.{tsx,jsx}"
+    ],
+    "label": "React",
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/QVHF2yNzWi3ZeZhW1QAQJD/WOL---Design-System-Discovery?node-id=1-56258&t=2ZaNWSsgnAN3SOjU-1"
+  }
+}

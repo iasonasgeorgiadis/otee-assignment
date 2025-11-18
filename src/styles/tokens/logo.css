@@ -1,0 +1,47 @@
+/* Logo Tokens */
+
+:root {
+  /* Canonical sizes */
+  --igds-logo-size-xs: 20px;
+  --igds-logo-size-small: 24px;
+  --igds-logo-size-large: 48px;
+  --igds-logo-size-xlarge: 64px;
+  --igds-logo-width: auto;
+  --igds-logo-height: auto;
+
+  /* Brand legibility constraints */
+  --igds-logo-wol-min-height: 20px;
+  --igds-logo-wiley-min-height: 24px;
+
+  /* Form constraints */
+  --igds-logo-full-min-width: 80px;
+  --igds-logo-full-aspect-ratio: auto;
+  --igds-logo-compact-min-width: 24px;
+  --igds-logo-compact-aspect-ratio: 1;
+
+  /* Clear space */
+  --igds-logo-clear-space-multiplier: 0.5;
+  --igds-logo-clear-space-minimum: 8px;
+
+  /* Responsive scale preferences */
+  --igds-logo-scale-mobile: 0.75;
+  --igds-logo-scale-tablet: 0.875;
+  --igds-logo-scale-desktop: 1;
+
+  /* Motion */
+  --igds-logo-transition-duration: 200ms;
+  --igds-logo-transition-timing: ease;
+}
+
+:root {
+  /* Asset sources */
+  --igds-logo-wol-full-light-src: '/brand/logos/web/wol-logo-full-light.png';
+  --igds-logo-wol-full-dark-src: '/brand/logos/web/wol-logo-full-dark.png';
+  --igds-logo-wol-compact-light-src: '/brand/logos/web/wol-logo-compact-light.png';
+  --igds-logo-wol-compact-dark-src: '/brand/logos/web/wol-logo-compact-dark.png';
+
+  --igds-logo-wiley-full-light-src: '/brand/logos/web/wiley-logo-full-light.svg';
+  --igds-logo-wiley-full-dark-src: '/brand/logos/web/wiley-logo-full-dark.svg';
+  --igds-logo-wiley-compact-light-src: '/brand/logos/web/wiley-logo-compact-light.svg';
+  --igds-logo-wiley-compact-dark-src: '/brand/logos/web/wiley-logo-compact-dark.svg';
+}

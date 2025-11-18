@@ -1,0 +1,53 @@
+/* IconScale Component Styles */
+
+/* Base container */
+.igds-icon-scale {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-space-24);
+  padding: var(--igds-space-16);
+}
+
+/* Single size variant */
+.igds-icon-scale--single {
+  gap: 0;
+  padding: 0;
+}
+
+/* Individual icon item container */
+.igds-icon-scale__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--igds-space-8);
+}
+
+/* Icon styling */
+.igds-icon-scale__icon {
+  color: var(--igds-color-icon-neutral-grey-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Size label */
+.igds-icon-scale__label {
+  font-family: var(--igds-font-family-primary);
+  font-size: var(--igds-font-size-caption);
+  color: var(--igds-color-text-neutral-grey-secondary);
+  white-space: nowrap;
+}
+
+/* Hover effects for interactive use */
+.igds-icon-scale__item:hover .igds-icon-scale__icon {
+  color: var(--igds-color-icon-neutral-grey-secondary);
+  transition: color 200ms ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .igds-icon-scale {
+    flex-wrap: wrap;
+    gap: var(--igds-space-16);
+  }
+}

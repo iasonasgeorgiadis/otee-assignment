@@ -1,0 +1,122 @@
+/* CoverCard Component Styles - Uses Semantic Tokens Directly */
+
+.igds-cover-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-space-24);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.igds-cover-card--clickable {
+  cursor: pointer;
+}
+
+.igds-cover-card--clickable:focus {
+  outline: 2px solid var(--igds-color-border-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Image Container */
+.igds-cover-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 240/315; /* 4:5 aspect ratio from Figma */
+  overflow: hidden;
+  background: var(--igds-color-background-neutral-white);
+  display: flex;
+  align-items: stretch;
+}
+
+/* Image border overlay */
+.igds-cover-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hover opacity overlay */
+.igds-cover-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--igds-color-background-alpha-neutral-black-lighter);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.igds-cover-card__image-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ensure ImagePlaceholder fills container */
+.igds-cover-card__image .igds-image-placeholder {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: inherit;
+}
+
+/* Title */
+.igds-cover-card__title {
+  font-family: var(--igds-typography-subheading-family);
+  font-size: var(--igds-typography-subheading-size);
+  font-weight: var(--igds-typography-subheading-weight);
+  line-height: 1.4; /* From Figma: 1.399999976158142 */
+  width: 100%;
+  transition: color 300ms ease-in-out;
+}
+
+/* Light Mode */
+.igds-cover-card--light .igds-cover-card__image::after {
+  border-color: var(--igds-color-border-neutral-grey-light);
+}
+
+.igds-cover-card--light .igds-cover-card__title {
+  color: var(--igds-color-text-neutral-grey-primary);
+}
+
+.igds-cover-card--light:hover .igds-cover-card__image::before {
+  opacity: 1;
+}
+
+.igds-cover-card--light:hover .igds-cover-card__title {
+  color: var(--igds-color-text-neutral-grey-secondary);
+}
+
+/* Dark Mode */
+.igds-cover-card--dark .igds-cover-card__image {
+  background: var(--igds-color-background-neutral-grey-dark);
+}
+
+.igds-cover-card--dark .igds-cover-card__image::after {
+  border-color: var(--igds-color-border-neutral-white-lighter);
+}
+
+.igds-cover-card--dark .igds-cover-card__title {
+  color: var(--igds-color-text-neutral-white-primary);
+}
+
+.igds-cover-card--dark:hover .igds-cover-card__image::before {
+  opacity: 1;
+}
+
+.igds-cover-card--dark:hover .igds-cover-card__title {
+  color: var(--igds-color-text-neutral-white-secondary);
+}
+
+/* Non-clickable cards should not show hover effects */
+.igds-cover-card:not(.igds-cover-card--clickable):hover .igds-cover-card__title {
+  color: inherit;
+}
+
+.igds-cover-card:not(.igds-cover-card--clickable):hover .igds-cover-card__image::before {
+  opacity: 0;
+}

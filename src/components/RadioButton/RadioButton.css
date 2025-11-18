@@ -1,0 +1,134 @@
+@import "../../styles/tokens.css";
+
+/* =============================================================================
+   RADIO BUTTON COMPONENT STYLES
+   ============================================================================= */
+
+.igds-radio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--igds-radio-button-gap);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  font-family: var(--igds-radio-button-font-family);
+  font-weight: var(--igds-radio-button-font-weight);
+  vertical-align: top;
+}
+
+/* Size variants */
+.igds-radio-button--size-small {
+  font-size: var(--igds-radio-button-font-size-small);
+  line-height: var(--igds-radio-button-line-height-small);
+}
+
+.igds-radio-button--size-medium {
+  font-size: var(--igds-radio-button-font-size-medium);
+  line-height: var(--igds-radio-button-line-height-medium);
+}
+
+/* Disabled state */
+.igds-radio-button--disabled {
+  cursor: not-allowed;
+}
+
+/* Hidden input */
+.igds-radio-button__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Radio button icon styles */
+.igds-radio-button__radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color var(--igds-radio-button-transition-duration) var(--igds-radio-button-transition-timing-function);
+}
+
+/* =============================================================================
+   UNSELECTED STATE COLORS
+   ============================================================================= */
+
+/* Default unselected */
+.igds-radio-button__radio--unselected {
+  color: var(--igds-radio-button-color-unselected-default);
+}
+
+/* Hover unselected */
+.igds-radio-button__radio--unselected.igds-radio-button__radio--hover {
+  color: var(--igds-radio-button-color-unselected-hover);
+}
+
+/* Disabled unselected */
+.igds-radio-button__radio--unselected.igds-radio-button__radio--disabled {
+  color: var(--igds-radio-button-color-unselected-disabled);
+}
+
+/* =============================================================================
+   SELECTED STATE COLORS
+   ============================================================================= */
+
+/* Default selected */
+.igds-radio-button__radio--selected {
+  color: var(--igds-radio-button-color-selected-default);
+}
+
+/* Hover selected */
+.igds-radio-button__radio--selected.igds-radio-button__radio--hover {
+  color: var(--igds-radio-button-color-selected-hover);
+}
+
+/* Disabled selected */
+.igds-radio-button__radio--selected.igds-radio-button__radio--disabled {
+  color: var(--igds-radio-button-color-selected-disabled);
+}
+
+/* =============================================================================
+   MATERIAL ICON SPECIFIC STYLES
+   ============================================================================= */
+
+/* Ensure Material Icon font is loaded and styled correctly */
+.igds-radio-button__radio.material-icons,
+.igds-radio-button__radio.material-icons-outlined {
+  font-size: inherit;
+  width: auto;
+  height: auto;
+}
+
+/* =============================================================================
+   LABEL STYLES
+   ============================================================================= */
+
+/* Base label styles */
+.igds-radio-button__label {
+  color: var(--igds-radio-button-text-default);
+  white-space: nowrap;
+  transition: color var(--igds-radio-button-transition-duration) var(--igds-radio-button-transition-timing-function);
+}
+
+/* Disabled label */
+.igds-radio-button__label--disabled {
+  color: var(--igds-radio-button-text-disabled);
+}
+
+/* =============================================================================
+   FOCUS STATES (ACCESSIBILITY)
+   ============================================================================= */
+
+/* Focus indicator for keyboard navigation */
+.igds-radio-button__input:focus-visible ~ .igds-radio-button__radio::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid var(--igds-color-border-accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+}

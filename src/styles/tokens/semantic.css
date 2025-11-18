@@ -1,0 +1,591 @@
+/* Semantic Tokens - Design System Semantics */
+
+/* Branding and System Colors */
+:root {
+  /* Brand Primary Colors */
+  --igds-color-brand-primary-darkest: var(--igds-color-blue-900);
+  --igds-color-brand-primary-darker: var(--igds-color-blue-800);
+  --igds-color-brand-primary-dark: var(--igds-color-blue-700);
+  --igds-color-brand-primary-medium: var(--igds-color-blue-500);
+  --igds-color-brand-primary-light: var(--igds-color-blue-200);
+  --igds-color-brand-primary-lighter: var(--igds-color-blue-100);
+  --igds-color-brand-primary-lightest: var(--igds-color-blue-50);
+
+  /* Brand Alpha Primary Colors */
+  --igds-color-brand-alpha-primary-darkest: rgba(12, 40, 85, 0.30);
+  --igds-color-brand-alpha-primary-darker: rgba(12, 40, 85, 0.20);
+  --igds-color-brand-alpha-primary-dark: rgba(30, 88, 159, 0.20);
+  --igds-color-brand-alpha-primary-medium: rgba(18, 60, 128, 0.20);
+  --igds-color-brand-alpha-primary-light: rgba(103, 168, 220, 0.20);
+  --igds-color-brand-alpha-primary-lighter: rgba(185, 216, 240, 0.30);
+  --igds-color-brand-alpha-primary-lightest: rgba(226, 240, 249, 0.30);
+
+  /* Brand Secondary Colors */
+  --igds-color-brand-secondary-darkest: var(--igds-color-grey-900);
+  --igds-color-brand-secondary-darker: var(--igds-color-grey-800);
+  --igds-color-brand-secondary-dark: var(--igds-color-grey-600);
+  --igds-color-brand-secondary-medium: var(--igds-color-grey-400);
+  --igds-color-brand-secondary-light: var(--igds-color-grey-200);
+  --igds-color-brand-secondary-lighter: var(--igds-color-grey-100);
+  --igds-color-brand-secondary-lightest: var(--igds-color-grey-50);
+
+  /* Brand Alpha Secondary Colors */
+  --igds-color-brand-alpha-secondary-darker: rgba(60, 62, 63, 0.20);
+  --igds-color-brand-alpha-secondary-dark: rgba(111, 112, 113, 0.20);
+  --igds-color-brand-alpha-secondary-medium: rgba(183, 184, 185, 0.20);
+  --igds-color-brand-alpha-secondary-light: rgba(233, 235, 236, 0.20);
+  --igds-color-brand-alpha-secondary-lighter: rgba(242, 243, 245, 0.30);
+  --igds-color-brand-alpha-secondary-lightest: rgba(248, 249, 251, 0.30);
+
+  /* Brand Tertiary Colors */
+  --igds-color-brand-tertiary-darkest: var(--igds-color-red-900);
+  --igds-color-brand-tertiary-darker: var(--igds-color-red-800);
+  --igds-color-brand-tertiary-dark: var(--igds-color-red-700);
+  --igds-color-brand-tertiary-medium: var(--igds-color-red-600);
+  --igds-color-brand-tertiary-light: var(--igds-color-red-200);
+  --igds-color-brand-tertiary-lighter: var(--igds-color-red-100);
+  --igds-color-brand-tertiary-lightest: var(--igds-color-red-50);
+
+  /* Brand Alpha Tertiary Colors */
+  --igds-color-brand-alpha-tertiary-darkest: rgba(102, 0, 0, 0.20);
+  --igds-color-brand-alpha-tertiary-darker: rgba(102, 0, 0, 0.20);
+  --igds-color-brand-alpha-tertiary-dark: rgba(212, 0, 0, 0.20);
+  --igds-color-brand-alpha-tertiary-medium: rgba(255, 42, 18, 0.20);
+  --igds-color-brand-alpha-tertiary-light: rgba(255, 162, 139, 0.20);
+  --igds-color-brand-alpha-tertiary-lighter: rgba(255, 199, 184, 0.20);
+  --igds-color-brand-alpha-tertiary-lightest: rgba(255, 231, 230, 0.20);
+
+  /* System Success */
+  --igds-color-system-success: var(--igds-color-green-600);
+  --igds-color-system-alpha-success: rgba(58, 127, 59, 0.10);
+
+  /* System Warning */
+  --igds-color-system-warning: var(--igds-color-orange-900);
+  --igds-color-system-alpha-warning: rgba(148, 47, 0, 0.10);
+
+  /* System Danger */
+  --igds-color-system-danger: var(--igds-color-red-800);
+  --igds-color-system-alpha-danger: rgba(212, 0, 0, 0.10);
+
+  /* System Information */
+  --igds-color-system-information: var(--igds-color-blue-700);
+  --igds-color-system-alpha-information: rgba(32, 107, 213, 0.10);
+
+  /* System Disabled */
+  --igds-color-system-disabled: var(--igds-color-grey-600);
+  --igds-color-system-alpha-disabled: var(--igds-color-black-200);
+
+  /* Access Model Colors */
+  --igds-color-access-open: var(--igds-color-pink-800);
+  --igds-color-access-free: var(--igds-color-orange-800);
+  --igds-color-access-full: var(--igds-color-green-600);
+} 
+
+/* Background Colors */
+:root {
+  /* Accent Colors */
+  /* Primary Background Colors */
+  --igds-color-background-accent-primary: var(--igds-color-brand-primary-darker); /* default */
+  --igds-color-background-accent-primary-darker: var(--igds-color-brand-primary-darkest);
+  --igds-color-background-accent-primary-dark: var(--igds-color-brand-primary-dark);
+  --igds-color-background-accent-primary-light: var(--igds-color-brand-primary-lighter);
+  --igds-color-background-accent-primary-lighter: var(--igds-color-brand-primary-lightest);
+
+  /* Alpha Primary Background Colors */
+  --igds-color-background-accent-alpha-primary: var(--igds-color-brand-alpha-primary-lightest); /* default */
+  --igds-color-background-accent-alpha-primary-darker: var(--igds-color-brand-alpha-primary-darker);
+  --igds-color-background-accent-alpha-primary-dark: var(--igds-color-brand-alpha-primary-dark);
+  --igds-color-background-accent-alpha-primary-light: var(--igds-color-brand-alpha-primary-light);
+  --igds-color-background-accent-alpha-primary-lighter: var(--igds-color-brand-alpha-primary-lighter);
+
+  /* Secondary Background Colors */
+  --igds-color-background-accent-secondary: var(--igds-color-brand-secondary-lightest); /* default */
+  --igds-color-background-accent-secondary-darker: var(--igds-color-brand-secondary-darker);
+  --igds-color-background-accent-secondary-dark: var(--igds-color-brand-secondary-dark);
+  --igds-color-background-accent-secondary-light: var(--igds-color-brand-secondary-light);
+  --igds-color-background-accent-secondary-lighter: var(--igds-color-brand-secondary-lighter);
+
+  /* Alpha Secondary Background Colors */
+  --igds-color-background-accent-alpha-secondary: var(--igds-color-brand-alpha-secondary-lightest); /* default */
+  --igds-color-background-accent-alpha-secondary-darker: var(--igds-color-brand-alpha-secondary-darker);
+  --igds-color-background-accent-alpha-secondary-dark: var(--igds-color-brand-alpha-secondary-dark);
+  --igds-color-background-accent-alpha-secondary-light: var(--igds-color-brand-alpha-secondary-light);
+  --igds-color-background-accent-alpha-secondary-lighter: var(--igds-color-brand-alpha-secondary-lighter);
+
+  /* Tertiary Background Colors */
+  --igds-color-background-accent-tertiary: var(--igds-color-brand-tertiary-darker); /* default */
+  --igds-color-background-accent-tertiary-darker: var(--igds-color-brand-tertiary-dark);
+  --igds-color-background-accent-tertiary-dark: var(--igds-color-brand-tertiary-medium);
+  --igds-color-background-accent-tertiary-light: var(--igds-color-brand-tertiary-lighter);
+  --igds-color-background-accent-tertiary-lighter: var(--igds-color-brand-tertiary-lightest);
+
+  /* Alpha Tertiary Background Colors */
+  --igds-color-background-accent-alpha-tertiary: var(--igds-color-brand-alpha-tertiary-lightest); /* default */
+  --igds-color-background-accent-alpha-tertiary-darker: var(--igds-color-brand-alpha-tertiary-darker);
+  --igds-color-background-accent-alpha-tertiary-dark: var(--igds-color-brand-alpha-tertiary-dark);
+  --igds-color-background-accent-alpha-tertiary-light: var(--igds-color-brand-alpha-tertiary-light);
+  --igds-color-background-accent-alpha-tertiary-lighter: var(--igds-color-brand-alpha-tertiary-lighter);
+
+  /* Neutral Colors */
+  /* White Background Colors */
+  --igds-color-background-neutral-white: var(--igds-color-white-900); /* default */
+  --igds-color-background-neutral-white-light: var(--igds-color-grey-100);
+  --igds-color-background-neutral-white-lighter: var(--igds-color-grey-50);
+
+  /* Alpha White Background Colors */
+  --igds-color-background-alpha-neutral-white: var(--igds-color-black-50); /* default */
+  --igds-color-background-alpha-neutral-white-darker: var(--igds-color-black-600);
+  --igds-color-background-alpha-neutral-white-dark: var(--igds-color-black-400);
+  --igds-color-background-alpha-neutral-white-light: var(--igds-color-black-100);
+  --igds-color-background-alpha-neutral-white-lighter: var(--igds-color-black-50);
+
+  /* Black Background Colors */
+  --igds-color-background-neutral-black: var(--igds-color-grey-900); /* default */
+  --igds-color-background-neutral-light: var(--igds-color-grey-800);
+  --igds-color-background-neutral-lighter: var(--igds-color-grey-700);
+
+  /* Alpha Black Background Colors */
+  --igds-color-background-alpha-neutral-black: var(--igds-color-black-700); /* default */
+  --igds-color-background-alpha-neutral-black-darker: var(--igds-color-black-900);
+  --igds-color-background-alpha-neutral-black-dark: var(--igds-color-black-800);
+  --igds-color-background-alpha-neutral-black-light: var(--igds-color-black-600);
+  --igds-color-background-alpha-neutral-black-lighter: var(--igds-color-black-500);
+
+  /* Grey Background Colors */
+  --igds-color-background-neutral-grey: var(--igds-color-grey-300); /* default */
+  --igds-color-background-neutral-grey-darker: var(--igds-color-grey-500);
+  --igds-color-background-neutral-grey-dark: var(--igds-color-grey-400);
+  --igds-color-background-neutral-grey-light: var(--igds-color-grey-200);
+  --igds-color-background-neutral-grey-lighter: var(--igds-color-grey-100);
+
+  /* Alpha Grey Background Colors */
+  --igds-color-background-alpha-neutral-grey: var(--igds-color-black-400); /* default */
+  --igds-color-background-alpha-neutral-grey-darker: var(--igds-color-black-600);
+  --igds-color-background-alpha-neutral-grey-dark: var(--igds-color-black-300);
+  --igds-color-background-alpha-neutral-grey-light: var(--igds-color-black-500);
+  --igds-color-background-alpha-neutral-grey-lighter: var(--igds-color-black-400);
+
+  /* System Colors */
+  /* Disabled Background Colors */
+  --igds-color-background-system-disabled: var(--igds-color-grey-400);
+  --igds-color-background-system-disabled-light: var(--igds-color-grey-200);
+  --igds-color-background-system-disabled-lighter: var(--igds-color-grey-100);
+
+  /* Alpha Disabled Background Colors */
+  --igds-color-background-alpha-system-disabled: var(--igds-color-system-alpha-disabled);
+
+  /* Information Background Colors */
+  --igds-color-background-system-information: var(--igds-color-system-information); /* default */
+  --igds-color-background-system-information-darker: var(--igds-color-blue-800);
+  --igds-color-background-system-information-dark: var(--igds-color-blue-700);
+  --igds-color-background-system-information-light: var(--igds-color-blue-100);
+  --igds-color-background-system-information-lighter: var(--igds-color-blue-50);
+
+  /* Alpha Information Background Colors */
+  --igds-color-background-alpha-system-information: var(--igds-color-system-alpha-information); /* default */
+  --igds-color-background-alpha-system-information-light: rgba(32, 107, 213, 0.10);
+  --igds-color-background-alpha-system-information-lighter: rgba(32, 107, 213, 0.02);
+
+  /* Danger Background Colors */
+  --igds-color-background-system-danger: var(--igds-color-system-danger); /* default */
+  --igds-color-background-system-danger-darker: var(--igds-color-red-900);
+  --igds-color-background-system-danger-dark: var(--igds-color-red-800);
+  --igds-color-background-system-danger-light: var(--igds-color-red-100);
+  --igds-color-background-system-danger-lighter: var(--igds-color-red-50);
+
+  /* Alpha Danger Background Colors */
+  --igds-color-background-alpha-system-danger: var(--igds-color-system-alpha-danger); /* default */
+  --igds-color-background-alpha-system-danger-light: rgba(102, 0, 0, 0.10);
+  --igds-color-background-alpha-system-danger-lighter: rgba(102, 0, 0, 0.02);
+
+  /* Warning Background Colors */
+  --igds-color-background-system-warning: var(--igds-color-system-warning); /* default */
+  --igds-color-background-system-warning-darker: var(--igds-color-orange-800);
+  --igds-color-background-system-warning-dark: var(--igds-color-orange-600);
+  --igds-color-background-system-warning-light: var(--igds-color-orange-100);
+  --igds-color-background-system-warning-lighter: var(--igds-color-orange-50);
+
+  /* Alpha Warning Background Colors */
+  --igds-color-background-alpha-system-warning: var(--igds-color-system-alpha-warning); /* default */
+  --igds-color-background-alpha-system-warning-light: rgba(148, 47, 0, 0.10);
+  --igds-color-background-alpha-system-warning-lighter: rgba(148, 47, 0, 0.02);
+
+  /* Success Background Colors */
+  --igds-color-background-system-success: var(--igds-color-system-success); /* default */
+  --igds-color-background-system-success-darker: var(--igds-color-green-900);
+  --igds-color-background-system-success-dark: var(--igds-color-green-700);
+  --igds-color-background-system-success-light: var(--igds-color-green-100);
+  --igds-color-background-system-success-lighter: var(--igds-color-green-50);
+
+  /* Alpha Success Background Colors */
+  --igds-color-background-alpha-system-success: var(--igds-color-system-alpha-success); /* default */
+  --igds-color-background-alpha-system-success-light: rgba(58, 127, 59, 0.10);
+  --igds-color-background-alpha-system-success-lighter: rgba(58, 127, 59, 0.02);
+}
+
+/* Border Colors */
+:root {
+  /* Accent Colors */
+  /* Primary Border Colors */
+  --igds-color-border-accent-primary: var(--igds-color-brand-primary-darker); /* default */
+  --igds-color-border-accent-primary-darker: var(--igds-color-brand-primary-darkest);
+  --igds-color-border-accent-primary-dark: var(--igds-color-brand-primary-dark);
+  --igds-color-border-accent-primary-light: var(--igds-color-brand-primary-lighter);
+  --igds-color-border-accent-primary-lighter: var(--igds-color-brand-primary-lightest);
+
+  /* Alpha Primary Border Colors */
+  --igds-color-border-accent-alpha-primary: var(--igds-color-brand-alpha-primary-darkest); /* default */
+  --igds-color-border-accent-alpha-primary-darker: var(--igds-color-brand-alpha-primary-darker);
+  --igds-color-border-accent-alpha-primary-dark: var(--igds-color-brand-alpha-primary-dark);
+  --igds-color-border-accent-alpha-primary-light: var(--igds-color-brand-alpha-primary-light);
+  --igds-color-border-accent-alpha-primary-lighter: var(--igds-color-brand-alpha-primary-lighter);
+
+  /* Secondary Border Colors */
+  --igds-color-border-accent-secondary: var(--igds-color-brand-secondary-medium); /* default */
+  --igds-color-border-accent-secondary-darker: var(--igds-color-brand-secondary-darkest);
+  --igds-color-border-accent-secondary-dark: var(--igds-color-brand-secondary-darker);
+  --igds-color-border-accent-secondary-light: var(--igds-color-brand-secondary-light);
+  --igds-color-border-accent-secondary-lighter: var(--igds-color-brand-secondary-lighter);
+
+  /* Alpha Secondary Border Colors */
+  --igds-color-border-accent-alpha-secondary: var(--igds-color-brand-alpha-secondary-medium); /* default */
+  --igds-color-border-accent-alpha-secondary-darker: var(--igds-color-brand-alpha-secondary-darker);
+  --igds-color-border-accent-alpha-secondary-dark: var(--igds-color-brand-alpha-secondary-dark);
+  --igds-color-border-accent-alpha-secondary-light: var(--igds-color-brand-alpha-secondary-light);
+  --igds-color-border-accent-alpha-secondary-lighter: var(--igds-color-brand-alpha-secondary-lighter);
+
+  /* Tertiary Border Colors */
+  --igds-color-border-accent-tertiary: var(--igds-color-brand-tertiary-dark); /* default */
+  --igds-color-border-accent-tertiary-darker: var(--igds-color-brand-tertiary-darkest);
+  --igds-color-border-accent-tertiary-dark: var(--igds-color-brand-tertiary-darker);
+  --igds-color-border-accent-tertiary-light: var(--igds-color-brand-tertiary-light);
+  --igds-color-border-accent-tertiary-lighter: var(--igds-color-brand-tertiary-lighter);
+
+  /* Alpha Tertiary Border Colors */
+  --igds-color-border-accent-alpha-tertiary: var(--igds-color-brand-alpha-tertiary-medium); /* default */
+  --igds-color-border-accent-alpha-tertiary-dark: var(--igds-color-brand-alpha-tertiary-dark);
+  --igds-color-border-accent-alpha-tertiary-darker: var(--igds-color-brand-alpha-tertiary-darker);
+  --igds-color-border-accent-alpha-tertiary-light: var(--igds-color-brand-alpha-tertiary-light);
+  --igds-color-border-accent-alpha-tertiary-lighter: var(--igds-color-brand-alpha-tertiary-lighter);
+
+  /* Neutral Colors */
+  /* Grey Border Colors */
+  --igds-color-border-neutral-grey: var(--igds-color-grey-400); /* default */
+  --igds-color-border-neutral-grey-darker: var(--igds-color-grey-800);
+  --igds-color-border-neutral-grey-dark: var(--igds-color-grey-600);
+  --igds-color-border-neutral-grey-light: var(--igds-color-grey-300);
+  --igds-color-border-neutral-grey-lighter: var(--igds-color-grey-100);
+
+  /* Alpha Grey Border Colors */
+  --igds-color-border-alpha-neutral-grey: var(--igds-color-black-400); /* default */
+  --igds-color-border-alpha-neutral-grey-dark: var(--igds-color-black-300);
+  --igds-color-border-alpha-neutral-grey-darker: var(--igds-color-black-600);
+  --igds-color-border-alpha-neutral-grey-light: var(--igds-color-black-200);
+  --igds-color-border-alpha-neutral-grey-lighter: var(--igds-color-black-100);
+
+  /* White Border Colors */
+  --igds-color-border-neutral-white: var(--igds-color-white-900); /* default */
+  --igds-color-border-neutral-white-darker: var(--igds-color-grey-500);
+  --igds-color-border-neutral-white-dark: var(--igds-color-grey-200);
+  --igds-color-border-neutral-white-light: var(--igds-color-grey-100);
+  --igds-color-border-neutral-white-lighter: var(--igds-color-grey-50);
+
+  /* Alpha White Border Colors */
+  --igds-color-border-alpha-neutral-white: var(--igds-color-black-50); /* default */
+  --igds-color-border-alpha-neutral-white-dark: var(--igds-color-black-400);
+  --igds-color-border-alpha-neutral-white-darker: var(--igds-color-black-600);
+  --igds-color-border-alpha-neutral-white-light: var(--igds-color-black-200);
+  --igds-color-border-alpha-neutral-white-lighter: var(--igds-color-black-100);
+
+  /* Black Border Colors */
+  --igds-color-border-neutral-black: var(--igds-color-grey-700); /* default */
+  --igds-color-border-neutral-black-darker: var(--igds-color-grey-900);
+  --igds-color-border-neutral-black-dark: var(--igds-color-grey-800);
+  --igds-color-border-neutral-black-light: var(--igds-color-grey-600);
+  --igds-color-border-neutral-black-lighter: var(--igds-color-grey-500);
+
+  /* Alpha Black Border Colors */
+  --igds-color-border-alpha-neutral-black: var(--igds-color-black-800); /* default */
+  --igds-color-border-alpha-neutral-black-dark: var(--igds-color-black-800);
+  --igds-color-border-alpha-neutral-black-darker: var(--igds-color-black-900);
+  --igds-color-border-alpha-neutral-black-light: var(--igds-color-black-700);
+  --igds-color-border-alpha-neutral-black-lighter: var(--igds-color-black-600);
+
+  /* System Colors */
+  /* Disabled Border Colors */
+  --igds-color-border-system-disabled: var(--igds-color-grey-400);
+
+  /* Alpha Disabled Border Colors */
+  --igds-color-border-alpha-system-disabled: var(--igds-color-system-alpha-disabled);
+
+  /* Information Border Colors */
+  --igds-color-border-system-information: var(--igds-color-system-information); /* default */
+  --igds-color-border-system-information-darker: var(--igds-color-blue-800);
+  --igds-color-border-system-information-dark: var(--igds-color-blue-700);
+  --igds-color-border-system-information-light: var(--igds-color-blue-200);
+  --igds-color-border-system-information-lighter: var(--igds-color-blue-50);
+
+  /* Alpha Information Border Colors */
+  --igds-color-border-alpha-system-information: var(--igds-color-system-alpha-information); /* default */
+  --igds-color-border-alpha-system-information-light: rgba(32, 107, 213, 0.10);
+  --igds-color-border-alpha-system-information-lighter: rgba(32, 107, 213, 0.02);
+
+  /* Danger Border Colors */
+  --igds-color-border-system-danger: var(--igds-color-system-danger); /* default */
+  --igds-color-border-system-danger-darker: var(--igds-color-red-900);
+  --igds-color-border-system-danger-dark: var(--igds-color-red-800);
+  --igds-color-border-system-danger-light: var(--igds-color-red-300);
+  --igds-color-border-system-danger-lighter: var(--igds-color-red-50);
+
+  /* Alpha Danger Border Colors */
+  --igds-color-border-alpha-system-danger: var(--igds-color-system-alpha-danger); /* default */
+  --igds-color-border-alpha-system-danger-light: rgba(102, 0, 0, 0.10);
+  --igds-color-border-alpha-system-danger-lighter: rgba(102, 0, 0, 0.02);
+
+  /* Warning Border Colors */
+  --igds-color-border-system-warning: var(--igds-color-system-warning); /* default */
+  --igds-color-border-system-warning-darker: var(--igds-color-orange-800);
+  --igds-color-border-system-warning-dark: var(--igds-color-orange-600);
+  --igds-color-border-system-warning-light: var(--igds-color-orange-300);
+  --igds-color-border-system-warning-lighter: var(--igds-color-orange-50);
+
+  /* Alpha Warning Border Colors */
+  --igds-color-border-alpha-system-warning: var(--igds-color-system-alpha-warning); /* default */
+  --igds-color-border-alpha-system-warning-light: rgba(148, 47, 0, 0.10);
+  --igds-color-border-alpha-system-warning-lighter: rgba(148, 47, 0, 0.02);
+
+  /* Success Border Colors */
+  --igds-color-border-system-success: var(--igds-color-system-success); /* default */
+  --igds-color-border-system-success-darker: var(--igds-color-green-900);
+  --igds-color-border-system-success-dark: var(--igds-color-green-700);
+  --igds-color-border-system-success-light: var(--igds-color-green-100);
+  --igds-color-border-system-success-lighter: var(--igds-color-green-50);
+
+  /* Alpha Success Border Colors */
+  --igds-color-border-alpha-system-success: var(--igds-color-system-alpha-success); /* default */
+  --igds-color-border-alpha-system-success-light: rgba(58, 127, 59, 0.10);
+  --igds-color-border-alpha-system-success-lighter: rgba(58, 127, 59, 0.02);
+}
+
+/* Icon Colors */
+:root {
+  /* Accent Colors */
+  /* Primary Icon Colors */
+  --igds-color-icon-accent-primary: var(--igds-color-brand-primary-darker); /* default */
+  --igds-color-icon-accent-primary-darker: var(--igds-color-brand-primary-darkest);
+  --igds-color-icon-accent-primary-dark: var(--igds-color-brand-primary-dark);
+  --igds-color-icon-accent-primary-light: var(--igds-color-brand-primary-light);
+  --igds-color-icon-accent-primary-lighter: var(--igds-color-brand-primary-lighter);
+  --igds-color-icon-accent-primary-contrast: var(--igds-color-brand-primary-lightest);
+
+  /* On Primary Icon Colors */
+  --igds-color-icon-accent-on-primary-darker: var(--igds-color-brand-primary-lightest);
+  --igds-color-icon-accent-on-primary-dark: var(--igds-color-brand-primary-lighter);
+  --igds-color-icon-accent-on-primary-light: var(--igds-color-brand-primary-light);
+  --igds-color-icon-accent-on-primary-lighter: var(--igds-color-brand-primary-medium);
+
+  /* Secondary Icon Colors */
+  --igds-color-icon-accent-secondary: var(--igds-color-brand-secondary-darkest); /* default */
+  --igds-color-icon-accent-secondary-darker: var(--igds-color-brand-secondary-darkest);
+  --igds-color-icon-accent-secondary-dark: var(--igds-color-brand-secondary-darker);
+  --igds-color-icon-accent-secondary-light: var(--igds-color-brand-secondary-dark);
+  --igds-color-icon-accent-secondary-lighter: var(--igds-color-brand-secondary-medium);
+  --igds-color-icon-accent-secondary-contrast: var(--igds-color-brand-secondary-lightest);
+
+  /* On Secondary Icon Colors */
+  --igds-color-icon-accent-on-secondary-darker: var(--igds-color-brand-secondary-darkest);
+  --igds-color-icon-accent-on-secondary-dark: var(--igds-color-brand-secondary-darker);
+  --igds-color-icon-accent-on-secondary-light: var(--igds-color-brand-secondary-dark);
+  --igds-color-icon-accent-on-secondary-lighter: var(--igds-color-brand-secondary-medium);
+
+  /* Tertiary Icon Colors */
+  --igds-color-icon-accent-tertiary: var(--igds-color-brand-tertiary-dark); /* default */
+  --igds-color-icon-accent-tertiary-darker: var(--igds-color-brand-tertiary-darker);
+  --igds-color-icon-accent-tertiary-dark: var(--igds-color-brand-tertiary-dark);
+  --igds-color-icon-accent-tertiary-light: var(--igds-color-brand-tertiary-medium);
+  --igds-color-icon-accent-tertiary-lighter: var(--igds-color-brand-tertiary-light);
+  --igds-color-icon-accent-tertiary-contrast: var(--igds-color-brand-tertiary-lightest);
+
+  /* On Tertiary Icon Colors */
+  --igds-color-icon-accent-on-tertiary-darker: var(--igds-color-brand-tertiary-lightest);
+  --igds-color-icon-accent-on-tertiary-dark: var(--igds-color-brand-tertiary-light);
+  --igds-color-icon-accent-on-tertiary-light: var(--igds-color-brand-tertiary-medium);
+  --igds-color-icon-accent-on-tertiary-lighter: var(--igds-color-brand-tertiary-dark);
+
+  /* Neutral Colors */
+  /* Grey Icon Colors */
+  --igds-color-icon-neutral-grey-primary: var(--igds-color-grey-800); /* default */
+  --igds-color-icon-neutral-grey-secondary: var(--igds-color-grey-700);
+  --igds-color-icon-neutral-grey-tertiary: var(--igds-color-grey-600);
+  --igds-color-icon-neutral-grey-light: var(--igds-color-grey-500);
+  --igds-color-icon-neutral-grey-lighter: var(--igds-color-grey-400);
+
+  /* White Icon Colors */
+  --igds-color-icon-neutral-white-primary: var(--igds-color-white-900); /* default */
+  --igds-color-icon-neutral-white-secondary: var(--igds-color-grey-200);
+  --igds-color-icon-neutral-white-tertiary: var(--igds-color-grey-400);
+  --igds-color-icon-neutral-white-light: var(--igds-color-grey-700);
+  --igds-color-icon-neutral-white-lighter: var(--igds-color-grey-600);
+
+  /* System Colors */
+  --igds-color-icon-system-disabled: var(--igds-color-system-disabled);
+  --igds-color-icon-system-information: var(--igds-color-system-information);
+  --igds-color-icon-system-danger: var(--igds-color-system-danger);
+  --igds-color-icon-system-warning: var(--igds-color-system-warning);
+  --igds-color-icon-system-success: var(--igds-color-system-success);
+}
+
+/* Text Colors */
+:root {
+  /* Accent Colors */
+  /* Primary Text Colors */
+  --igds-color-text-accent-primary: var(--igds-color-brand-primary-darker); /* default #123c80 */
+  --igds-color-text-accent-primary-darker: var(--igds-color-brand-primary-darkest);
+  --igds-color-text-accent-primary-dark: var(--igds-color-brand-primary-dark);
+  --igds-color-text-accent-primary-light: var(--igds-color-brand-primary-light);
+  --igds-color-text-accent-primary-lighter: var(--igds-color-brand-primary-lighter);
+  --igds-color-text-accent-primary-contrast: var(--igds-color-brand-primary-lightest);
+
+  /* On Primary Text Colors */
+  --igds-color-text-accent-on-primary-darker: var(--igds-color-brand-primary-lightest);
+  --igds-color-text-accent-on-primary-dark: var(--igds-color-brand-primary-lighter);
+  --igds-color-text-accent-on-primary-light: var(--igds-color-brand-primary-light);
+  --igds-color-text-accent-on-primary-lighter: var(--igds-color-brand-primary-medium);
+
+  /* Secondary Text Colors */
+  --igds-color-text-accent-secondary: var(--igds-color-brand-secondary-darkest); /* default */
+  --igds-color-text-accent-secondary-darker: var(--igds-color-brand-secondary-darkest);
+  --igds-color-text-accent-secondary-dark: var(--igds-color-brand-secondary-darker);
+  --igds-color-text-accent-secondary-light: var(--igds-color-brand-secondary-dark);
+  --igds-color-text-accent-secondary-lighter: var(--igds-color-brand-secondary-medium);
+  --igds-color-text-accent-secondary-contrast: var(--igds-color-brand-secondary-lightest);
+
+  /* On Secondary Text Colors */
+  --igds-color-text-accent-on-secondary-darker: var(--igds-color-brand-primary-darkest);
+  --igds-color-text-accent-on-secondary-dark: var(--igds-color-brand-primary-darker);
+  --igds-color-text-accent-on-secondary-light: var(--igds-color-brand-primary-dark);
+  --igds-color-text-accent-on-secondary-lighter: var(--igds-color-brand-primary-medium);
+
+  /* Tertiary Text Colors */
+  --igds-color-text-accent-tertiary: var(--igds-color-brand-tertiary-darker); /* default */
+  --igds-color-text-accent-tertiary-darker: var(--igds-color-brand-tertiary-darker);
+  --igds-color-text-accent-tertiary-dark: var(--igds-color-brand-tertiary-dark);
+  --igds-color-text-accent-tertiary-light: var(--igds-color-brand-tertiary-medium);
+  --igds-color-text-accent-tertiary-lighter: var(--igds-color-brand-tertiary-light);
+  --igds-color-text-accent-tertiary-contrast: var(--igds-color-brand-tertiary-lightest);
+
+  /* On Tertiary Text Colors */
+  --igds-color-text-accent-on-tertiary-darker: var(--igds-color-brand-tertiary-lightest);
+  --igds-color-text-accent-on-tertiary-dark: var(--igds-color-brand-tertiary-light);
+  --igds-color-text-accent-on-tertiary-light: var(--igds-color-brand-tertiary-medium);
+  --igds-color-text-accent-on-tertiary-lighter: var(--igds-color-brand-tertiary-dark);
+
+  /* Neutral Colors */
+  /* Grey Text Colors */
+  --igds-color-text-neutral-grey-primary: var(--igds-color-grey-800); /* default */
+  --igds-color-text-neutral-grey-secondary: var(--igds-color-grey-700);
+  --igds-color-text-neutral-grey-tertiary: var(--igds-color-grey-600);
+  --igds-color-text-neutral-grey-light: var(--igds-color-grey-400);
+  --igds-color-text-neutral-grey-lighter: var(--igds-color-grey-200);
+
+  /* White Text Colors */
+  --igds-color-text-neutral-white-primary: var(--igds-color-white-900); /* default */
+  --igds-color-text-neutral-white-secondary: var(--igds-color-grey-100);
+  --igds-color-text-neutral-white-tertiary: var(--igds-color-grey-300);
+  --igds-color-text-neutral-white-light: var(--igds-color-grey-500);
+  --igds-color-text-neutral-white-lighter: var(--igds-color-grey-700);
+
+  /* System Colors */
+  --igds-color-text-system-disabled: var(--igds-color-system-disabled);
+  --igds-color-text-system-information: var(--igds-color-system-information);
+  --igds-color-text-system-danger: var(--igds-color-system-danger);
+  --igds-color-text-system-warning: var(--igds-color-system-warning);
+  --igds-color-text-system-success: var(--igds-color-system-success);
+}
+
+/* Elevation Tokens */
+:root {
+  /* Elevation shadows provide depth and layering for components */
+  /* Based on Figma design: 0px 0px 24px -4px rgba(12, 12, 13, 0.4) for dropdown */
+
+  --igds-elevation-100: 0px 1px 2px rgba(12, 12, 13, 0.15);
+  --igds-elevation-200: 0px 2px 4px rgba(12, 12, 13, 0.2);
+  --igds-elevation-300: 0px 4px 8px rgba(12, 12, 13, 0.25);
+  --igds-elevation-400: 0px 0px 24px -4px rgba(12, 12, 13, 0.4); /* Dropdown shadow from Figma */
+  --igds-elevation-500: 0px 8px 16px rgba(12, 12, 13, 0.3);
+  --igds-elevation-600: 0px 12px 24px rgba(12, 12, 13, 0.35);
+  --igds-elevation-700: 0px 16px 32px rgba(12, 12, 13, 0.4);
+  --igds-elevation-800: 0px 20px 40px rgba(12, 12, 13, 0.45);
+  --igds-elevation-900: 0px 24px 48px rgba(12, 12, 13, 0.5);
+}
+
+/* Typography */
+:root {
+  /* Title Hero */
+  --igds-typography-title-hero-family: var(--igds-typography-family-sans);
+  --igds-typography-title-hero-size: var(--igds-typography-size-5xl);
+  --igds-typography-title-hero-weight: var(--igds-typography-weight-bold);
+  --igds-typography-title-hero-line-height: var(--igds-typography-line-height-tight);
+  --igds-typography-title-hero-letter-spacing: var(--igds-typography-letter-spacing-tighter);
+
+  /* Title Page */
+  --igds-typography-title-page-family: var(--igds-typography-family-sans);
+  --igds-typography-title-page-size: var(--igds-typography-size-3xl);
+  --igds-typography-title-page-weight: var(--igds-typography-weight-semibold);
+  --igds-typography-title-page-line-height: var(--igds-typography-line-height-tight);
+  --igds-typography-title-page-letter-spacing: var(--igds-typography-letter-spacing-tight);
+
+  /* Subtitle */
+  --igds-typography-subtitle-family: var(--igds-typography-family-sans);
+  --igds-typography-subtitle-size: var(--igds-typography-size-2xl);
+  --igds-typography-subtitle-weight: var(--igds-typography-weight-semibold);
+  --igds-typography-subtitle-line-height: var(--igds-typography-line-height-tight);
+  --igds-typography-subtitle-letter-spacing: var(--igds-typography-letter-spacing-tight);
+
+  /* Heading */
+  --igds-typography-heading-family: var(--igds-typography-family-sans);
+  --igds-typography-heading-size: var(--igds-typography-size-xl);
+  --igds-typography-heading-weight: var(--igds-typography-weight-semibold);
+  --igds-typography-heading-line-height: var(--igds-typography-line-height-normal);
+  --igds-typography-heading-letter-spacing: var(--igds-typography-letter-spacing-normal);
+
+  /* Subheading */
+  --igds-typography-subheading-family: var(--igds-typography-family-sans);
+  --igds-typography-subheading-size: var(--igds-typography-size-lg);
+  --igds-typography-subheading-weight: var(--igds-typography-weight-semibold);
+  --igds-typography-subheading-line-height: var(--igds-typography-line-height-normal);
+  --igds-typography-subheading-letter-spacing: var(--igds-typography-letter-spacing-normal);
+
+  /* Body */
+  --igds-typography-body-family: var(--igds-typography-family-sans);
+  --igds-typography-body-size: var(--igds-typography-size-md);
+  --igds-typography-body-size-small: var(--igds-typography-size-sm);
+  --igds-typography-body-weight: var(--igds-typography-weight-regular);
+  --igds-typography-body-weight-strong: var(--igds-typography-weight-bold);
+  --igds-typography-body-style-italic: var(--igds-typography-style-italic);
+  --igds-typography-body-line-height: var(--igds-typography-line-height-relaxed);
+  --igds-typography-body-line-height-small: var(--igds-typography-line-height-normal);
+  --igds-typography-body-letter-spacing: var(--igds-typography-letter-spacing-normal);
+
+  /* Caption */
+  --igds-typography-caption-family: var(--igds-typography-family-sans);
+  --igds-typography-caption-size: var(--igds-typography-size-xs);
+  --igds-typography-caption-weight: var(--igds-typography-weight-regular);
+  --igds-typography-caption-weight-strong: var(--igds-typography-weight-semibold);
+  --igds-typography-caption-line-height: var(--igds-typography-line-height-normal);
+  --igds-typography-caption-letter-spacing: var(--igds-typography-letter-spacing-wide);
+
+  /* Button */
+  --igds-typography-button-family: var(--igds-typography-family-sans);
+  --igds-typography-button-size: var(--igds-typography-size-sm);
+  --igds-typography-button-weight: var(--igds-typography-weight-bold);
+  --igds-typography-button-line-height: var(--igds-typography-line-height-normal);
+  --igds-typography-button-letter-spacing: var(--igds-typography-letter-spacing-normal);
+
+  /* Code */
+  --igds-typography-code-family: var(--igds-typography-family-mono);
+  --igds-typography-code-size: var(--igds-typography-size-md);
+  --igds-typography-code-weight: var(--igds-typography-weight-regular);
+  --igds-typography-code-line-height: var(--igds-typography-line-height-relaxed);
+  --igds-typography-code-letter-spacing: var(--igds-typography-letter-spacing-normal);
+}

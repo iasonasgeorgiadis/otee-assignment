@@ -1,0 +1,246 @@
+/* Footer Component Styles - Mobile First Responsive Design */
+
+/* Base styles - Mobile by default (<768px) */
+.igds-footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text-primary);
+  width: 100%;
+  font-family: var(--footer-font-family);
+}
+
+/* Container for columns */
+.igds-footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-column-gap);
+  padding: var(--footer-padding-top-mobile) var(--footer-padding-x-mobile) var(--footer-padding-bottom-mobile);
+}
+
+/* Individual column */
+.igds-footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-column-item-gap);
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Column title */
+.igds-footer__column-title {
+  font-size: var(--footer-title-size);
+  font-weight: var(--footer-title-weight);
+  line-height: var(--footer-title-line-height);
+  color: var(--footer-title-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Links list */
+.igds-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-link-gap);
+  width: 100%;
+}
+
+/* Link item */
+.igds-footer__link-item {
+  width: 100%;
+  text-align: center;
+}
+
+/* Link styles */
+.igds-footer__link {
+  color: var(--footer-link-color);
+  font-size: var(--footer-link-size);
+  font-weight: var(--footer-link-weight);
+  line-height: var(--footer-link-line-height);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: var(--footer-link-underline-thickness);
+  text-underline-offset: var(--footer-link-underline-offset);
+  padding-bottom: var(--footer-link-padding-bottom);
+  display: inline-block;
+  position: relative;
+  transition: color var(--footer-link-transition),
+              text-decoration-color var(--footer-link-animation-duration) var(--footer-link-animation-timing);
+}
+
+/* Link as button (no href) */
+.igds-footer__link--button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  text-align: inherit;
+  width: auto;
+}
+
+/* Link hover state */
+.igds-footer__link:hover {
+  color: var(--footer-link-color-hover);
+  text-decoration-color: currentColor;
+}
+
+/* Link pressed/active state */
+.igds-footer__link:active {
+  color: var(--footer-link-color-pressed);
+}
+
+/* Link focus state */
+.igds-footer__link:focus {
+  outline: var(--footer-link-focus-outline);
+  outline-offset: var(--footer-link-focus-outline-offset);
+}
+
+/* Focus visible - show underline for keyboard navigation */
+.igds-footer__link:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* Footnotes section */
+.igds-footer__footnotes {
+  position: relative;
+  padding: var(--footer-padding-top-mobile) var(--footer-padding-x-mobile) var(--footer-padding-bottom-mobile);
+}
+
+/* Footnotes border */
+.igds-footer__footnotes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--footer-padding-x-mobile);
+  right: var(--footer-padding-x-mobile);
+  height: var(--footer-border-width);
+  background-color: var(--footer-border-color);
+}
+
+/* Footnotes content wrapper */
+.igds-footer__footnotes-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-footnotes-gap);
+  align-items: center;
+  padding-top: var(--footer-footnotes-padding-top);
+}
+
+/* Logo wrapper */
+.igds-footer__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo link styling */
+.igds-footer__logo-link,
+.igds-footer__logo-button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--footer-logo-transition-duration) var(--footer-logo-transition-timing);
+}
+
+/* Logo button specific reset */
+.igds-footer__logo-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Logo hover effect */
+.igds-footer__logo-link:hover,
+.igds-footer__logo-button:hover {
+  opacity: var(--footer-logo-hover-opacity);
+}
+
+/* Logo focus state */
+.igds-footer__logo-link:focus,
+.igds-footer__logo-button:focus {
+  outline: var(--footer-link-focus-outline);
+  outline-offset: var(--footer-link-focus-outline-offset);
+  border-radius: var(--footer-logo-focus-radius);
+}
+
+/* Copyright text */
+.igds-footer__copyright {
+  font-family: var(--footer-copyright-font-family);
+  font-size: var(--footer-copyright-size);
+  font-weight: var(--footer-copyright-weight);
+  line-height: var(--footer-copyright-line-height);
+  letter-spacing: var(--footer-copyright-letter-spacing);
+  color: var(--footer-copyright-color);
+  text-align: center;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Tablet styles (768px - 1023px) */
+@media (min-width: 768px) {
+  .igds-footer__container {
+    padding: var(--footer-padding-top-tablet) var(--footer-padding-x-tablet) var(--footer-padding-bottom-tablet);
+  }
+
+  .igds-footer__footnotes {
+    padding: var(--footer-padding-top-tablet) var(--footer-padding-x-tablet) var(--footer-padding-bottom-tablet);
+  }
+
+  .igds-footer__footnotes::before {
+    left: var(--footer-padding-x-tablet);
+    right: var(--footer-padding-x-tablet);
+  }
+}
+
+/* Desktop styles (≥1024px) */
+@media (min-width: 1024px) {
+  .igds-footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--footer-column-gap);
+    padding: var(--footer-padding-top-desktop) var(--footer-padding-x-desktop) var(--footer-padding-bottom-desktop);
+  }
+
+  .igds-footer__column {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .igds-footer__column-title {
+    text-align: left;
+    width: 100%;
+  }
+
+  .igds-footer__link-item {
+    text-align: left;
+  }
+
+  .igds-footer__footnotes {
+    padding: var(--footer-padding-top-desktop) var(--footer-padding-x-desktop) var(--footer-padding-bottom-desktop);
+  }
+
+  .igds-footer__footnotes::before {
+    left: var(--footer-padding-x-desktop);
+    right: var(--footer-padding-x-desktop);
+  }
+
+  .igds-footer__footnotes-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .igds-footer__logo {
+    justify-content: flex-start;
+  }
+
+  .igds-footer__copyright {
+    text-align: left;
+    flex: 1;
+    margin-left: var(--footer-footnotes-gap);
+  }
+}

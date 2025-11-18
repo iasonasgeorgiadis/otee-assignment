@@ -1,0 +1,88 @@
+/* Logo Component Styles */
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  /* Default sizing will be handled by tokens */
+  width: var(--igds-logo-width, auto);
+  height: var(--igds-logo-height, auto);
+
+  /* Smooth transitions for size changes */
+  transition: all var(--transition-duration-fast, 200ms) var(--transition-timing-ease, ease);
+}
+
+/* Size variants aligned with Figma naming */
+.logo--small {
+  height: var(--igds-logo-size-small, 24px);
+}
+
+.logo--large {
+  height: var(--igds-logo-size-large, 48px);
+}
+
+.logo--xlarge {
+  height: var(--igds-logo-size-xlarge, 64px);
+}
+
+.logo--custom {
+  /* Custom sizes handled via inline styles */
+}
+
+/* Brand-specific constraints */
+.logo--wol {
+  /* WOL logos have specific minimum sizes to maintain legibility */
+  min-height: var(--igds-logo-wol-min-height, 20px);
+}
+
+.logo--wiley {
+  /* Wiley logos have different aspect ratios */
+  min-height: var(--igds-logo-wiley-min-height, 24px);
+}
+
+/* Variant-specific styling */
+.logo--full {
+  /* Full logos (with text) need more space */
+  min-width: var(--igds-logo-full-min-width, 80px);
+}
+
+.logo--compact {
+  /* Compact logos are typically square or nearly square */
+  min-width: var(--igds-logo-compact-min-width, 24px);
+  aspect-ratio: var(--igds-logo-compact-aspect-ratio, 1);
+}
+
+.logo--wol.logo--compact {
+  /* Keep WOL compact PNG in its intrinsic 1170x564 ratio */
+  --igds-logo-compact-aspect-ratio: 1170 / 564;
+}
+
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .logo--xlarge {
+    height: var(--igds-logo-size-large, 48px);
+  }
+
+  .logo--large {
+    height: var(--igds-logo-size-small, 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo--xlarge,
+  .logo--large,
+  .logo--small {
+    height: var(--igds-logo-size-xs, 20px);
+  }
+}
+
+/* Print styles - always use light mode */
+@media print {
+  .logo {
+    /* Ensure logos display properly in print */
+    filter: none;
+    opacity: 1;
+  }
+}

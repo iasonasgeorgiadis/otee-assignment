@@ -1,0 +1,297 @@
+/* Header Component Styles */
+
+.igds-header {
+  background: var(--igds-header-background);
+  box-shadow: var(--igds-header-shadow);
+  width: 100%;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.igds-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Logo hover effect */
+.igds-header__logo {
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.igds-header__logo:hover {
+  opacity: 0.85;
+}
+
+/* =============================================================================
+   DESKTOP VARIANT
+   ============================================================================= */
+
+.igds-header--desktop {
+  padding: 0 var(--igds-header-padding-x-desktop);
+  height: 80px;
+}
+
+.igds-header--desktop .igds-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+/* Left side container */
+.igds-header--desktop .igds-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-header-section-gap-desktop);
+  flex-shrink: 0;
+}
+
+/* Right side container */
+.igds-header--desktop .igds-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-header-section-gap-desktop);
+  flex-shrink: 0;
+}
+
+
+/* Institution Section */
+.igds-header__institution {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-header-institution-gap);
+  flex-shrink: 0;
+}
+
+.igds-header__institution-logo {
+  border: var(--igds-header-institution-logo-border-width) solid var(--igds-header-institution-logo-border-color);
+  border-radius: var(--igds-header-institution-logo-border-radius);
+  padding: var(--igds-header-institution-logo-padding-y) var(--igds-header-institution-logo-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  max-width: var(--igds-header-institution-logo-max-width);
+  width: auto;
+  min-width: 0;
+  height: var(--igds-header-institution-logo-height);
+  max-height: var(--igds-header-institution-logo-height);
+  background: var(--igds-header-institution-logo-background);
+  --igds-header-institution-placeholder-width: 180px;
+}
+
+.igds-header__institution-logo--placeholder {
+  flex: 0 1 var(--igds-header-institution-logo-max-width);
+  width: min(var(--igds-header-institution-placeholder-width), var(--igds-header-institution-logo-max-width));
+}
+
+.igds-header__institution-logo img,
+.igds-header__institution-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+}
+
+.igds-header__institution-logo--placeholder .igds-header__institution-placeholder {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.igds-header__institution-text {
+  font-family: var(--igds-header-institution-text-font-family);
+  font-size: var(--igds-header-institution-text-font-size);
+  font-weight: var(--igds-header-institution-text-font-weight);
+  line-height: var(--igds-header-institution-text-line-height);
+  color: var(--igds-header-institution-text-color);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Divider */
+.igds-header__divider {
+  width: var(--igds-header-divider-width);
+  height: var(--igds-header-divider-height);
+  background: var(--igds-header-divider-color);
+  flex-shrink: 0;
+}
+
+/* Search Section */
+.igds-header--desktop .igds-header__search {
+  flex: 1 1 auto;
+  min-width: 430px;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.igds-header__search .igds-input-field {
+  width: 100%;
+}
+
+/* Actions Section */
+.igds-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-header-actions-gap);
+  flex-shrink: 0;
+}
+
+.igds-header__action-button {
+  background: var(--igds-header-action-button-background);
+  border: var(--igds-header-action-button-border);
+  padding: var(--igds-header-action-button-padding);
+  cursor: var(--igds-header-action-button-cursor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--igds-header-transition-properties) var(--igds-header-transition-duration) var(--igds-header-transition-timing-function);
+  color: var(--igds-header-icon-color);
+}
+
+.igds-header__action-button:hover {
+  color: var(--igds-header-icon-color-hover);
+}
+
+/* Cart button on desktop should be blue */
+.igds-header--desktop .igds-header__action-button--cart {
+  color: var(--igds-header-cart-icon-color);
+}
+
+.igds-header--desktop .igds-header__action-button--cart:hover {
+  color: var(--igds-header-cart-icon-color-hover);
+}
+
+.igds-header__login-text {
+  font-family: var(--igds-header-login-text-font-family);
+  font-size: var(--igds-header-login-text-font-size);
+  font-weight: var(--igds-header-login-text-font-weight);
+  line-height: var(--igds-header-login-text-line-height);
+  color: var(--igds-header-login-text-color);
+  background: var(--igds-header-action-button-background);
+  border: var(--igds-header-action-button-border);
+  padding: var(--igds-header-action-button-padding);
+  cursor: var(--igds-header-action-button-cursor);
+  transition: var(--igds-header-transition-properties) var(--igds-header-transition-duration) var(--igds-header-transition-timing-function);
+  white-space: nowrap;
+}
+
+.igds-header__login-text:hover {
+  color: var(--igds-header-login-text-color-hover);
+}
+
+/* =============================================================================
+   TABLET VARIANT
+   ============================================================================= */
+
+.igds-header--tablet {
+  padding: 0 var(--igds-header-padding-x-tablet);
+  height: 80px;
+}
+
+.igds-header--tablet .igds-header__container {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--igds-header-gap-tablet);
+}
+
+.igds-header--tablet .igds-header__actions {
+  gap: var(--igds-header-gap-tablet);
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   MOBILE VARIANT
+   ============================================================================= */
+
+.igds-header--mobile {
+  padding: 0 var(--igds-header-padding-x-mobile);
+  height: 80px;
+}
+
+.igds-header--mobile .igds-header__container {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--igds-header-gap-mobile);
+}
+
+/* Mobile logo specific sizing */
+.igds-header--mobile .igds-logo {
+  height: 56px;
+  width: auto;
+}
+
+.igds-header--mobile .igds-header__actions {
+  gap: var(--igds-header-gap-mobile);
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+   ============================================================================= */
+
+.igds-header__action-button:focus {
+  outline: 2px solid var(--igds-color-border-accent-primary);
+  outline-offset: 2px;
+}
+
+.igds-header__login-text:focus {
+  outline: 2px solid var(--igds-color-border-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Remove default button focus styles to use custom ones */
+.igds-header__action-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.igds-header__login-text:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* =============================================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================================= */
+
+/* Ensure content doesn't overflow on very small screens */
+@media (max-width: 375px) {
+  .igds-header--mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .igds-header--mobile .igds-header__actions {
+    gap: 12px;
+  }
+}
+
+/* Tablet breakpoint adjustments */
+@media (max-width: 768px) and (min-width: 376px) {
+  .igds-header--tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop breakpoint - full width layout */
+@media (min-width: 1440px) {
+  .igds-header--desktop {
+    /* Full width header - no max-width constraints */
+  }
+}
