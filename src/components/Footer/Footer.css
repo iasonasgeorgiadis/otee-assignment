@@ -36,7 +36,11 @@
 .igds-footer__status-group {
   display: flex;
   width: 100%;
-  gap: var(--igds-space-0, 0px);
+  gap: var(--igds-space-8, 8px);
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Status Pills - Mobile */
@@ -100,7 +104,27 @@
 /* ===== TABLET STYLES (768px+) ===== */
 @media (min-width: 768px) {
   .igds-footer {
-    padding: var(--igds-space-8, 8px) var(--igds-space-24, 24px);
+    padding: var(--igds-space-16, 16px) var(--igds-space-24, 24px);
+  }
+
+  .igds-footer__container {
+    align-items: center;
+    gap: var(--igds-space-24, 24px);
+  }
+
+  .igds-footer__button-group {
+    gap: var(--igds-space-24, 24px);
+  }
+
+  .igds-footer__status-group {
+    gap: var(--igds-space-16, 16px);
+  }
+}
+
+/* ===== DESKTOP STYLES (1024px+) ===== */
+@media (min-width: 1024px) {
+  .igds-footer {
+    padding: var(--igds-space-8, 8px) var(--igds-space-32, 32px);
   }
 
   .igds-footer__container {
@@ -113,41 +137,12 @@
   .igds-footer__button-group {
     flex-direction: row;
     align-items: center;
-    gap: var(--igds-space-0, 0px);
-    flex: 1 1 0;
+    gap: var(--igds-space-8, 8px);
+    flex: 1 1 auto;
   }
 
-  /* Diagnostics Button - Tablet */
   .igds-footer__diagnostics-button {
     width: auto;
-  }
-
-  /* Status Group - Tablet */
-  .igds-footer__status-group {
-    width: auto;
-    gap: var(--igds-space-0, 0px);
-  }
-
-  /* Status Pills - Tablet */
-  .igds-footer__status-pill {
-    flex: 0 0 auto;
-    padding: var(--igds-space-8, 8px) var(--igds-space-24, 24px);
-  }
-
-  /* Clear Button - Tablet */
-  .igds-footer__clear-button {
-    width: auto;
-  }
-}
-
-/* ===== DESKTOP STYLES (1024px+) ===== */
-@media (min-width: 1024px) {
-  .igds-footer {
-    padding: var(--igds-space-8, 8px) var(--igds-space-32, 32px);
-  }
-
-  .igds-footer__button-group {
-    gap: var(--igds-space-8, 8px);
   }
 
   /* Diagnostics Button - Desktop: Override to use smaller size styling */
@@ -159,6 +154,13 @@
     min-height: 32px;
   }
 
+  .igds-footer__status-group {
+    width: auto;
+    flex-wrap: nowrap;
+    gap: var(--igds-space-4, 4px);
+    justify-content: flex-start;
+  }
+
   /* Status Pills - Desktop */
   .igds-footer__status-pill {
     font-size: var(--igds-typography-body-size-small, 14px);
@@ -166,6 +168,7 @@
     padding: var(--igds-space-4, 4px) var(--igds-space-16, 16px);
     min-width: 100px;
     gap: var(--igds-space-4, 4px);
+    flex: 0 0 auto;
   }
 
   /* Status Label - Show on desktop */
@@ -174,16 +177,16 @@
     white-space: nowrap;
   }
 
-  /* Status Icons - Desktop (smaller) */
+  /* Status Icons - Desktop */
   .igds-footer__status-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
-  /* Chevron Icon - Desktop (smaller) */
+  /* Chevron Icon - Desktop */
   .igds-footer__chevron-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   /* Clear Button - Desktop: Override to use smaller size styling */
@@ -193,5 +196,6 @@
     font-size: var(--igds-typography-body-size-small, 14px);
     font-weight: var(--igds-typography-body-weight-strong, 700);
     min-height: 32px;
+    width: auto;
   }
 }

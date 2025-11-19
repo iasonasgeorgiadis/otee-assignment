@@ -29,9 +29,12 @@ export const Footer: React.FC = () => {
             size="small"
             className="igds-footer__diagnostics-button"
             aria-label="Diagnostics panel expanded"
-            iconLead={
+            aria-expanded="true"
+            icon={
               <MaterialIcon
                 name="expand_less"
+                variant="outlined"
+                size={24}
                 className="igds-footer__chevron-icon"
               />
             }
@@ -47,6 +50,8 @@ export const Footer: React.FC = () => {
               >
                 <MaterialIcon
                   name={iconName}
+                  variant="outlined"
+                  size={24}
                   className={`igds-footer__status-icon ${iconClass}`}
                 />
                 <span className="igds-footer__status-label">

@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Button } from '../Button';
 import { Logo } from '../Brand/Logo/Logo';
 import { MaterialIcon } from '../MaterialIcon/MaterialIcon';
 import './Header.css';
@@ -35,40 +36,40 @@ export const Header: FC<HeaderProps> = ({
             role="group"
             aria-label="Primary header actions"
           >
-            <button
-              type="button"
-              className="otee-header__action-button"
+            <Button
               aria-label="Review submissions"
+              variant="neutral"
+              label=""
+              className="otee-header__icon-button"
+              iconLead={<MaterialIcon name="assignment_turned_in" variant="outlined" size={ICON_SIZE} />}
               onClick={onClipboardClick}
-            >
-              <MaterialIcon name="assignment_turned_in" variant="outlined" size={ICON_SIZE} />
-            </button>
-            <button
-              type="button"
-              className="otee-header__action-button"
+            />
+            <Button
               aria-label="Open workspace grid"
+              variant="neutral"
+              label=""
+              className="otee-header__icon-button"
+              iconLead={<MaterialIcon name="apps" variant="outlined" size={ICON_SIZE} />}
               onClick={onGridClick}
-            >
-              <MaterialIcon name="apps" variant="outlined" size={ICON_SIZE} />
-            </button>
-            <button
-              type="button"
-              className="otee-header__action-button"
+            />
+            <Button
               aria-label="Toggle theme"
+              variant="neutral"
+              label=""
+              className="otee-header__icon-button"
+              iconLead={<MaterialIcon name="light_mode" variant="outlined" size={ICON_SIZE} />}
               onClick={onThemeClick}
-            >
-              <MaterialIcon name="light_mode" variant="outlined" size={ICON_SIZE} />
-            </button>
+            />
           </div>
 
-          <button
-            type="button"
-            className="otee-header__action-button otee-header__action-button--menu"
+          <Button
             aria-label="Open menu"
+            variant="neutral"
+            label=""
+            className="otee-header__icon-button otee-header__icon-button--menu"
+            iconLead={<MaterialIcon name="menu" variant="outlined" size={ICON_SIZE} />}
             onClick={onMenuClick}
-          >
-            <MaterialIcon name="menu" variant="outlined" size={ICON_SIZE} />
-          </button>
+          />
         </div>
 
         <div className="otee-header__logo">
@@ -76,22 +77,22 @@ export const Header: FC<HeaderProps> = ({
         </div>
 
         <div className="otee-header__end">
-          <button
-            type="button"
+          <Button
+            variant="neutral"
             className="otee-header__shared-button"
+            iconLead={<MaterialIcon name="language" variant="outlined" size={20} />}
             onClick={onSharedResourcesClick}
           >
-            <MaterialIcon name="language" variant="outlined" size={20} />
-            <span className="otee-header__shared-label">Shared resources</span>
-          </button>
-          <button
-            type="button"
-            className="otee-header__action-button"
+            Shared resources
+          </Button>
+          <Button
             aria-label="Open profile"
+            variant="neutral"
+            label=""
+            className="otee-header__icon-button"
+            iconLead={<MaterialIcon name="account_circle" variant="outlined" size={ICON_SIZE} />}
             onClick={onProfileClick}
-          >
-            <MaterialIcon name="account_circle" variant="outlined" size={ICON_SIZE} />
-          </button>
+          />
         </div>
       </div>
     </header>
