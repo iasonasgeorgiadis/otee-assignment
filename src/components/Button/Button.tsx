@@ -3,7 +3,7 @@ import './Button.css';
 
 type ButtonVariant = 'primary' | 'secondary' | 'neutral' | 'link';
 type ButtonSize = 'medium' | 'small';
-type LinkColor = 'primary' | 'secondary';
+type LinkColor = 'primary' | 'secondary' | 'neutral';
 
 type SharedButtonProps = {
   /** Button text content */

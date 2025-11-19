@@ -2,6 +2,7 @@ import React from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
 import './MenuItem.css';
 import { MaterialIcon } from '../MaterialIcon/MaterialIcon';
+import { Button } from '../Button/Button';
 
 export interface MenuItemProps {
   /** Displayed label */
@@ -31,8 +32,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   hover = false,
   disabled = false,
   className = '',
-  iconName = 'play_arrow',
-  iconVariant = 'outlined',
+  iconName = 'keyboard_arrow_right',
+  iconVariant = 'filled',
   onClick,
 }) => {
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -65,7 +66,6 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     .join(' ');
 
   const iconSize = size === 'medium' ? 24 : 20;
-
   return (
     <div
       className={containerClass}
@@ -76,14 +76,24 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       onKeyDown={handleKeyDown}
     >
       {withIcon && (
-        <span className={`igds-menu-item__icon igds-menu-item__icon--${size}`}>
-          <MaterialIcon
-            name={iconName}
-            size={iconSize}
-            variant={iconVariant}
-            className="igds-menu-item__icon-glyph"
-          />
-        </span>
+        <Button
+          variant="neutral"
+          size={size}
+          ghost
+          label=""
+          aria-label={label}
+          tabIndex={-1}
+          iconLead={
+            <MaterialIcon
+              name={iconName}
+              size={iconSize}
+              variant={iconVariant}
+              className="igds-menu-item__icon-glyph"
+            />
+          }
+          className="igds-menu-item__icon-button"
+          disabled={disabled}
+        />
       )}
       <span className="igds-menu-item__label">{label}</span>
     </div>

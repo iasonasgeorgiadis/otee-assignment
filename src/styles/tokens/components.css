@@ -192,38 +192,76 @@
   --igds-button-border-neutral-ghost-pressed: transparent;
   --igds-button-border-neutral-ghost-disabled: transparent;
 
-  /* Button Link Variant */
+  /* Button Link Variant - From Figma MCP Analysis
+     Figma Component: "button-link" (Node ID: 40001222-2033)
+     Last Extracted: 2025-11-19 via #get_design_context and #get_variable_defs
+
+     Figma Properties:
+     - variant: "primary" | "secondary" | "neutral"
+     - size: "medium" | "small"
+     - state: "active" | "hover" | "pressed"
+     - disabled: true | false
+
+     Token Mapping from Figma:
+     - Primary default text → --igds-color-text-accent-primary (#a35a00)
+     - Primary hover text → --igds-color-text-accent-primary (#a35a00)
+     - Primary pressed text → --igds-color-text-accent-primary-darker (#844901)
+     - Secondary/Neutral default text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+     - Secondary/Neutral hover text → --igds-color-text-neutral-grey-secondary (#5b5c5d)
+     - Secondary/Neutral pressed text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+     - Primary hover/pressed border → --igds-color-border-accent-primary (#a35a00) / --igds-color-border-accent-primary-darker (#844901)
+     - Secondary/Neutral hover/pressed border → --igds-color-border-accent-secondary (#b7b8b9)
+     - Disabled text → --igds-color-text-system-disabled (#6f7071)
+     - Medium underline height → 3px
+     - Small underline height → 1px
+  */
+
+  /* Button Link Variant - Background (always transparent) */
   --igds-button-background-link-default: transparent;
   --igds-button-background-link-hover: transparent;
   --igds-button-background-link-pressed: transparent;
   --igds-button-background-link-disabled: transparent;
 
-  /* Button Link Variant - Primary Pressed State Background */
-  --igds-button-background-link-primary-pressed: transparent;
+  /* Button Link Variant - Primary Text Colors */
+  --igds-button-text-link-primary-default: var(--igds-color-text-accent-primary);
+  --igds-button-text-link-primary-hover: var(--igds-color-text-accent-primary);
+  --igds-button-text-link-primary-pressed: var(--igds-color-text-accent-primary-darker);
 
-  /* Button Link Variant - Secondary Pressed State Background */
-  --igds-button-background-link-secondary-pressed: transparent;
+  /* Button Link Variant - Secondary Text Colors */
+  --igds-button-text-link-secondary-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-link-secondary-hover: var(--igds-color-text-neutral-grey-secondary);
+  --igds-button-text-link-secondary-pressed: var(--igds-color-text-neutral-grey-primary);
 
+  /* Button Link Variant - Neutral Text Colors (same as secondary) */
+  --igds-button-text-link-neutral-default: var(--igds-color-text-neutral-grey-primary);
+  --igds-button-text-link-neutral-hover: var(--igds-color-text-neutral-grey-secondary);
+  --igds-button-text-link-neutral-pressed: var(--igds-color-text-neutral-grey-primary);
+
+  /* Button Link Variant - Disabled Text */
+  --igds-button-text-link-disabled: var(--igds-color-text-system-disabled);
+
+  /* Button Link Variant - Legacy tokens for backwards compatibility */
   --igds-button-text-link-default: var(--igds-color-text-accent-primary);
   --igds-button-text-link-hover: var(--igds-color-text-accent-primary);
   --igds-button-text-link-pressed: var(--igds-color-text-accent-primary-darker);
-  --igds-button-text-link-disabled: var(--igds-color-text-system-disabled);
 
+  /* Button Link Variant - Border (transparent, underline is separate) */
   --igds-button-border-link-default: transparent;
   --igds-button-border-link-hover: transparent;
   --igds-button-border-link-pressed: transparent;
   --igds-button-border-link-disabled: transparent;
 
-  /* Button Link Variant - Border Bottom for Hover/Active States (3px border) */
-  --igds-button-border-bottom-link-primary-hover: 3px solid var(--igds-color-border-accent-primary);
-  --igds-button-border-bottom-link-primary-pressed: 3px solid var(--igds-color-border-accent-primary);
-  --igds-button-border-bottom-link-secondary-hover: 3px solid var(--igds-color-border-accent-secondary);
-  --igds-button-border-bottom-link-secondary-pressed: 3px solid var(--igds-color-border-accent-secondary);
+  /* Button Link Variant - Primary Underline Colors */
+  --igds-button-underline-link-primary-hover: var(--igds-color-border-accent-primary);
+  --igds-button-underline-link-primary-pressed: var(--igds-color-border-accent-primary-darker);
 
-  --igds-button-text-decoration-link-default: underline;
-  --igds-button-text-decoration-link-hover: underline;
-  --igds-button-text-decoration-link-pressed: underline;
-  --igds-button-text-decoration-link-disabled: none;
+  /* Button Link Variant - Secondary Underline Colors */
+  --igds-button-underline-link-secondary-hover: var(--igds-color-border-accent-secondary);
+  --igds-button-underline-link-secondary-pressed: var(--igds-color-border-accent-secondary);
+
+  /* Button Link Variant - Neutral Underline Colors (same as secondary) */
+  --igds-button-underline-link-neutral-hover: var(--igds-color-border-accent-secondary);
+  --igds-button-underline-link-neutral-pressed: var(--igds-color-border-accent-secondary);
 
   /* Button Focus States (for accessibility) */
   --igds-button-focus-outline-color: var(--igds-color-border-accent-primary);
@@ -232,7 +270,9 @@
   --igds-button-focus-outline-style: solid;
 
   /* Button Link Animation Tokens */
-  --igds-button-link-underline-height: 3px;
+  --igds-button-link-underline-height-medium: 3px;
+  --igds-button-link-underline-height-small: 1px;
+  --igds-button-link-underline-height: 3px; /* Legacy token, defaults to medium */
   --igds-button-link-transition-duration: 300ms;
   --igds-button-link-transition-timing: ease-in-out;
 
@@ -257,6 +297,37 @@
   --igds-button-icon-size-small: 32px;
   --igds-button-icon-padding-medium: var(--igds-space-12);
   --igds-button-icon-padding-small: var(--igds-space-8);
+
+  /* Button Icon Variant Colors (Figma: button-icon 40001318-3016) */
+  --igds-button-icon-background-primary-default: var(--igds-color-background-accent-primary-light);
+  --igds-button-icon-background-primary-hover: var(--igds-color-background-accent-primary-dark);
+  --igds-button-icon-background-primary-pressed: var(--igds-color-background-accent-primary-dark);
+  --igds-button-icon-background-primary-disabled: var(--igds-color-background-system-disabled-light);
+  --igds-button-icon-border-primary-default: transparent;
+  --igds-button-icon-border-primary-hover: transparent;
+  --igds-button-icon-border-primary-pressed: transparent;
+  --igds-button-icon-border-primary-disabled: transparent;
+
+  --igds-button-icon-background-secondary-default: var(--igds-color-background-accent-primary-lighter);
+  --igds-button-icon-background-secondary-hover: var(--igds-color-background-accent-primary-light);
+  --igds-button-icon-background-secondary-pressed: var(--igds-color-background-accent-primary);
+  --igds-button-icon-background-secondary-disabled: var(--igds-color-background-system-disabled-light);
+  --igds-button-icon-border-secondary-default: transparent;
+  --igds-button-icon-border-secondary-hover: transparent;
+  --igds-button-icon-border-secondary-pressed: transparent;
+  --igds-button-icon-border-secondary-disabled: transparent;
+
+  --igds-button-icon-background-neutral-default: var(--igds-color-background-neutral-grey-light);
+  --igds-button-icon-background-neutral-hover: var(--igds-color-background-neutral-grey);
+  --igds-button-icon-background-neutral-pressed: var(--igds-color-background-neutral-grey-dark);
+  --igds-button-icon-background-neutral-disabled: var(--igds-color-background-system-disabled-light);
+  --igds-button-icon-border-neutral-default: transparent;
+  --igds-button-icon-border-neutral-hover: transparent;
+  --igds-button-icon-border-neutral-pressed: transparent;
+  --igds-button-icon-border-neutral-disabled: transparent;
+
+  --igds-button-icon-foreground: var(--igds-color-icon-neutral-grey-primary);
+  --igds-button-icon-foreground-disabled: var(--igds-color-icon-system-disabled);
 }
 
 
@@ -291,7 +362,7 @@
 
 :root {
   /* InputField Base Layout */
-  --igds-input-field-border-radius: var(--igds-radius-none);
+  --igds-input-field-border-radius: var(--igds-radius-sm);
   --igds-input-field-border-width: 1px;
   --igds-input-field-border-width-active: 2px;
   --igds-input-field-gap-medium: var(--igds-space-8);
@@ -1238,8 +1309,63 @@
   --igds-tooltip-body-font-weight: var(--igds-typography-weight-medium);
   --igds-tooltip-body-line-height: var(--igds-typography-body-line-height-small);
   --igds-tooltip-beak-size: 8px;
-  --igds-tooltip-beak-overlap: calc((var(--igds-tooltip-beak-size) / -2) + var(--igds-tooltip-border-width));
+  --igds-tooltip-beak-offset: calc(var(--igds-tooltip-beak-size) * 0.20710678);
   --igds-tooltip-beak-border-radius: 0;
+}
+
+/* =============================================================================
+   DETAILED FILES LIST COMPONENT TOKENS
+   ============================================================================= */
+
+/* Detailed Files List Component - From Figma MCP Analysis
+   Figma Component: "detailed-files-list" (Node ID: 40016945-8753)
+   Last Extracted: 2025-01-21 via #get_design_context
+
+   Key visual specs:
+   - Row width → 715px with 8px padding on all sides
+   - Default background #f8f9fb → hover background #f2f3f5
+   - Thumbnail → 40px square, subtle border, 24px Material icon or 2-letter label
+   - Primary text → Body Small Strong (14px/700/1.4)
+   - Secondary text → Body Small Medium (14px/500/1.4) in grey secondary
+   - Trailing action → Neutral ghost icon button, 32px circle w/ 20px icon
+*/
+
+:root {
+  --igds-detailed-files-list-max-width: 715px;
+  --igds-detailed-files-list-gap: var(--igds-space-8);
+  --igds-detailed-files-list-padding-x: var(--igds-space-8);
+  --igds-detailed-files-list-padding-y: var(--igds-space-8);
+  --igds-detailed-files-list-radius: var(--igds-radius-sm);
+  --igds-detailed-files-list-background-default: var(--igds-color-background-neutral-white-lighter);
+  --igds-detailed-files-list-background-hover: var(--igds-color-background-neutral-grey-light);
+  --igds-detailed-files-list-font-family: var(--igds-typography-body-family);
+  --igds-detailed-files-list-text-color: var(--igds-color-text-neutral-grey-primary);
+  --igds-detailed-files-list-transition-duration: 150ms;
+  --igds-detailed-files-list-transition-easing: ease-in-out;
+
+  --igds-detailed-files-list-thumbnail-size: var(--igds-space-40);
+  --igds-detailed-files-list-thumbnail-radius: var(--igds-radius-sm);
+  --igds-detailed-files-list-thumbnail-border-width: 1px;
+  --igds-detailed-files-list-thumbnail-border-color: var(--igds-color-border-neutral-white-dark);
+  --igds-detailed-files-list-thumbnail-background: var(--igds-color-background-neutral-white-lighter);
+  --igds-detailed-files-list-thumbnail-text-color: var(--igds-color-icon-neutral-grey-primary);
+  --igds-detailed-files-list-thumbnail-font-size: var(--igds-typography-size-xs);
+  --igds-detailed-files-list-thumbnail-font-weight: var(--igds-typography-weight-bold);
+  --igds-detailed-files-list-thumbnail-letter-spacing: 0.08em;
+  --igds-detailed-files-list-thumbnail-icon-size: 24px;
+
+  --igds-detailed-files-list-info-gap: var(--igds-space-0);
+  --igds-detailed-files-list-name-font-size: var(--igds-typography-body-size-small);
+  --igds-detailed-files-list-name-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-detailed-files-list-name-line-height: var(--igds-typography-body-line-height-small);
+  --igds-detailed-files-list-meta-font-size: var(--igds-typography-body-size-small);
+  --igds-detailed-files-list-meta-font-weight: var(--igds-typography-weight-medium);
+  --igds-detailed-files-list-meta-line-height: var(--igds-typography-body-line-height-small);
+  --igds-detailed-files-list-meta-color: var(--igds-color-text-neutral-grey-secondary);
+
+  --igds-detailed-files-list-action-color: var(--igds-color-icon-neutral-grey-tertiary);
+  --igds-detailed-files-list-action-size: var(--igds-space-32);
+  --igds-detailed-files-list-action-icon-size: 20px;
 }
 
 /* =============================================================================
@@ -1274,6 +1400,91 @@
   --igds-plain-files-list-action-size: var(--igds-space-32);
   --igds-plain-files-list-transition-duration: 150ms;
   --igds-plain-files-list-transition-easing: ease-in-out;
+}
+
+
+/* =============================================================================
+   LIST CHAT COMPONENT TOKENS
+   ============================================================================= */
+
+/* List Chat Component - From Figma MCP Analysis
+   Figma Component: "list-chat" (Node ID: 40016946-3888)
+   Last Extracted: 2025-01-21 via #get_design_context
+
+   Key visual specs:
+   - Default row background → #f8f9fb (Neutral/White/Lighter)
+   - Hover row background → #f2f3f5 (Neutral/White/Light)
+   - Typography → Body Small Medium (14px / 500 / 1.4)
+   - Padding → 8px on all sides with 8px gap to the trailing icon button
+   - Icon button → Neutral ghost circle, 32px square, visible on hover only
+*/
+
+:root {
+  --igds-list-chat-max-width: 715px;
+  --igds-list-chat-gap: var(--igds-space-8);
+  --igds-list-chat-padding-x: var(--igds-space-8);
+  --igds-list-chat-padding-y: var(--igds-space-8);
+  --igds-list-chat-min-height: var(--igds-space-48);
+  --igds-list-chat-radius: var(--igds-radius-sm);
+  --igds-list-chat-background-default: var(--igds-color-background-neutral-white-lighter);
+  --igds-list-chat-background-hover: var(--igds-color-background-neutral-white-light);
+  --igds-list-chat-text-color: var(--igds-color-text-neutral-grey-primary);
+  --igds-list-chat-font-family: var(--igds-typography-body-family);
+  --igds-list-chat-font-size: var(--igds-typography-body-size-small);
+  --igds-list-chat-font-weight: var(--igds-typography-weight-medium);
+  --igds-list-chat-line-height: var(--igds-typography-body-line-height-small);
+  --igds-list-chat-icon-color: var(--igds-color-icon-neutral-grey-secondary);
+  --igds-list-chat-action-size: var(--igds-space-32);
+  --igds-list-chat-action-scale-hidden: 0.9;
+  --igds-list-chat-transition-duration: 150ms;
+  --igds-list-chat-transition-easing: ease-in-out;
+}
+
+
+/* =============================================================================
+   PANE ANIMATION TOKENS
+   ============================================================================= */
+
+:root {
+  --igds-pane-toggle-duration: 280ms;
+  --igds-pane-toggle-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* =============================================================================
+   PROJECT BROWSER COMPONENT TOKENS
+   Figma Component: "project-browser" (Node ID: 40014949-1919)
+   ============================================================================= */
+
+:root {
+  --igds-project-browser-expanded-width: 23.75rem; /* 380px */
+  --igds-project-browser-collapsed-width: var(--igds-space-88);  /* 88px */
+  --igds-project-browser-height: 37rem;           /* 592px */
+  --igds-project-browser-padding: var(--igds-space-24);
+  --igds-project-browser-gap: var(--igds-space-24);
+  --igds-project-browser-border-radius: var(--igds-radius-xl);
+  --igds-project-browser-background: var(--igds-color-background-neutral-white);
+  --igds-project-browser-border-color: var(--igds-color-border-neutral-grey-light);
+  --igds-project-browser-heading-gap: var(--igds-space-12);
+  --igds-project-browser-body-gap: var(--igds-space-16);
+  --igds-project-browser-actions-gap: var(--igds-space-8);
+  --igds-project-browser-section-gap: var(--igds-space-8);
+  --igds-project-browser-action-size: var(--igds-space-40);
+  --igds-project-browser-icon-background: var(--igds-color-background-neutral-grey-light);
+  --igds-project-browser-icon-background-hover: var(--igds-color-background-neutral-grey-lighter);
+  --igds-project-browser-icon-color: var(--igds-color-icon-neutral-grey-primary);
+  --igds-project-browser-icon-radius: var(--igds-radius-full);
+  --igds-project-browser-section-font-family: var(--igds-typography-body-family);
+  --igds-project-browser-section-font-size: var(--igds-typography-body-size);
+  --igds-project-browser-section-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-project-browser-section-line-height: var(--igds-typography-body-line-height);
+  --igds-project-browser-section-text-color: var(--igds-color-text-neutral-grey-primary);
+  --igds-project-browser-section-text-hover: var(--igds-color-text-neutral-grey-secondary);
+  --igds-project-browser-section-radius: var(--igds-radius-sm);
+  --igds-project-browser-body-max-height: 32rem;
+  --igds-project-browser-collapse-translate: -1.5rem;
+  --igds-project-browser-focus-outline-color: var(--igds-color-border-accent-primary-light);
+  --igds-project-browser-focus-outline-width: 2px;
 }
 
 

@@ -1,0 +1,173 @@
+@import '../../styles/tokens.css';
+
+.project-browser {
+  background: var(--igds-project-browser-background);
+  border: 1px solid var(--igds-project-browser-border-color);
+  border-radius: var(--igds-project-browser-border-radius);
+  padding: var(--igds-project-browser-padding);
+  width: 100%;
+  max-width: var(--igds-project-browser-expanded-width);
+  min-height: var(--igds-project-browser-height);
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-project-browser-gap);
+  overflow: hidden;
+  align-self: flex-start;
+  transition:
+    width var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
+    gap var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
+    padding var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
+    border-color var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing);
+}
+
+.project-browser--collapsed {
+  width: var(--igds-project-browser-collapsed-width);
+  max-width: var(--igds-project-browser-collapsed-width);
+  min-width: var(--igds-project-browser-collapsed-width);
+  flex: 0 0 var(--igds-project-browser-collapsed-width);
+  padding-inline: var(--igds-project-browser-padding);
+}
+
+.project-browser--collapsed .project-browser__header {
+  justify-content: center;
+}
+
+.project-browser--collapsed .project-browser__title {
+  display: none;
+}
+
+.project-browser__header {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-project-browser-heading-gap);
+  width: 100%;
+}
+
+.project-browser__title {
+  color: var(--igds-color-text-neutral-grey-primary);
+  font-family: var(--igds-typography-heading-family);
+  font-size: var(--igds-typography-heading-size);
+  font-weight: var(--igds-typography-heading-weight);
+  line-height: var(--igds-typography-heading-line-height);
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  transition: opacity var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing);
+}
+
+.project-browser__icon-button {
+  min-inline-size: var(--igds-project-browser-action-size);
+  min-block-size: var(--igds-project-browser-action-size);
+  border-radius: var(--igds-project-browser-icon-radius, var(--igds-radius-full));
+  padding: 0;
+  color: var(--igds-project-browser-icon-color);
+}
+
+.project-browser__icon-button .material-icons,
+.project-browser__icon-button .material-icons-outlined,
+.project-browser__icon-button .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.project-browser__toggle {
+  margin-left: auto;
+}
+
+.project-browser__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-project-browser-body-gap);
+  width: 100%;
+}
+
+
+.project-browser--collapsed .project-browser__body {
+  display: none;
+}
+
+.project-browser--collapsed .project-browser__title {
+  opacity: 0;
+}
+
+.project-browser__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-project-browser-actions-gap);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.project-browser__actions-group {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-project-browser-actions-gap);
+}
+
+.project-browser__actions-group--trailing {
+  margin-left: auto;
+  justify-content: flex-end;
+  min-width: var(--igds-project-browser-action-size);
+}
+
+.project-browser__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-project-browser-section-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-browser__section-item {
+  width: 100%;
+}
+
+.project-browser__menu-item {
+  background: transparent;
+  padding: var(--igds-space-4) 0;
+}
+
+.project-browser__menu-item.igds-menu-item--with-icon {
+  padding: var(--igds-space-4) 0;
+}
+
+.project-browser__menu-item .igds-menu-item__icon {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+}
+
+.project-browser__menu-item .igds-menu-item__icon-glyph {
+  font-size: 18px;
+  color: var(--igds-project-browser-section-text-color);
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.project-browser__menu-item .igds-menu-item__label {
+  font-family: var(--igds-project-browser-section-font-family);
+  font-size: var(--igds-project-browser-section-font-size);
+  font-weight: var(--igds-project-browser-section-font-weight);
+  line-height: var(--igds-project-browser-section-line-height);
+  color: var(--igds-project-browser-section-text-color);
+}
+
+.project-browser__menu-item:hover .igds-menu-item__label,
+.project-browser__menu-item:focus-visible .igds-menu-item__label {
+  color: var(--igds-project-browser-section-text-hover);
+}
+
+.project-browser--collapsed .project-browser__menu-item {
+  opacity: 0;
+}
+
+.project-browser__icon-button .material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}

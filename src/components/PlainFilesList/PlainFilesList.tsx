@@ -35,7 +35,7 @@ export const PlainFilesList: FC<PlainFilesListProps> = ({
         aria-label={`File options for ${fileName}`}
         label=""
         variant="neutral"
-        ghost
+        ghost={true}
         size="small"
         className="plain-files-list__action"
         iconLead={<MaterialIcon name="more_horiz" variant="outlined" size={20} />}

@@ -78,8 +78,8 @@ export const DetailedFilesList: FC<DetailedFilesListProps> = ({
         aria-label={resolvedActionLabel}
         variant="neutral"
         size="small"
-        ghost
         label=""
+        ghost={true}
         iconLead={<MaterialIcon name="close" variant="outlined" size={20} />}
         className="detailed-files-list__action"
         onClick={onAction}

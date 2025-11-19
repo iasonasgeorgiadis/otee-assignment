@@ -29,7 +29,7 @@ const meta = {
     },
     linkColor: {
       control: { type: 'select' },
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'neutral'],
       description: 'Link color scheme when variant is link',
     },
     size: {
@@ -511,6 +511,35 @@ export const LinkSecondaryDisabled: Story = {
   },
 };
 
+// Neutral Link Variants (new)
+export const LinkNeutral: Story = {
+  args: {
+    label: 'Button',
+    variant: 'link',
+    linkColor: 'neutral',
+    size: 'medium',
+  },
+};
+
+export const LinkNeutralSmall: Story = {
+  args: {
+    label: 'Button',
+    variant: 'link',
+    linkColor: 'neutral',
+    size: 'small',
+  },
+};
+
+export const LinkNeutralDisabled: Story = {
+  args: {
+    label: 'Button',
+    variant: 'link',
+    linkColor: 'neutral',
+    size: 'medium',
+    disabled: true,
+  },
+};
+
 // All Variants Story
 export const AllVariants: Story = {
   render: () => (
@@ -611,12 +640,15 @@ export const AllVariants: Story = {
       <div>
         <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Link Buttons</h3>
         <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-          <Button variant="link" linkColor="primary" size="medium" label="LINK" />
-          <Button variant="link" linkColor="primary" size="small" label="LINK" />
-          <Button variant="link" linkColor="secondary" size="medium" label="LINK" />
-          <Button variant="link" linkColor="secondary" size="small" label="LINK" />
-          <Button variant="link" linkColor="primary" size="medium" disabled label="LINK" />
-          <Button variant="link" linkColor="secondary" size="medium" disabled label="LINK" />
+          <Button variant="link" linkColor="primary" size="medium" label="Button" />
+          <Button variant="link" linkColor="primary" size="small" label="Button" />
+          <Button variant="link" linkColor="secondary" size="medium" label="Button" />
+          <Button variant="link" linkColor="secondary" size="small" label="Button" />
+          <Button variant="link" linkColor="neutral" size="medium" label="Button" />
+          <Button variant="link" linkColor="neutral" size="small" label="Button" />
+          <Button variant="link" linkColor="primary" size="medium" disabled label="Button" />
+          <Button variant="link" linkColor="secondary" size="medium" disabled label="Button" />
+          <Button variant="link" linkColor="neutral" size="medium" disabled label="Button" />
         </div>
       </div>
 
@@ -624,10 +656,12 @@ export const AllVariants: Story = {
       <div>
         <h3 style={{ marginBottom: '16px', fontFamily: 'sans-serif' }}>Link Buttons with Icons</h3>
         <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-          <Button variant="link" linkColor="primary" size="medium" label="LINK" iconEnd={<MaterialIcon name="arrow_outward" />} />
-          <Button variant="link" linkColor="primary" size="small" label="LINK" iconEnd={<MaterialIcon name="arrow_outward" />} />
-          <Button variant="link" linkColor="secondary" size="medium" label="LINK" iconEnd={<MaterialIcon name="arrow_outward" />} />
-          <Button variant="link" linkColor="secondary" size="small" label="LINK" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="primary" size="medium" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="primary" size="small" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="secondary" size="medium" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="secondary" size="small" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="neutral" size="medium" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
+          <Button variant="link" linkColor="neutral" size="small" label="Button" iconEnd={<MaterialIcon name="arrow_outward" />} />
         </div>
       </div>
     </div>

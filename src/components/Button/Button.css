@@ -44,6 +44,8 @@
 /* Size Variants */
 .igds-button--medium {
   padding: var(--igds-button-padding-y-medium) var(--igds-button-padding-x-medium);
+  font-family: var(--igds-typography-body-family);
+  font-size: var(--igds-typography-body-size);
 }
 
 .igds-button--small {
@@ -317,135 +319,175 @@
   display: inline-block;
 }
 
-/* Link Variant - Updated with animated underline from left */
+/* Link Variant - Updated with animated underline from left
+   Figma Component: "button-link" (Node ID: 40001222-2033)
+   Supports variants: primary, secondary, neutral
+   Supports sizes: medium (3px underline), small (1px underline)
+*/
 .igds-button--link {
   background-color: var(--igds-button-background-link-default);
   border: none;
   border-radius: 0;
-  padding: var(--igds-button-padding-y-medium) 0;
+  padding: var(--igds-space-4) var(--igds-space-0);
   position: relative;
-  color: var(--igds-button-text-link-default);
+  font-family: var(--igds-button-font-family);
   font-size: var(--igds-button-font-size);
   font-weight: var(--igds-button-font-weight);
   line-height: var(--igds-button-line-height);
   text-decoration: none;
-  transition: color var(--igds-button-transition-duration) var(--igds-button-transition-timing-function),
-              background-color var(--igds-button-transition-duration) var(--igds-button-transition-timing-function);
+  transition: color var(--igds-button-link-transition-duration) var(--igds-button-link-transition-timing);
 }
 
-/* Animated underline pseudo-element */
+/* Animated underline pseudo-element - Medium size (3px) */
 .igds-button--link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: var(--igds-button-link-underline-height);
+  height: var(--igds-button-link-underline-height-medium);
   background-color: transparent;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--igds-button-link-transition-duration) var(--igds-button-link-transition-timing);
+  transition: transform var(--igds-button-link-transition-duration) var(--igds-button-link-transition-timing),
+              background-color var(--igds-button-link-transition-duration) var(--igds-button-link-transition-timing);
 }
 
+/* Small size variant - 1px underline, smaller font */
 .igds-button--link.igds-button--small {
-  padding: var(--igds-button-padding-y-small) 0;
+  padding: var(--igds-space-0);
+  font-family: var(--igds-typography-body-family);
+  font-size: var(--igds-typography-body-size-small);
 }
 
-/* Link Hover State - Animate underline in */
-.igds-button--link:hover:not(:disabled) {
-  color: var(--igds-button-text-link-hover);
+.igds-button--link.igds-button--small::after {
+  height: var(--igds-button-link-underline-height-small);
 }
 
-.igds-button--link:hover:not(:disabled)::after {
+/* =============================================================================
+   LINK VARIANT: PRIMARY
+   Text: Orange (#a35a00)
+   Underline: Orange (#a35a00) on hover, Darker orange (#844901) on pressed
+   ============================================================================= */
+
+.igds-button--link.igds-button--primary,
+.igds-button--link-primary {
+  color: var(--igds-button-text-link-primary-default);
+}
+
+.igds-button--link.igds-button--primary::after,
+.igds-button--link-primary::after {
+  background-color: var(--igds-button-underline-link-primary-hover);
+}
+
+.igds-button--link.igds-button--primary:hover:not(:disabled),
+.igds-button--link-primary:hover:not(:disabled) {
+  color: var(--igds-button-text-link-primary-hover);
+}
+
+.igds-button--link.igds-button--primary:hover:not(:disabled)::after,
+.igds-button--link-primary:hover:not(:disabled)::after {
+  transform: scaleX(1);
+  background-color: var(--igds-button-underline-link-primary-hover);
+}
+
+.igds-button--link.igds-button--primary:active:not(:disabled),
+.igds-button--link-primary:active:not(:disabled) {
+  color: var(--igds-button-text-link-primary-pressed);
+}
+
+.igds-button--link.igds-button--primary:active:not(:disabled)::after,
+.igds-button--link-primary:active:not(:disabled)::after {
+  transform: scaleX(1);
+  background-color: var(--igds-button-underline-link-primary-pressed);
+}
+
+/* =============================================================================
+   LINK VARIANT: SECONDARY
+   Text: Grey primary (#3c3e3f) default, Grey secondary (#5b5c5d) on hover
+   Underline: Grey (#b7b8b9)
+   ============================================================================= */
+
+.igds-button--link.igds-button--secondary,
+.igds-button--link-secondary {
+  color: var(--igds-button-text-link-secondary-default);
+}
+
+.igds-button--link.igds-button--secondary::after,
+.igds-button--link-secondary::after {
+  background-color: var(--igds-button-underline-link-secondary-hover);
+}
+
+.igds-button--link.igds-button--secondary:hover:not(:disabled),
+.igds-button--link-secondary:hover:not(:disabled) {
+  color: var(--igds-button-text-link-secondary-hover);
+}
+
+.igds-button--link.igds-button--secondary:hover:not(:disabled)::after,
+.igds-button--link-secondary:hover:not(:disabled)::after {
   transform: scaleX(1);
 }
 
-/* Link Active/Pressed State */
-.igds-button--link:active:not(:disabled) {
-  color: var(--igds-button-text-link-pressed);
+.igds-button--link.igds-button--secondary:active:not(:disabled),
+.igds-button--link-secondary:active:not(:disabled) {
+  color: var(--igds-button-text-link-secondary-pressed);
 }
 
-.igds-button--link:active:not(:disabled)::after {
+.igds-button--link.igds-button--secondary:active:not(:disabled)::after,
+.igds-button--link-secondary:active:not(:disabled)::after {
   transform: scaleX(1);
 }
 
-/* Link Primary Variant (matches primary button colors) */
-.igds-button--link.igds-button--primary {
-  color: var(--igds-button-text-link-default);
+/* =============================================================================
+   LINK VARIANT: NEUTRAL
+   Text: Grey primary (#3c3e3f) default, Grey secondary (#5b5c5d) on hover
+   Underline: Grey (#b7b8b9)
+   ============================================================================= */
+
+.igds-button--link.igds-button--neutral,
+.igds-button--link-neutral {
+  color: var(--igds-button-text-link-neutral-default);
 }
 
-.igds-button--link.igds-button--primary::after {
-  background-color: var(--igds-color-border-accent-primary);
+.igds-button--link.igds-button--neutral::after,
+.igds-button--link-neutral::after {
+  background-color: var(--igds-button-underline-link-neutral-hover);
 }
 
-.igds-button--link.igds-button--primary:hover:not(:disabled) {
-  color: var(--igds-button-text-link-hover);
+.igds-button--link.igds-button--neutral:hover:not(:disabled),
+.igds-button--link-neutral:hover:not(:disabled) {
+  color: var(--igds-button-text-link-neutral-hover);
 }
 
-.igds-button--link.igds-button--primary:active:not(:disabled) {
-  color: var(--igds-button-text-link-pressed);
+.igds-button--link.igds-button--neutral:hover:not(:disabled)::after,
+.igds-button--link-neutral:hover:not(:disabled)::after {
+  transform: scaleX(1);
 }
 
-/* Link Secondary Variant (matches secondary button colors) */
-.igds-button--link.igds-button--secondary {
-  color: var(--igds-button-text-link-default);
+.igds-button--link.igds-button--neutral:active:not(:disabled),
+.igds-button--link-neutral:active:not(:disabled) {
+  color: var(--igds-button-text-link-neutral-pressed);
 }
 
-.igds-button--link.igds-button--secondary::after {
-  background-color: var(--igds-color-border-accent-secondary);
+.igds-button--link.igds-button--neutral:active:not(:disabled)::after,
+.igds-button--link-neutral:active:not(:disabled)::after {
+  transform: scaleX(1);
 }
 
-.igds-button--link.igds-button--secondary:hover:not(:disabled) {
-  color: var(--igds-button-text-link-hover);
-}
+/* =============================================================================
+   LINK VARIANT: DISABLED
+   ============================================================================= */
 
-.igds-button--link.igds-button--secondary:active:not(:disabled) {
-  color: var(--igds-button-text-link-pressed);
-}
-
-/* Link Disabled State */
 .igds-button--link:disabled,
 .igds-button--link.igds-button--disabled {
   color: var(--igds-button-text-link-disabled);
   background-color: var(--igds-button-background-link-disabled);
+  cursor: not-allowed;
 }
 
 .igds-button--link:disabled::after,
 .igds-button--link.igds-button--disabled::after {
   display: none;
-}
-
-/* LinkColor Variants - Aligned with button variant terminology */
-.igds-button--link-primary {
-  color: var(--igds-button-text-link-default);
-}
-
-.igds-button--link-primary::after {
-  background-color: var(--igds-color-border-accent-primary);
-}
-
-.igds-button--link-primary:hover:not(:disabled) {
-  color: var(--igds-button-text-link-hover);
-}
-
-.igds-button--link-primary:active:not(:disabled) {
-  color: var(--igds-button-text-link-pressed);
-}
-
-.igds-button--link-secondary {
-  color: var(--igds-button-text-link-default);
-}
-
-.igds-button--link-secondary::after {
-  background-color: var(--igds-color-border-accent-secondary);
-}
-
-.igds-button--link-secondary:hover:not(:disabled) {
-  color: var(--igds-button-text-link-hover);
-}
-
-.igds-button--link-secondary:active:not(:disabled) {
-  color: var(--igds-button-text-link-pressed);
 }
 
 /* Icon-Only Variant - Circular buttons with icon only (no label) */
@@ -468,4 +510,74 @@
 .igds-button--icon-only .igds-button__icon-lead,
 .igds-button--icon-only .igds-button__icon-end {
   margin: 0;
+}
+
+/* Icon-only filled variants (matches button-icon spec) */
+.igds-button--icon-only.igds-button--primary:not(.igds-button--ghost):not(.igds-button--outlined) {
+  background-color: var(--igds-button-icon-background-primary-default);
+  border-color: var(--igds-button-icon-border-primary-default);
+  color: var(--igds-button-icon-foreground);
+}
+
+.igds-button--icon-only.igds-button--primary:not(.igds-button--ghost):not(.igds-button--outlined):hover:not(:disabled) {
+  background-color: var(--igds-button-icon-background-primary-hover);
+  border-color: var(--igds-button-icon-border-primary-hover);
+}
+
+.igds-button--icon-only.igds-button--primary:not(.igds-button--ghost):not(.igds-button--outlined):active:not(:disabled) {
+  background-color: var(--igds-button-icon-background-primary-pressed);
+  border-color: var(--igds-button-icon-border-primary-pressed);
+}
+
+.igds-button--icon-only.igds-button--primary:not(.igds-button--ghost):not(.igds-button--outlined):disabled,
+.igds-button--icon-only.igds-button--primary:not(.igds-button--ghost):not(.igds-button--outlined).igds-button--disabled {
+  background-color: var(--igds-button-icon-background-primary-disabled);
+  border-color: var(--igds-button-icon-border-primary-disabled);
+  color: var(--igds-button-icon-foreground-disabled);
+}
+
+.igds-button--icon-only.igds-button--secondary:not(.igds-button--ghost):not(.igds-button--outlined) {
+  background-color: var(--igds-button-icon-background-secondary-default);
+  border-color: var(--igds-button-icon-border-secondary-default);
+  color: var(--igds-button-icon-foreground);
+}
+
+.igds-button--icon-only.igds-button--secondary:not(.igds-button--ghost):not(.igds-button--outlined):hover:not(:disabled) {
+  background-color: var(--igds-button-icon-background-secondary-hover);
+  border-color: var(--igds-button-icon-border-secondary-hover);
+}
+
+.igds-button--icon-only.igds-button--secondary:not(.igds-button--ghost):not(.igds-button--outlined):active:not(:disabled) {
+  background-color: var(--igds-button-icon-background-secondary-pressed);
+  border-color: var(--igds-button-icon-border-secondary-pressed);
+}
+
+.igds-button--icon-only.igds-button--secondary:not(.igds-button--ghost):not(.igds-button--outlined):disabled,
+.igds-button--icon-only.igds-button--secondary:not(.igds-button--ghost):not(.igds-button--outlined).igds-button--disabled {
+  background-color: var(--igds-button-icon-background-secondary-disabled);
+  border-color: var(--igds-button-icon-border-secondary-disabled);
+  color: var(--igds-button-icon-foreground-disabled);
+}
+
+.igds-button--icon-only.igds-button--neutral:not(.igds-button--ghost):not(.igds-button--outlined) {
+  background-color: var(--igds-button-icon-background-neutral-default);
+  border-color: var(--igds-button-icon-border-neutral-default);
+  color: var(--igds-button-icon-foreground);
+}
+
+.igds-button--icon-only.igds-button--neutral:not(.igds-button--ghost):not(.igds-button--outlined):hover:not(:disabled) {
+  background-color: var(--igds-button-icon-background-neutral-hover);
+  border-color: var(--igds-button-icon-border-neutral-hover);
+}
+
+.igds-button--icon-only.igds-button--neutral:not(.igds-button--ghost):not(.igds-button--outlined):active:not(:disabled) {
+  background-color: var(--igds-button-icon-background-neutral-pressed);
+  border-color: var(--igds-button-icon-border-neutral-pressed);
+}
+
+.igds-button--icon-only.igds-button--neutral:not(.igds-button--ghost):not(.igds-button--outlined):disabled,
+.igds-button--icon-only.igds-button--neutral:not(.igds-button--ghost):not(.igds-button--outlined).igds-button--disabled {
+  background-color: var(--igds-button-icon-background-neutral-disabled);
+  border-color: var(--igds-button-icon-border-neutral-disabled);
+  color: var(--igds-button-icon-foreground-disabled);
 }
