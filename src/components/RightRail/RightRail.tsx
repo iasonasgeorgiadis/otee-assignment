@@ -32,7 +32,7 @@ export interface RightRailProps {
 }
 
 const DEFAULT_ACTIONS: RightRailAction[] = [
-  { id: 'dashboard', iconName: 'web_asset', ariaLabel: 'Dashboard', iconVariant: 'symbols-outlined' },
+  { id: 'dashboard', iconName: 'web', ariaLabel: 'Dashboard', iconVariant: 'symbols-outlined' },
   { id: 'help', iconName: 'help', ariaLabel: 'Help', iconVariant: 'symbols-outlined' },
   { id: 'search', iconName: 'search', ariaLabel: 'Search', iconVariant: 'symbols-outlined' }
 ];
@@ -96,7 +96,7 @@ export const RightRail: FC<RightRailProps> = ({
       <div className="right-rail__separator" />
 
       <Button
-        variant="secondary"
+        variant="primary"
         size="medium"
         label=""
         className="right-rail__primary-button"

@@ -13,18 +13,11 @@
   gap: var(--igds-project-browser-gap);
   overflow: hidden;
   align-self: flex-start;
-  transition:
-    width var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
-    gap var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
-    padding var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing),
-    border-color var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing);
 }
 
 .project-browser--collapsed {
-  width: var(--igds-project-browser-collapsed-width);
-  max-width: var(--igds-project-browser-collapsed-width);
-  min-width: var(--igds-project-browser-collapsed-width);
-  flex: 0 0 var(--igds-project-browser-collapsed-width);
+  width: fit-content;
+  max-width: fit-content;
   padding-inline: var(--igds-project-browser-padding);
 }
 
@@ -78,11 +71,13 @@
   flex-direction: column;
   gap: var(--igds-project-browser-body-gap);
   width: 100%;
+  opacity: 1;
+  transition: opacity var(--igds-pane-toggle-duration) var(--igds-pane-toggle-easing);
 }
-
 
 .project-browser--collapsed .project-browser__body {
   display: none;
+  opacity: 0;
 }
 
 .project-browser--collapsed .project-browser__title {

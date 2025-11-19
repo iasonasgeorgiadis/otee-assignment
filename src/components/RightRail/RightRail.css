@@ -72,9 +72,6 @@
   background: var(--igds-right-rail-icon-background-hover);
 }
 
-.right-rail__action-button.igds-button:active:not(:disabled) {
-  transform: scale(0.95);
-}
 
 .right-rail__action-button .material-symbols-outlined {
   font-variation-settings:
@@ -117,9 +114,6 @@
   background: var(--igds-right-rail-primary-background-hover);
 }
 
-.right-rail__primary-button.igds-button:active:not(:disabled) {
-  transform: scale(0.95);
-}
 
 .right-rail__primary-button .material-symbols-outlined {
   font-variation-settings:
