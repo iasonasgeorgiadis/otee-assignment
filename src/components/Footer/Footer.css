@@ -13,7 +13,6 @@
 
 .igds-footer__container {
   width: 100%;
-  max-width: var(--page-min-width, 1440px);
   display: flex;
   flex-direction: column;
   gap: var(--igds-space-16, 16px);
@@ -36,9 +35,8 @@
 .igds-footer__status-group {
   display: flex;
   width: 100%;
-  gap: var(--igds-space-8, 8px);
-  flex: 1 1 auto;
-  justify-content: space-between;
+  gap: var(--igds-space-16, 16px);
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -56,8 +54,7 @@
   line-height: 1.4;
   color: var(--igds-color-text-neutral-grey-primary, #3c3e3f);
   padding: var(--igds-space-8, 8px) var(--igds-space-24, 24px);
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 auto;
 }
 
 /* Status Icons */
@@ -117,7 +114,7 @@
   }
 
   .igds-footer__status-group {
-    gap: var(--igds-space-16, 16px);
+    gap: var(--igds-space-24, 24px);
   }
 }
 

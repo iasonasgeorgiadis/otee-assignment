@@ -1,0 +1,42 @@
+@import '../../styles/tokens.css';
+
+.file-dropzone {
+  position: relative;
+  width: 100%;
+  min-height: 18rem;
+  border: 1px dashed var(--igds-color-border-neutral-grey, #b7b8b9);
+  border-radius: var(--igds-radius-sm, 4px);
+  background: var(--igds-color-background-neutral-white, #fff);
+  padding: var(--igds-space-24, 24px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.file-dropzone--active {
+  border-color: var(--igds-color-border-accent-primary, #f68d2e);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--igds-color-border-accent-primary, #f68d2e) 25%, transparent);
+  background: var(--igds-color-background-neutral-white-lighter, #fefaf5);
+}
+
+.file-dropzone__input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .file-dropzone {
+    min-height: 12rem;
+    padding: var(--igds-space-16, 16px);
+  }
+}
