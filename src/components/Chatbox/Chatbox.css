@@ -1,0 +1,168 @@
+/* Chatbox Component Styles */
+
+/* Container */
+.igds-chatbox {
+  display: inline-flex;
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--igds-chatbox-background-default);
+  border: var(--igds-chatbox-border-width) solid var(--igds-chatbox-border-color);
+  border-radius: var(--igds-chatbox-border-radius);
+  cursor: text;
+  transition: background-color var(--igds-chatbox-transition-duration) var(--igds-chatbox-transition-timing);
+}
+
+/* Hover state - applied via class for consistent behavior */
+.igds-chatbox--hover {
+  background-color: var(--igds-chatbox-background-hover);
+}
+
+/* Focus-within for accessibility */
+.igds-chatbox:focus-within {
+  outline: var(--igds-chatbox-focus-outline-width) solid var(--igds-chatbox-focus-outline-color);
+  outline-offset: var(--igds-chatbox-focus-outline-offset);
+}
+
+/* Inner container */
+.igds-chatbox__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--igds-chatbox-gap);
+  width: 100%;
+  padding: var(--igds-chatbox-padding);
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* Filled state has different padding on the end */
+.igds-chatbox--filled .igds-chatbox__inner {
+  padding-right: var(--igds-chatbox-padding-filled-end);
+}
+
+/* Icon Start - Plus button */
+.igds-chatbox__icon-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--igds-chatbox-icon-size);
+  height: var(--igds-chatbox-icon-size);
+  padding: var(--igds-chatbox-icon-start-padding);
+  background-color: var(--igds-chatbox-icon-start-background);
+  border: none;
+  border-radius: var(--igds-chatbox-border-radius);
+  color: var(--igds-chatbox-icon-start-color);
+  cursor: pointer;
+  transition: background-color var(--igds-chatbox-transition-duration) var(--igds-chatbox-transition-timing);
+}
+
+.igds-chatbox__icon-start:hover {
+  opacity: 0.8;
+}
+
+.igds-chatbox__icon-start:focus {
+  outline: none;
+}
+
+/* Text Input */
+.igds-chatbox__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  font-family: var(--igds-chatbox-font-family);
+  font-size: var(--igds-chatbox-font-size);
+  font-weight: var(--igds-chatbox-font-weight);
+  line-height: var(--igds-chatbox-line-height);
+  color: var(--igds-chatbox-text-placeholder);
+  cursor: text;
+}
+
+.igds-chatbox__input::placeholder {
+  color: var(--igds-chatbox-text-placeholder);
+}
+
+.igds-chatbox__input:focus {
+  outline: none;
+}
+
+/* Text color changes on hover and when filled */
+.igds-chatbox--hover .igds-chatbox__input,
+.igds-chatbox--filled .igds-chatbox__input {
+  color: var(--igds-chatbox-text-filled);
+}
+
+.igds-chatbox--hover .igds-chatbox__input::placeholder {
+  color: var(--igds-chatbox-text-filled);
+}
+
+/* Icon End - Mic/Send button */
+.igds-chatbox__icon-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  width: var(--igds-chatbox-icon-size);
+  height: var(--igds-chatbox-icon-size);
+  padding: var(--igds-chatbox-icon-end-padding);
+  background-color: var(--igds-chatbox-icon-end-background-default);
+  border: none;
+  border-radius: var(--igds-chatbox-border-radius);
+  color: var(--igds-chatbox-icon-end-color);
+  cursor: pointer;
+  transition: background-color var(--igds-chatbox-transition-duration) var(--igds-chatbox-transition-timing);
+}
+
+.igds-chatbox__icon-end:hover {
+  opacity: 0.9;
+}
+
+.igds-chatbox__icon-end:focus {
+  outline: none;
+}
+
+/* Filled state - send button has darker background */
+.igds-chatbox--filled .igds-chatbox__icon-end {
+  background-color: var(--igds-chatbox-icon-end-background-filled);
+}
+
+/* Icon transition container */
+.igds-chatbox__icon-mic,
+.igds-chatbox__icon-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: opacity var(--igds-chatbox-transition-duration) var(--igds-chatbox-transition-timing),
+              transform var(--igds-chatbox-transition-duration) var(--igds-chatbox-transition-timing);
+}
+
+/* Hidden state for icon transition */
+.igds-chatbox__icon--hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Visible state */
+.igds-chatbox__icon-mic:not(.igds-chatbox__icon--hidden),
+.igds-chatbox__icon-send:not(.igds-chatbox__icon--hidden) {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Disabled state */
+.igds-chatbox--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igds-chatbox--disabled .igds-chatbox__input,
+.igds-chatbox--disabled .igds-chatbox__icon-start,
+.igds-chatbox--disabled .igds-chatbox__icon-end {
+  cursor: not-allowed;
+}

@@ -1,0 +1,87 @@
+/* ChatMessage Component Styles
+   Design Source: Figma "messages" (Node ID: 40016946-2816)
+*/
+
+/* Base ChatMessage Styles */
+.igds-chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-chat-message-gap);
+  padding: var(--igds-chat-message-padding);
+  border-radius: var(--igds-chat-message-border-radius);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ChatMessage Content */
+.igds-chat-message__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-width: 1px;
+  font-family: var(--igds-chat-message-font-family);
+  font-size: var(--igds-chat-message-font-size);
+  font-weight: var(--igds-chat-message-font-weight);
+  line-height: var(--igds-chat-message-line-height);
+  color: var(--igds-chat-message-text-color);
+}
+
+/* User Prompt Variant */
+.igds-chat-message--user-prompt {
+  background: var(--igds-chat-message-user-background);
+  border: var(--igds-chat-message-user-border-width) solid var(--igds-chat-message-user-border-color);
+}
+
+/* AI Response Variant */
+.igds-chat-message--ai-response {
+  background: var(--igds-chat-message-ai-background);
+  border: var(--igds-chat-message-ai-border);
+}
+
+/* Typography styles for AI response content */
+.igds-chat-message--ai-response .igds-chat-message__content p {
+  margin: 0 0 0;
+  line-height: var(--igds-chat-message-line-height);
+}
+
+.igds-chat-message--ai-response .igds-chat-message__content p:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.igds-chat-message--ai-response .igds-chat-message__content strong {
+  font-weight: var(--igds-chat-message-font-weight-strong);
+}
+
+/* List styles for AI response */
+.igds-chat-message--ai-response .igds-chat-message__content ol,
+.igds-chat-message--ai-response .igds-chat-message__content ul {
+  margin: 0;
+  padding-left: var(--igds-chat-message-list-indent);
+}
+
+.igds-chat-message--ai-response .igds-chat-message__content ol {
+  list-style-type: decimal;
+}
+
+.igds-chat-message--ai-response .igds-chat-message__content ul {
+  list-style-type: disc;
+}
+
+.igds-chat-message--ai-response .igds-chat-message__content li {
+  margin: 0;
+  padding: 0;
+  line-height: var(--igds-chat-message-line-height);
+}
+
+/* Nested list styles */
+.igds-chat-message--ai-response .igds-chat-message__content ol ol,
+.igds-chat-message--ai-response .igds-chat-message__content ol ul,
+.igds-chat-message--ai-response .igds-chat-message__content ul ol,
+.igds-chat-message--ai-response .igds-chat-message__content ul ul {
+  margin-top: 0;
+}
+
+/* User prompt simple text style */
+.igds-chat-message--user-prompt .igds-chat-message__content {
+  justify-content: center;
+}

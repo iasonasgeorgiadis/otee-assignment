@@ -114,7 +114,7 @@
 
   /* Button Neutral Variant - Filled */
   --igds-button-background-neutral-default: var(--igds-color-background-neutral-grey-light);
-  --igds-button-background-neutral-hover: var(--igds-color-background-neutral-grey-light);
+  --igds-button-background-neutral-hover: var(--igds-color-background-neutral-white-light);
   --igds-button-background-neutral-pressed: var(--igds-color-background-neutral-grey-dark);
   --igds-button-background-neutral-disabled: var(--igds-color-background-system-disabled);
 
@@ -140,7 +140,7 @@
   --igds-button-text-neutral-outlined-disabled: var(--igds-color-text-system-disabled);
 
   --igds-button-border-neutral-outlined-default: var(--igds-color-border-neutral-grey);
-  --igds-button-border-neutral-outlined-hover: var(--igds-color-border-neutral-grey-light);
+  --igds-button-border-neutral-outlined-hover: var(--igds-color-border-neutral-white-light);
   --igds-button-border-neutral-outlined-pressed: var(--igds-color-border-neutral-grey-lighter);
   --igds-button-border-neutral-outlined-disabled: var(--igds-color-border-system-disabled);
 
@@ -318,7 +318,7 @@
   --igds-button-icon-border-secondary-disabled: transparent;
 
   --igds-button-icon-background-neutral-default: var(--igds-color-background-neutral-grey-light);
-  --igds-button-icon-background-neutral-hover: var(--igds-color-background-neutral-grey);
+  --igds-button-icon-background-neutral-hover: var(--igds-color-background-neutral-white-lighter);
   --igds-button-icon-background-neutral-pressed: var(--igds-color-background-neutral-grey-dark);
   --igds-button-icon-background-neutral-disabled: var(--igds-color-background-system-disabled-light);
   --igds-button-icon-border-neutral-default: transparent;
@@ -1532,6 +1532,134 @@
   /* Separator */
   --igds-right-rail-separator-color: var(--igds-color-border-neutral-grey-light);
   --igds-right-rail-separator-spacing: var(--igds-space-24);
+}
+
+
+/* =============================================================================
+   CHATBOX COMPONENT TOKENS
+   ============================================================================= */
+
+/* Chatbox Component - From Figma MCP Analysis
+   Figma Component: "chatbox" (Node ID: 40001249-247)
+   Last Extracted: 2025-11-19 via #get_design_context and #get_variable_defs
+
+   Figma Properties:
+   - state: "active" | "hover" | "filled"
+
+   Token Mapping from Figma:
+   - Active/Filled background → --igds-color-background-neutral-white (#ffffff)
+   - Hover background → --igds-color-background-neutral-white-lighter (#f8f9fb)
+   - Border → --igds-color-border-neutral-grey-light (#dadcdd)
+   - Border radius → --igds-radius-full (360px)
+   - Placeholder text → --igds-color-text-neutral-grey-tertiary (#6f7071)
+   - Filled text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Icon Start bg → --igds-color-background-neutral-grey-light (#e9ebec)
+   - Icon End bg (default) → --igds-color-background-accent-primary-lighter (#fff3e0)
+   - Icon End bg (filled) → --igds-color-background-accent-primary-light (#ffc384)
+   - Icon color → --igds-color-icon-neutral-grey-primary (#3c3e3f)
+   - Typography → Body Base (Manrope, 500, 16px, 1.5 line-height)
+   - Spacing → --igds-space-4, --igds-space-8, --igds-space-12, --igds-space-16
+*/
+
+:root {
+  /* Chatbox Base Layout */
+  --igds-chatbox-border-radius: var(--igds-radius-full);
+  --igds-chatbox-border-width: 1px;
+  --igds-chatbox-padding: var(--igds-space-8);
+  --igds-chatbox-padding-filled-end: var(--igds-space-8);
+  --igds-chatbox-gap: var(--igds-space-8);
+  --igds-chatbox-icon-size: 40px;
+  --igds-chatbox-icon-inner-size: 24px;
+
+  /* Chatbox Typography */
+  --igds-chatbox-font-family: var(--igds-typography-body-family);
+  --igds-chatbox-font-size: var(--igds-typography-body-size);
+  --igds-chatbox-font-weight: 500;
+  --igds-chatbox-line-height: 1.5;
+
+  /* Chatbox Container Colors */
+  --igds-chatbox-background-default: var(--igds-color-background-neutral-white);
+  --igds-chatbox-background-hover: var(--igds-color-background-neutral-white-lighter);
+  --igds-chatbox-border-color: var(--igds-color-border-neutral-grey-light);
+
+  /* Chatbox Text Colors */
+  --igds-chatbox-text-placeholder: var(--igds-color-text-neutral-grey-tertiary);
+  --igds-chatbox-text-filled: var(--igds-color-text-neutral-grey-primary);
+
+  /* Chatbox Icon Start */
+  --igds-chatbox-icon-start-background: var(--igds-color-background-neutral-grey-light);
+  --igds-chatbox-icon-start-padding: var(--igds-space-8);
+  --igds-chatbox-icon-start-color: var(--igds-color-icon-neutral-grey-primary);
+
+  /* Chatbox Icon End - Default/Hover (microphone) */
+  --igds-chatbox-icon-end-background-default: var(--igds-color-background-accent-primary-lighter);
+  --igds-chatbox-icon-end-padding: var(--igds-space-12);
+  --igds-chatbox-icon-end-color: var(--igds-color-icon-neutral-grey-primary);
+
+  /* Chatbox Icon End - Filled (send) */
+  --igds-chatbox-icon-end-background-filled: var(--igds-color-background-accent-primary-light);
+
+  /* Chatbox Transitions */
+  --igds-chatbox-transition-duration: 200ms;
+  --igds-chatbox-transition-timing: ease-in-out;
+
+  /* Chatbox Focus States */
+  --igds-chatbox-focus-outline-color: var(--igds-color-border-accent-primary);
+  --igds-chatbox-focus-outline-width: 2px;
+  --igds-chatbox-focus-outline-offset: 2px;
+}
+
+
+/* =============================================================================
+   CHAT MESSAGE COMPONENT TOKENS
+   ============================================================================= */
+
+/* ChatMessage Component - From Figma MCP Analysis
+   Figma Component: "messages" (Node ID: 40016946-2816)
+   Last Extracted: 2025-11-19 via #get_design_context and #get_variable_defs
+
+   Figma Properties:
+   - type: "user-prompt" | "ai-response"
+
+   Token Mapping from Figma:
+   - User prompt border → --igds-color-border-neutral-grey-light (#dadcdd)
+   - Border radius → --igds-radius-md (8px)
+   - Padding → --igds-space-16 (16px)
+   - Gap → --igds-space-12 (12px)
+   - Text color → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Typography → Body Base (Manrope, 500, 16px, 1.5 line-height)
+   - Bold text weight → --igds-typography-body-weight-strong (700)
+*/
+
+:root {
+  /* ChatMessage Base Layout */
+  --igds-chat-message-border-radius: var(--igds-radius-md);
+  --igds-chat-message-padding: var(--igds-space-16);
+  --igds-chat-message-gap: var(--igds-space-12);
+
+  /* ChatMessage Typography */
+  --igds-chat-message-font-family: var(--igds-typography-body-family);
+  --igds-chat-message-font-size: var(--igds-typography-body-size);
+  --igds-chat-message-font-weight: 500;
+  --igds-chat-message-font-weight-strong: var(--igds-typography-body-weight-strong);
+  --igds-chat-message-line-height: 1.5;
+
+  /* ChatMessage Text Colors */
+  --igds-chat-message-text-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* ChatMessage User Prompt Variant */
+  --igds-chat-message-user-border-color: var(--igds-color-border-neutral-grey-light);
+  --igds-chat-message-user-border-width: 1px;
+  --igds-chat-message-user-background: transparent;
+
+  /* ChatMessage AI Response Variant */
+  --igds-chat-message-ai-background: transparent;
+  --igds-chat-message-ai-border: none;
+
+  /* ChatMessage List Styles */
+  --igds-chat-message-list-marker-size: 16px;
+  --igds-chat-message-list-indent: 1.5em;
+  --igds-chat-message-list-gap: 0;
 }
 
 
