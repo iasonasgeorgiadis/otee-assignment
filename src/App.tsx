@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import './App.css';
-import { LandingPage } from './pages/LandingPage';
+import { ProjectWorkspace } from './pages/ProjectWorkspace';
 
 const App: FC = () => {
-  return <LandingPage />;
+  return <ProjectWorkspace />;
 };
 
 export default App;

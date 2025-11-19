@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { MaterialIcon } from '../MaterialIcon';
 import type { MaterialIconProps } from '../MaterialIcon/MaterialIcon';
+import { Tooltip } from '../Tooltip';
 import './RightRail.css';
 
 export interface RightRailAction {
@@ -80,46 +81,58 @@ export const RightRail: FC<RightRailProps> = ({
     <aside className={rootClassName} data-state={stateLabel} aria-label="Right rail toolbar">
       <div className="right-rail__actions">
         {actions.map((action) => (
-          <Button
+          <Tooltip
             key={action.id}
-            variant="neutral"
-            size="medium"
-            label=""
-            aria-label={action.ariaLabel}
-            className="right-rail__action-button"
-            iconLead={<MaterialIcon name={action.iconName} variant={action.iconVariant} size={24} />}
-            onClick={() => handleActionSelect(action.id)}
-          />
+            title={null}
+            body={action.ariaLabel}
+            placement="left"
+          >
+            <Button
+              variant="neutral"
+              size="medium"
+              label=""
+              aria-label={action.ariaLabel}
+              className="right-rail__action-button"
+              iconLead={<MaterialIcon name={action.iconName} variant={action.iconVariant} size={24} />}
+              onClick={() => handleActionSelect(action.id)}
+            />
+          </Tooltip>
         ))}
       </div>
 
       <div className="right-rail__separator" />
 
-      <Button
-        variant="primary"
-        size="medium"
-        label=""
-        className="right-rail__primary-button"
-        aria-label={isSelected ? 'Exit selection mode' : 'Enter selection mode'}
-        aria-pressed={isSelected}
-        onClick={handleToggle}
-        iconLead={
-          <span className="right-rail__icon-wrapper">
-            <MaterialIcon
-              name="auto_awesome"
-              variant="symbols-outlined"
-              size={24}
-              className={`right-rail__icon right-rail__icon--sparkle ${!isSelected ? 'right-rail__icon--visible' : ''}`}
-            />
-            <MaterialIcon
-              name="output"
-              variant="symbols-outlined"
-              size={24}
-              className={`right-rail__icon right-rail__icon--arrow ${isSelected ? 'right-rail__icon--visible' : ''}`}
-            />
-          </span>
-        }
-      />
+      <Tooltip
+        title={null}
+        body={isSelected ? 'Exit selection mode' : 'Enter selection mode'}
+        placement="left"
+      >
+        <Button
+          variant="primary"
+          size="medium"
+          label=""
+          className="right-rail__primary-button"
+          aria-label={isSelected ? 'Exit selection mode' : 'Enter selection mode'}
+          aria-pressed={isSelected}
+          onClick={handleToggle}
+          iconLead={
+            <span className="right-rail__icon-wrapper">
+              <MaterialIcon
+                name="auto_awesome"
+                variant="symbols-outlined"
+                size={24}
+                className={`right-rail__icon right-rail__icon--sparkle ${!isSelected ? 'right-rail__icon--visible' : ''}`}
+              />
+              <MaterialIcon
+                name="output"
+                variant="symbols-outlined"
+                size={24}
+                className={`right-rail__icon right-rail__icon--arrow ${isSelected ? 'right-rail__icon--visible' : ''}`}
+              />
+            </span>
+          }
+        />
+      </Tooltip>
     </aside>
   );
 };

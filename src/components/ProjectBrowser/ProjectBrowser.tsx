@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { MaterialIcon } from '../MaterialIcon';
 import type { MaterialIconProps } from '../MaterialIcon/MaterialIcon';
+import { Tooltip } from '../Tooltip';
 import './ProjectBrowser.css';
 
 export type ProjectBrowserState = 'expanded' | 'collapsed';
@@ -129,34 +130,46 @@ export const ProjectBrowser: FC<ProjectBrowserProps> = ({
   );
 
   const renderActionButton = (action: ProjectBrowserAction) => (
-    <Button
+    <Tooltip
       key={action.id}
-      variant="neutral"
-      ghost={true}
-      size="medium"
-      label=""
-      aria-label={action.ariaLabel}
-      className="project-browser__icon-button"
-      iconLead={<MaterialIcon name={action.iconName} variant={action.iconVariant} size={24} />}
-      onClick={() => handleActionSelect(action.id)}
-    />
+      title={null}
+      body={action.ariaLabel}
+      placement="bottom"
+    >
+      <Button
+        variant="neutral"
+        ghost={true}
+        size="medium"
+        label=""
+        aria-label={action.ariaLabel}
+        className="project-browser__icon-button"
+        iconLead={<MaterialIcon name={action.iconName} variant={action.iconVariant} size={24} />}
+        onClick={() => handleActionSelect(action.id)}
+      />
+    </Tooltip>
   );
 
   return (
     <section className={rootClassName} data-state={resolvedStateLabel} aria-label="Project browser">
       <div className="project-browser__header">
         <h2 className="project-browser__title">{projectName}</h2>
-        <Button
-          type="button"
-          variant="neutral"
-          size="medium"
-          label=""
-          className="project-browser__icon-button project-browser__toggle"
-          onClick={handleToggle}
-          aria-label={isExpanded ? 'Collapse project browser' : 'Expand project browser'}
-          aria-expanded={isExpanded}
-          iconLead={<MaterialIcon name="thumbnail_bar" variant="symbols-outlined" size={24} />}
-        />
+        <Tooltip
+          title={null}
+          body={isExpanded ? 'Collapse project browser' : 'Expand project browser'}
+          placement="bottom"
+        >
+          <Button
+            type="button"
+            variant="neutral"
+            size="medium"
+            label=""
+            className="project-browser__icon-button project-browser__toggle"
+            onClick={handleToggle}
+            aria-label={isExpanded ? 'Collapse project browser' : 'Expand project browser'}
+            aria-expanded={isExpanded}
+            iconLead={<MaterialIcon name="thumbnail_bar" variant="symbols-outlined" size={24} />}
+          />
+        </Tooltip>
       </div>
 
       <div className="project-browser__body" aria-hidden={!isExpanded}>

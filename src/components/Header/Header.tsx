@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { Button } from '../Button';
 import { Logo } from '../Brand/Logo/Logo';
 import { MaterialIcon } from '../MaterialIcon/MaterialIcon';
+import { Tooltip } from '../Tooltip';
 import './Header.css';
 
 export interface HeaderProps {
@@ -36,40 +37,48 @@ export const Header: FC<HeaderProps> = ({
             role="group"
             aria-label="Primary header actions"
           >
-            <Button
-              aria-label="Review submissions"
-              variant="neutral"
-              label=""
-              className="otee-header__icon-button"
-              iconLead={<MaterialIcon name="assignment_turned_in" variant="outlined" size={ICON_SIZE} />}
-              onClick={onClipboardClick}
-            />
-            <Button
-              aria-label="Open workspace grid"
-              variant="neutral"
-              label=""
-              className="otee-header__icon-button"
-              iconLead={<MaterialIcon name="apps" variant="outlined" size={ICON_SIZE} />}
-              onClick={onGridClick}
-            />
-            <Button
-              aria-label="Toggle theme"
-              variant="neutral"
-              label=""
-              className="otee-header__icon-button"
-              iconLead={<MaterialIcon name="light_mode" variant="outlined" size={ICON_SIZE} />}
-              onClick={onThemeClick}
-            />
+            <Tooltip title={null} body="Review submissions" placement="bottom">
+              <Button
+                aria-label="Review submissions"
+                variant="neutral"
+                label=""
+                className="otee-header__icon-button"
+                iconLead={<MaterialIcon name="assignment_turned_in" variant="outlined" size={ICON_SIZE} />}
+                onClick={onClipboardClick}
+              />
+            </Tooltip>
+            <Tooltip title={null} body="Open workspace grid" placement="bottom">
+              <Button
+                aria-label="Open workspace grid"
+                variant="neutral"
+                label=""
+                className="otee-header__icon-button"
+                iconLead={<MaterialIcon name="apps" variant="outlined" size={ICON_SIZE} />}
+                onClick={onGridClick}
+              />
+            </Tooltip>
+            <Tooltip title={null} body="Toggle theme" placement="bottom">
+              <Button
+                aria-label="Toggle theme"
+                variant="neutral"
+                label=""
+                className="otee-header__icon-button"
+                iconLead={<MaterialIcon name="light_mode" variant="outlined" size={ICON_SIZE} />}
+                onClick={onThemeClick}
+              />
+            </Tooltip>
           </div>
 
-          <Button
-            aria-label="Open menu"
-            variant="neutral"
-            label=""
-            className="otee-header__icon-button otee-header__icon-button--menu"
-            iconLead={<MaterialIcon name="menu" variant="outlined" size={ICON_SIZE} />}
-            onClick={onMenuClick}
-          />
+          <Tooltip title={null} body="Open menu" placement="bottom">
+            <Button
+              aria-label="Open menu"
+              variant="neutral"
+              label=""
+              className="otee-header__icon-button otee-header__icon-button--menu"
+              iconLead={<MaterialIcon name="menu" variant="outlined" size={ICON_SIZE} />}
+              onClick={onMenuClick}
+            />
+          </Tooltip>
         </div>
 
         <div className="otee-header__logo">
@@ -77,22 +86,26 @@ export const Header: FC<HeaderProps> = ({
         </div>
 
         <div className="otee-header__end">
-          <Button
-            variant="neutral"
-            className="otee-header__shared-button"
-            iconLead={<MaterialIcon name="language" variant="outlined" size={20} />}
-            onClick={onSharedResourcesClick}
-          >
-            Shared resources
-          </Button>
-          <Button
-            aria-label="Open profile"
-            variant="neutral"
-            label=""
-            className="otee-header__icon-button"
-            iconLead={<MaterialIcon name="account_circle" variant="outlined" size={ICON_SIZE} />}
-            onClick={onProfileClick}
-          />
+          <Tooltip title={null} body="Shared resources" placement="bottom">
+            <Button
+              variant="neutral"
+              className="otee-header__shared-button"
+              iconLead={<MaterialIcon name="language" variant="outlined" size={20} />}
+              onClick={onSharedResourcesClick}
+            >
+              Shared resources
+            </Button>
+          </Tooltip>
+          <Tooltip title={null} body="Open profile" placement="bottom">
+            <Button
+              aria-label="Open profile"
+              variant="neutral"
+              label=""
+              className="otee-header__icon-button"
+              iconLead={<MaterialIcon name="account_circle" variant="outlined" size={ICON_SIZE} />}
+              onClick={onProfileClick}
+            />
+          </Tooltip>
         </div>
       </div>
     </header>
