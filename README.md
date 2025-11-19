@@ -60,15 +60,15 @@ This scalable design system is built with modern tools optimized for multi-produ
 The logo implementation mirrors the token layering approach so designers can ship updates without code changes.
 
 ### Repository layout
-- `brand/logos/master/` – editable master exports (SVG for Wiley, high-res PNG for WOL) that mirror the canonical Figma artwork.
+- `brand/logos/master/` – editable OTee master exports (SVG light + dark) that mirror the canonical Figma artwork.
 - `public/brand/logos/web/` – optimized assets served by the app at runtime.
 - `src/styles/tokens/logo.css` – logo-specific tokens covering sizes, clear space, and canonical asset paths.
-- `src/components/Brand/Logo/` – React component and styles that read the tokens and select the right brand/form/light–dark variant.
+- `src/components/Brand/Logo/` – React component and styles that read the tokens and select the right color-mode variant.
 - `brand/LOGO_GUIDE.md` – designer-facing walkthrough for the full workflow.
 
 ### Update workflow
 1. Apply changes in Figma (source of truth).
-2. Export masters to `brand/logos/master/` and web-ready files (PNG for WOL, SVG for Wiley) to `public/brand/logos/web/`, preserving filenames.
+2. Export `otee-logo-light.svg` and `otee-logo-dark.svg` to both `brand/logos/master/` (masters) and `public/brand/logos/web/` (web-ready), preserving filenames.
 3. Commit the updated assets; the `Logo` component picks them up automatically via the tokens.
 4. Preview in Storybook (`Logo.stories.tsx`) before release when needed.
 

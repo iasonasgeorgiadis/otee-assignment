@@ -18,18 +18,11 @@ const meta: Meta<typeof Footer> = {
     className: {
       description: 'Custom CSS class name for additional styling',
     },
-    logoBrand: {
-      description: 'Logo brand to display',
+    logoColorMode: {
+      description: 'Color mode for the OTee logo',
       control: {
         type: 'select',
-        options: ['wol', 'wiley'],
-      },
-    },
-    logoForm: {
-      description: 'Logo form to display',
-      control: {
-        type: 'select',
-        options: ['full', 'compact'],
+        options: ['light', 'dark', 'auto'],
       },
     },
     logoHref: {
@@ -49,15 +42,15 @@ type Story = StoryObj<typeof meta>;
 const defaultFooterData = {
   columns: [
     {
-      title: "About Wiley Online Library",
+      title: "About OTee",
       links: [
         { text: "Privacy Policy", href: "/privacy" },
         { text: "Terms of Use", href: "/terms" },
         { text: "About Cookies", href: "/cookies" },
         { text: "Manage Cookies", onClick: () => console.log('Manage cookies') },
         { text: "Accessibility", href: "/accessibility" },
-        { text: "Wiley Research DE&I Statement and Publishing Policies", href: "/policies" },
-        { text: "Developing World Access", href: "/developing-world" },
+        { text: "Research DE&I Statement", href: "/policies" },
+        { text: "Global Access", href: "/global" },
       ],
     },
     {
@@ -77,18 +70,19 @@ const defaultFooterData = {
       ],
     },
     {
-      title: "Connect with Wiley",
+      title: "Connect with OTee",
       links: [
-        { text: "The Wiley Network", href: "/network" },
-        { text: "Wiley Press Room", href: "/press" },
+        { text: "Community Hub", href: "/community" },
+        { text: "Press Room", href: "/press" },
       ],
     },
   ],
-  copyrightText: "Copyright © 1999-2025 John Wiley & Sons, Inc or related companies. All rights reserved, including rights for text and data mining and training of artificial intelligence technologies or similar technologies.",
+  copyrightText: "Copyright © 2024 OTee. All rights reserved, including rights for text and data mining and training of artificial intelligence technologies or similar technologies.",
+  logoColorMode: 'dark',
 };
 
 /**
- * Default footer with all sections and Wiley branding.
+ * Default footer with all sections and OTee branding.
  * This story demonstrates the full responsive behavior - resize your viewport to see it adapt.
  */
 export const Default: Story = {
@@ -96,22 +90,12 @@ export const Default: Story = {
 };
 
 /**
- * Footer with WOL (Wiley Online Library) branding.
+ * Footer showcasing the light logo variant for dark backgrounds.
  */
-export const WOLBranding: Story = {
+export const LightLogo: Story = {
   args: {
     ...defaultFooterData,
-    logoBrand: 'wol',
-  },
-};
-
-/**
- * Footer with compact logo form.
- */
-export const CompactLogo: Story = {
-  args: {
-    ...defaultFooterData,
-    logoForm: 'compact',
+    logoColorMode: 'light',
   },
 };
 
@@ -137,7 +121,7 @@ export const LimitedColumns: Story = {
         ],
       },
     ],
-    copyrightText: "© 2025 Wiley",
+    copyrightText: "© 2025 OTee",
   },
 };
 
@@ -147,7 +131,7 @@ export const LimitedColumns: Story = {
  */
 export const CopyrightOnly: Story = {
   args: {
-    copyrightText: "Copyright © 2025 John Wiley & Sons, Inc. All rights reserved.",
+    copyrightText: "Copyright © 2025 OTee. All rights reserved.",
   },
 };
 

@@ -140,10 +140,8 @@ export const Header: React.FC<HeaderProps> = ({
       <div className={headerClasses}>
         <div className="igds-header__container">
           <Logo
-            brand="wol"
             colorMode="light"
             size="large"
-            form="full"
             className="igds-header__logo"
           />
 
@@ -186,10 +184,8 @@ export const Header: React.FC<HeaderProps> = ({
       <div className={headerClasses}>
         <div className="igds-header__container">
           <Logo
-            brand="wol"
             colorMode="light"
             size={56}
-            form="compact"
             className="igds-header__logo"
           />
 
@@ -233,10 +229,8 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left side: Logo and Institution */}
         <div className="igds-header__left">
           <Logo
-            brand="wol"
             colorMode="light"
             size="large"
-            form="full"
             className="igds-header__logo"
           />
 

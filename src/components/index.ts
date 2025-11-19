@@ -7,6 +7,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './CoverCard';
 export * from './Dropdown';
+export * from './DetailedFilesList';
 export * from './Footer';
 export * from './Header';
 export * from './IconScale';

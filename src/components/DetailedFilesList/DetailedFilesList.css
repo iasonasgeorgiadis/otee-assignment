@@ -1,0 +1,82 @@
+@import '../../styles/tokens.css';
+
+.detailed-files-list {
+  width: 100%;
+  max-width: var(--igds-detailed-files-list-max-width);
+  display: flex;
+  align-items: center;
+  gap: var(--igds-detailed-files-list-gap);
+  padding: var(--igds-detailed-files-list-padding-y) var(--igds-detailed-files-list-padding-x);
+  border-radius: var(--igds-detailed-files-list-radius);
+  background: var(--igds-detailed-files-list-background-default);
+  font-family: var(--igds-detailed-files-list-font-family);
+  color: var(--igds-detailed-files-list-text-color);
+  transition: background-color var(--igds-detailed-files-list-transition-duration)
+      var(--igds-detailed-files-list-transition-easing);
+}
+
+.detailed-files-list:hover,
+.detailed-files-list:focus-within,
+.detailed-files-list--hover {
+  background: var(--igds-detailed-files-list-background-hover);
+}
+
+.detailed-files-list__thumbnail {
+  inline-size: var(--igds-detailed-files-list-thumbnail-size);
+  block-size: var(--igds-detailed-files-list-thumbnail-size);
+  border-radius: var(--igds-detailed-files-list-thumbnail-radius);
+  border: var(--igds-detailed-files-list-thumbnail-border-width)
+    solid var(--igds-detailed-files-list-thumbnail-border-color);
+  background: var(--igds-detailed-files-list-thumbnail-background);
+  color: var(--igds-detailed-files-list-thumbnail-text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailed-files-list__type-label {
+  text-transform: uppercase;
+  font-size: var(--igds-detailed-files-list-thumbnail-font-size);
+  font-weight: var(--igds-detailed-files-list-thumbnail-font-weight);
+  letter-spacing: var(--igds-detailed-files-list-thumbnail-letter-spacing);
+}
+
+.detailed-files-list__thumbnail-icon {
+  font-size: var(--igds-detailed-files-list-thumbnail-icon-size);
+}
+
+.detailed-files-list__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--igds-detailed-files-list-info-gap);
+}
+
+.detailed-files-list__name {
+  font-size: var(--igds-detailed-files-list-name-font-size);
+  font-weight: var(--igds-detailed-files-list-name-font-weight);
+  line-height: var(--igds-detailed-files-list-name-line-height);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detailed-files-list__meta {
+  font-size: var(--igds-detailed-files-list-meta-font-size);
+  font-weight: var(--igds-detailed-files-list-meta-font-weight);
+  line-height: var(--igds-detailed-files-list-meta-line-height);
+  color: var(--igds-detailed-files-list-meta-color);
+}
+
+.detailed-files-list__action {
+  color: var(--igds-detailed-files-list-action-color);
+  min-inline-size: var(--igds-detailed-files-list-action-size);
+  min-block-size: var(--igds-detailed-files-list-action-size);
+}
+
+.detailed-files-list__action .material-icons,
+.detailed-files-list__action .material-icons-outlined,
+.detailed-files-list__action .material-symbols-outlined {
+  font-size: var(--igds-detailed-files-list-action-icon-size);
+}

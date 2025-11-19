@@ -25,10 +25,8 @@ export interface FooterProps {
   copyrightText?: string;
   /** Custom CSS class name for additional styling */
   className?: string;
-  /** Logo brand to display - defaults to 'wiley' */
-  logoBrand?: 'wol' | 'wiley';
-  /** Logo form to display - defaults to 'full' */
-  logoForm?: 'full' | 'compact';
+  /** Color mode for the OTee logo */
+  logoColorMode?: 'light' | 'dark' | 'auto';
   /** URL for the logo link - makes logo clickable when provided */
   logoHref?: string;
   /** Click handler for logo - called when logo is clicked */
@@ -63,7 +61,7 @@ export interface FooterProps {
  * <Footer
  *   columns={[
  *     {
- *       title: "About Wiley Online Library",
+ *       title: "About OTee",
  *       links: [
  *         { text: "Privacy Policy", href: "/privacy" },
  *         { text: "Terms of Use", href: "/terms" }
@@ -77,7 +75,7 @@ export interface FooterProps {
  *       ]
  *     }
  *   ]}
- *   copyrightText="Copyright © 1999-2025 John Wiley & Sons, Inc or related companies."
+ *   copyrightText="Copyright © 2024 OTee"
  * />
  * ```
  *
@@ -85,7 +83,7 @@ export interface FooterProps {
  * ```tsx
  * // Minimal footer with just copyright
  * <Footer
- *   copyrightText="© 2025 Wiley"
+ *   copyrightText="© 2025 OTee"
  * />
  * ```
  */
@@ -93,8 +91,7 @@ export const Footer: React.FC<FooterProps> = ({
   columns = [],
   copyrightText,
   className = '',
-  logoBrand = 'wiley',
-  logoForm = 'full',
+  logoColorMode = 'dark',
   logoHref,
   onLogoClick,
 }) => {
@@ -158,7 +155,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
       )}
 
-      {(copyrightText || logoBrand) && (
+      {(copyrightText || logoColorMode) && (
         <div className="igds-footer__footnotes">
           <div className="igds-footer__footnotes-content">
             <div className="igds-footer__logo">
@@ -169,9 +166,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onLogoClick}
                 >
                   <Logo
-                    brand={logoBrand}
-                    form={logoForm}
-                    colorMode="dark"
+                    colorMode={logoColorMode}
                     size="large"
                   />
                 </a>
@@ -180,20 +175,16 @@ export const Footer: React.FC<FooterProps> = ({
                   type="button"
                   className="igds-footer__logo-button"
                   onClick={onLogoClick}
-                  aria-label={`${logoBrand} logo`}
+                  aria-label="OTee logo"
                 >
                   <Logo
-                    brand={logoBrand}
-                    form={logoForm}
-                    colorMode="dark"
+                    colorMode={logoColorMode}
                     size="large"
                   />
                 </button>
               ) : (
                 <Logo
-                  brand={logoBrand}
-                  form={logoForm}
-                  colorMode="dark"
+                  colorMode={logoColorMode}
                   size="large"
                 />
               )}

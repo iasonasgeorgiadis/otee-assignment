@@ -2,10 +2,6 @@ import React from 'react';
 import './Logo.css';
 
 export interface LogoProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  /** Brand variant to display - required */
-  brand: 'wol' | 'wiley';
-  /** Logo form - full includes text, compact is symbol only */
-  form: 'full' | 'compact';
   /** Size aligned with Figma naming convention */
   size?: 'small' | 'large' | 'xlarge' | number;
   /** Color mode for the logo */
@@ -17,14 +13,10 @@ export interface LogoProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 /**
- * Logo component for displaying brand assets
- *
- * Supports both WOL (Wiley Online Library) and Wiley corporate brands
- * with automatic color mode detection and responsive sizing.
+ * Logo component for displaying OTee brand assets with automatic
+ * color mode detection and responsive sizing.
  */
 export const Logo: React.FC<LogoProps> = ({
-  brand,
-  form,
   size = 'large',
   colorMode = 'auto',
   className = '',
@@ -39,20 +31,18 @@ export const Logo: React.FC<LogoProps> = ({
     // Default to light if auto-detection fails
     if (typeof window !== 'undefined') {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return isDark ? 'dark' : 'light';
+      return isDark ? 'light' : 'dark';
     }
     return 'light';
   };
 
   const resolvedColorMode = getColorMode();
 
-  // Determine file extension based on available assets for each brand
-  const fileExtension = brand === 'wol' ? 'png' : 'svg';
-
-  // Build logo filename
   const getLogoPath = () => {
-    const parts = [brand, 'logo', form, resolvedColorMode];
-    return `/brand/logos/web/${parts.join('-')}.${fileExtension}`;
+    const prefersDark = resolvedColorMode === 'light';
+    return prefersDark
+      ? '/brand/logos/web/otee-logo-dark.svg'
+      : '/brand/logos/web/otee-logo-light.svg';
   };
 
   // Handle size styling
@@ -67,8 +57,6 @@ export const Logo: React.FC<LogoProps> = ({
   // Generate CSS classes
   const classes = [
     'logo',
-    `logo--${brand}`,
-    `logo--${form}`,
     `logo--${typeof size === 'string' ? size : 'custom'}`,
     `logo--${resolvedColorMode}`,
     className
@@ -78,10 +66,7 @@ export const Logo: React.FC<LogoProps> = ({
   const getAltText = () => {
     if (alt !== undefined) return alt;
 
-    const brandName = brand === 'wol' ? 'Wiley Online Library' : 'Wiley';
-    const formText = form === 'compact' ? 'logo' : `${form} logo`;
-
-    return `${brandName} ${formText}`;
+    return 'OTee logo';
   };
 
   return (

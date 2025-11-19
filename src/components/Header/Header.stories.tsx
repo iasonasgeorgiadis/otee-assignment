@@ -3,7 +3,7 @@ import { Header } from './Header';
 
 const institutionLogoOptions = {
   None: undefined,
-  'Atypon (JPEG)': '/institutions/atypon-wiley-brand.jpg',
+  'Atypon (JPEG)': '/institutions/atypon-brand.jpg',
   'Columbia University (PNG)': '/institutions/columbia-university-logo.png'
 } as const;
 

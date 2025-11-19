@@ -10,14 +10,11 @@
   --igds-logo-height: auto;
 
   /* Brand legibility constraints */
-  --igds-logo-wol-min-height: 20px;
-  --igds-logo-wiley-min-height: 24px;
+  --igds-logo-min-height: 24px;
 
-  /* Form constraints */
-  --igds-logo-full-min-width: 80px;
+  /* Intrinsic proportions */
+  --igds-logo-full-min-width: auto;
   --igds-logo-full-aspect-ratio: auto;
-  --igds-logo-compact-min-width: 24px;
-  --igds-logo-compact-aspect-ratio: 1;
 
   /* Clear space */
   --igds-logo-clear-space-multiplier: 0.5;
@@ -35,13 +32,6 @@
 
 :root {
   /* Asset sources */
-  --igds-logo-wol-full-light-src: '/brand/logos/web/wol-logo-full-light.png';
-  --igds-logo-wol-full-dark-src: '/brand/logos/web/wol-logo-full-dark.png';
-  --igds-logo-wol-compact-light-src: '/brand/logos/web/wol-logo-compact-light.png';
-  --igds-logo-wol-compact-dark-src: '/brand/logos/web/wol-logo-compact-dark.png';
-
-  --igds-logo-wiley-full-light-src: '/brand/logos/web/wiley-logo-full-light.svg';
-  --igds-logo-wiley-full-dark-src: '/brand/logos/web/wiley-logo-full-dark.svg';
-  --igds-logo-wiley-compact-light-src: '/brand/logos/web/wiley-logo-compact-light.svg';
-  --igds-logo-wiley-compact-dark-src: '/brand/logos/web/wiley-logo-compact-dark.svg';
+  --igds-logo-otee-light-src: '/brand/logos/web/otee-logo-light.svg';
+  --igds-logo-otee-dark-src: '/brand/logos/web/otee-logo-dark.svg';
 }
