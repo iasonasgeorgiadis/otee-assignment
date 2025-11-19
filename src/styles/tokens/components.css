@@ -1664,6 +1664,130 @@
 
 
 /* =============================================================================
+   AI KNOWLEDGE BASE COMPONENT TOKENS
+   ============================================================================= */
+
+/* AI Knowledge Base Component - From Figma MCP Analysis
+   Figma Component: "AI Knowledge Base" (Node ID: 40016943-6246)
+   Last Extracted: 2025-11-19 via #get_design_context and #get_variable_defs
+
+   Figma Properties:
+   - screen: "empty" | "upload" | "filesList" | "chat" | "chat-conversation"
+
+   Token Mapping from Figma:
+   - Container background → --igds-color-background-neutral-white (#ffffff)
+   - Sidebar background → --igds-color-background-neutral-white-lighter (#f8f9fb)
+   - Dropzone border → --igds-color-border-neutral-grey (#b7b8b9) dashed
+   - Title text → --igds-color-text-neutral-grey-primary (#3c3e3f)
+   - Subtitle text → --igds-color-text-neutral-grey-tertiary (#6f7071)
+   - Icon color → --igds-color-icon-neutral-grey-light (#97989a)
+   - Sidebar width → 352px
+   - Border radius → --igds-radius-xl (16px)
+   - Spacing → --igds-space-8, --igds-space-12, --igds-space-16, --igds-space-24, --igds-space-32
+*/
+
+:root {
+  /* AI Knowledge Base Container */
+  --igds-ai-kb-background: var(--igds-color-background-neutral-white);
+  --igds-ai-kb-border-radius: var(--igds-radius-xl);
+  --igds-ai-kb-padding: var(--igds-space-24);
+  --igds-ai-kb-gap: var(--igds-space-24);
+  --igds-ai-kb-height: 100%;
+
+  /* AI Knowledge Base Header */
+  --igds-ai-kb-header-gap: var(--igds-space-8);
+  --igds-ai-kb-header-icon-size: 32px;
+  --igds-ai-kb-header-icon-color: var(--igds-color-icon-neutral-grey-primary);
+  --igds-ai-kb-header-title-gap: var(--igds-space-4);
+
+  /* AI Knowledge Base Title Typography */
+  --igds-ai-kb-title-font-family: var(--igds-typography-heading-family);
+  --igds-ai-kb-title-font-size: 24px;
+  --igds-ai-kb-title-font-weight: var(--igds-typography-weight-semibold);
+  --igds-ai-kb-title-line-height: 1.4;
+  --igds-ai-kb-title-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* AI Knowledge Base Subtitle Typography */
+  --igds-ai-kb-subtitle-font-family: var(--igds-typography-body-family);
+  --igds-ai-kb-subtitle-font-size: var(--igds-typography-body-size);
+  --igds-ai-kb-subtitle-font-weight: var(--igds-typography-weight-medium);
+  --igds-ai-kb-subtitle-line-height: 1.5;
+  --igds-ai-kb-subtitle-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* AI Knowledge Base Empty State */
+  --igds-ai-kb-empty-border-color: var(--igds-color-border-neutral-grey);
+  --igds-ai-kb-empty-border-style: dashed;
+  --igds-ai-kb-empty-border-width: 1px;
+  --igds-ai-kb-empty-border-radius: var(--igds-radius-sm);
+  --igds-ai-kb-empty-padding: var(--igds-space-48);
+  --igds-ai-kb-empty-gap: var(--igds-space-16);
+
+  /* AI Knowledge Base Dropzone */
+  --igds-ai-kb-dropzone-padding: var(--igds-space-24);
+  --igds-ai-kb-dropzone-gap: var(--igds-space-8);
+  --igds-ai-kb-dropzone-border-color: var(--igds-color-border-neutral-grey);
+  --igds-ai-kb-dropzone-border-style: dashed;
+  --igds-ai-kb-dropzone-border-width: 1px;
+  --igds-ai-kb-dropzone-border-radius: var(--igds-radius-sm);
+  --igds-ai-kb-dropzone-icon-size: 64px;
+  --igds-ai-kb-dropzone-icon-color: var(--igds-color-icon-neutral-grey-light);
+  /* Dropzone main text - Heading style */
+  --igds-ai-kb-dropzone-title-font-family: var(--igds-typography-heading-family);
+  --igds-ai-kb-dropzone-title-font-size: 24px;
+  --igds-ai-kb-dropzone-title-font-weight: var(--igds-typography-weight-semibold);
+  --igds-ai-kb-dropzone-title-line-height: 1.4;
+  --igds-ai-kb-dropzone-title-color: var(--igds-color-text-neutral-grey-primary);
+  /* Dropzone sub text - Body style */
+  --igds-ai-kb-dropzone-text-font-family: var(--igds-typography-body-family);
+  --igds-ai-kb-dropzone-text-font-size: var(--igds-typography-body-size);
+  --igds-ai-kb-dropzone-text-font-weight: var(--igds-typography-weight-medium);
+  --igds-ai-kb-dropzone-text-line-height: 1.5;
+  --igds-ai-kb-dropzone-text-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* AI Knowledge Base Button Container */
+  --igds-ai-kb-button-width: 180px;
+
+  /* AI Knowledge Base Files List */
+  --igds-ai-kb-files-gap: var(--igds-space-8);
+  --igds-ai-kb-files-counter-font-size: var(--igds-typography-body-size-small);
+  --igds-ai-kb-files-counter-font-weight: var(--igds-typography-weight-medium);
+  --igds-ai-kb-files-counter-color: var(--igds-color-text-neutral-grey-tertiary);
+
+  /* AI Knowledge Base Sidebar (Chat States) */
+  --igds-ai-kb-sidebar-width: 352px;
+  --igds-ai-kb-sidebar-background: var(--igds-color-background-neutral-white-lighter);
+  --igds-ai-kb-sidebar-padding: var(--igds-space-24);
+  --igds-ai-kb-sidebar-gap: var(--igds-space-24);
+  --igds-ai-kb-sidebar-border-radius: var(--igds-radius-xl);
+
+  /* AI Knowledge Base Section Headers */
+  --igds-ai-kb-section-font-family: var(--igds-typography-body-family);
+  --igds-ai-kb-section-font-size: var(--igds-typography-body-size);
+  --igds-ai-kb-section-font-weight: var(--igds-typography-body-weight-strong);
+  --igds-ai-kb-section-line-height: 1.5;
+  --igds-ai-kb-section-color: var(--igds-color-text-neutral-grey-primary);
+  --igds-ai-kb-section-gap: var(--igds-space-16);
+
+  /* AI Knowledge Base Main Content Area */
+  --igds-ai-kb-content-padding: var(--igds-space-24);
+  --igds-ai-kb-content-gap: var(--igds-space-24);
+
+  /* AI Knowledge Base Messages Area */
+  --igds-ai-kb-messages-gap: var(--igds-space-16);
+
+  /* AI Knowledge Base Conversation Header */
+  --igds-ai-kb-conversation-title-font-size: 20px;
+  --igds-ai-kb-conversation-title-font-weight: var(--igds-typography-weight-semibold);
+  --igds-ai-kb-conversation-title-line-height: 1.4;
+  --igds-ai-kb-conversation-title-color: var(--igds-color-text-neutral-grey-primary);
+
+  /* AI Knowledge Base Transitions */
+  --igds-ai-kb-transition-duration: 200ms;
+  --igds-ai-kb-transition-timing: ease-in-out;
+}
+
+
+/* =============================================================================
    FUTURE COMPONENT TOKENS
    ============================================================================= */
 

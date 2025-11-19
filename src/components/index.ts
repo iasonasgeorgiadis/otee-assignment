@@ -3,6 +3,7 @@ export * from './AgentChatbox';
 export * from './Accordion';
 export * from './Article';
 export * from './ArticleCard';
+export * from './AIKnowledgeBase';
 export * from './Brand/Logo';
 export * from './Button';
 export * from './Chatbox';

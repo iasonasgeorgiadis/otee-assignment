@@ -104,7 +104,7 @@ export const RightRail: FC<RightRailProps> = ({
 
       <Tooltip
         title={null}
-        body={isSelected ? 'Exit selection mode' : 'Enter selection mode'}
+        body={isSelected ? 'Close' : 'AI Knowledge Base'}
         placement="left"
       >
         <Button
@@ -112,7 +112,7 @@ export const RightRail: FC<RightRailProps> = ({
           size="medium"
           label=""
           className="right-rail__primary-button"
-          aria-label={isSelected ? 'Exit selection mode' : 'Enter selection mode'}
+          aria-label={isSelected ? 'Close' : 'AI Knowledge Base'}
           aria-pressed={isSelected}
           onClick={handleToggle}
           iconLead={
