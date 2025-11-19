@@ -578,7 +578,7 @@
   /* Button */
   --igds-typography-button-family: var(--igds-typography-family-sans);
   --igds-typography-button-size: var(--igds-typography-size-sm);
-  --igds-typography-button-weight: var(--igds-typography-weight-medium);
+  --igds-typography-button-weight: var(--igds-typography-weight-bold);
   --igds-typography-button-line-height: var(--igds-typography-line-height-normal);
   --igds-typography-button-letter-spacing: var(--igds-typography-letter-spacing-normal);
 

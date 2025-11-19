@@ -1259,6 +1259,7 @@
 */
 
 :root {
+  --igds-plain-files-list-gap: var(--igds-space-4);
   --igds-plain-files-list-item-padding-x: var(--igds-space-16);
   --igds-plain-files-list-item-padding-y: var(--igds-space-8);
   --igds-plain-files-list-item-radius: var(--igds-radius-sm);
@@ -1271,59 +1272,8 @@
   --igds-plain-files-list-line-height: var(--igds-typography-body-line-height-small);
   --igds-plain-files-list-icon-color: var(--igds-color-icon-neutral-grey-secondary);
   --igds-plain-files-list-action-size: var(--igds-space-32);
-  --igds-plain-files-list-max-width: 44.7rem; /* 715px from Figma spec */
   --igds-plain-files-list-transition-duration: 150ms;
   --igds-plain-files-list-transition-easing: ease-in-out;
-}
-
-
-/* =============================================================================
-   DETAILED FILES LIST COMPONENT TOKENS
-   ============================================================================= */
-
-/* Detailed Files List Component - From Figma MCP Analysis
-   Figma Component: "detailed-files-list" (Node ID: 40016945-8753)
-   Last Extracted: 2025-01-21 via #get_design_context
-
-   Key visual specs:
-   - Same container width/background behavior as plain list
-   - Thumbnail = 40px square with subtle border + uppercase file type label
-   - File size metadata uses Body Small Medium semantics (#5b5c5d)
-   - Trailing action icon uses neutral ghost button for hover/focus feedback
-*/
-
-:root {
-  --igds-detailed-files-list-padding-x: var(--igds-space-8);
-  --igds-detailed-files-list-padding-y: var(--igds-space-8);
-  --igds-detailed-files-list-gap: var(--igds-space-8);
-  --igds-detailed-files-list-radius: var(--igds-radius-sm);
-  --igds-detailed-files-list-background-default: var(--igds-color-background-neutral-white-lighter);
-  --igds-detailed-files-list-background-hover: var(--igds-color-background-neutral-white-light);
-  --igds-detailed-files-list-font-family: var(--igds-typography-body-family);
-  --igds-detailed-files-list-text-color: var(--igds-color-text-neutral-grey-primary);
-  --igds-detailed-files-list-name-font-size: var(--igds-typography-body-size-small);
-  --igds-detailed-files-list-name-font-weight: var(--igds-typography-body-weight-strong);
-  --igds-detailed-files-list-name-line-height: var(--igds-typography-body-line-height-small);
-  --igds-detailed-files-list-meta-font-size: var(--igds-typography-body-size-small);
-  --igds-detailed-files-list-meta-font-weight: var(--igds-typography-weight-medium);
-  --igds-detailed-files-list-meta-line-height: var(--igds-typography-body-line-height-small);
-  --igds-detailed-files-list-meta-color: var(--igds-color-text-neutral-grey-secondary);
-  --igds-detailed-files-list-thumbnail-size: var(--igds-space-40);
-  --igds-detailed-files-list-thumbnail-radius: var(--igds-radius-sm);
-  --igds-detailed-files-list-thumbnail-background: var(--igds-color-background-neutral-white);
-  --igds-detailed-files-list-thumbnail-border-color: var(--igds-color-border-neutral-grey-light);
-  --igds-detailed-files-list-thumbnail-border-width: 1px;
-  --igds-detailed-files-list-thumbnail-font-size: var(--igds-typography-size-xs);
-  --igds-detailed-files-list-thumbnail-font-weight: var(--igds-typography-body-weight-strong);
-  --igds-detailed-files-list-thumbnail-letter-spacing: var(--igds-typography-caption-letter-spacing);
-  --igds-detailed-files-list-thumbnail-text-color: var(--igds-color-text-neutral-grey-primary);
-  --igds-detailed-files-list-info-gap: var(--igds-space-4);
-  --igds-detailed-files-list-action-size: var(--igds-space-32);
-  --igds-detailed-files-list-action-color: var(--igds-color-icon-neutral-grey-secondary);
-  --igds-detailed-files-list-action-icon-size: var(--igds-space-20);
-  --igds-detailed-files-list-max-width: 44.7rem;
-  --igds-detailed-files-list-transition-duration: 150ms;
-  --igds-detailed-files-list-transition-easing: ease-in-out;
 }
 
 
