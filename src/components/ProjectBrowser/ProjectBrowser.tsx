@@ -49,11 +49,11 @@ export interface ProjectBrowserProps {
 }
 
 const DEFAULT_ACTIONS: ProjectBrowserAction[] = [
-  { id: 'files', iconName: 'insert_drive_file', ariaLabel: 'Browse files', iconVariant: 'symbols-outlined' },
+  { id: 'files', iconName: 'save', ariaLabel: 'Browse files', iconVariant: 'symbols-outlined' },
   { id: 'add', iconName: 'add', ariaLabel: 'Create resource', iconVariant: 'symbols-outlined' },
   { id: 'code', iconName: 'code_blocks', ariaLabel: 'Open code blocks', iconVariant: 'symbols-outlined' },
   { id: 'history', iconName: 'deployed_code_history', ariaLabel: 'Deployment history', iconVariant: 'symbols-outlined' },
-  { id: 'packages', iconName: 'inventory_2', ariaLabel: 'Project packages', iconVariant: 'symbols-outlined' },
+  { id: 'packages', iconName: 'deployed_code_history', ariaLabel: 'Project packages', iconVariant: 'symbols-outlined' },
   {
     id: 'more',
     iconName: 'more_vert',
@@ -132,6 +132,7 @@ export const ProjectBrowser: FC<ProjectBrowserProps> = ({
     <Button
       key={action.id}
       variant="neutral"
+      ghost={true}
       size="medium"
       label=""
       aria-label={action.ariaLabel}
@@ -178,7 +179,7 @@ export const ProjectBrowser: FC<ProjectBrowserProps> = ({
                 label={section.label}
                 size="medium"
                 withIcon
-                iconName="play_arrow"
+                iconName="arrow_right"
                 iconVariant="symbols-outlined"
                 className="project-browser__menu-item"
                 onClick={() => handleSectionSelect(section.id)}

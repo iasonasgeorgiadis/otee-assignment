@@ -1468,7 +1468,7 @@
   --igds-project-browser-heading-gap: var(--igds-space-12);
   --igds-project-browser-body-gap: var(--igds-space-16);
   --igds-project-browser-actions-gap: var(--igds-space-8);
-  --igds-project-browser-section-gap: var(--igds-space-8);
+  --igds-project-browser-section-gap: var(--igds-space-0);
   --igds-project-browser-action-size: var(--igds-space-40);
   --igds-project-browser-icon-background: var(--igds-color-background-neutral-grey-light);
   --igds-project-browser-icon-background-hover: var(--igds-color-background-neutral-grey-lighter);
@@ -1485,6 +1485,53 @@
   --igds-project-browser-collapse-translate: -1.5rem;
   --igds-project-browser-focus-outline-color: var(--igds-color-border-accent-primary-light);
   --igds-project-browser-focus-outline-width: 2px;
+}
+
+
+/* =============================================================================
+   RIGHT RAIL COMPONENT TOKENS
+   Figma Component: "right-rail" (Node ID: 40016943-6314)
+   Figma Properties:
+   - state: "active" | "selected"
+   Token Mapping:
+   - state="active" → white background, full border radius
+   - state="selected" → lighter background, left border only
+   ============================================================================= */
+
+:root {
+  /* Layout - container hugs content */
+  --igds-right-rail-height: 37rem;                /* 592px */
+  --igds-right-rail-padding: var(--igds-space-24);
+  --igds-right-rail-gap: var(--igds-space-12);
+  --igds-right-rail-actions-gap: var(--igds-space-16);
+
+  /* Container - Active State */
+  --igds-right-rail-background-active: var(--igds-color-background-neutral-white);
+  --igds-right-rail-border-color: var(--igds-color-border-neutral-grey-light);
+  --igds-right-rail-border-radius: var(--igds-radius-xl);
+
+  /* Container - Selected State */
+  --igds-right-rail-background-selected: var(--igds-color-background-neutral-white-lighter);
+
+  /* Icon Buttons */
+  --igds-right-rail-icon-size: var(--igds-space-40);
+  --igds-right-rail-icon-padding: var(--igds-space-8);
+  --igds-right-rail-icon-background: var(--igds-color-background-neutral-grey-light);
+  --igds-right-rail-icon-background-hover: var(--igds-color-background-neutral-grey-lighter);
+  --igds-right-rail-icon-color: var(--igds-color-icon-neutral-grey-primary);
+  --igds-right-rail-icon-radius: var(--igds-radius-full);
+
+  /* Primary Action Button */
+  --igds-right-rail-primary-size: var(--igds-space-40);
+  --igds-right-rail-primary-padding: var(--igds-space-12);
+  --igds-right-rail-primary-background: var(--igds-color-background-accent-primary-light);
+  --igds-right-rail-primary-background-hover: var(--igds-color-background-accent-primary);
+  --igds-right-rail-primary-color: var(--igds-color-icon-neutral-grey-primary);
+  --igds-right-rail-primary-radius: var(--igds-radius-full);
+
+  /* Separator */
+  --igds-right-rail-separator-color: var(--igds-color-border-neutral-grey-light);
+  --igds-right-rail-separator-spacing: var(--igds-space-24);
 }
 
 

@@ -32,7 +32,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   hover = false,
   disabled = false,
   className = '',
-  iconName = 'keyboard_arrow_right',
+  iconName = 'arrow_right',
   iconVariant = 'filled',
   onClick,
 }) => {

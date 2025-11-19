@@ -10,7 +10,7 @@
   border-radius: var(--igds-tooltip-border-radius);
   border: none;
   --igds-tooltip-border-width: 0px;
-  --igds-tooltip-beak-offset: calc(var(--igds-tooltip-beak-size) * 0.20710678);
+  --igds-tooltip-beak-offset: 0px;
   background-color: var(--igds-tooltip-background);
   color: var(--igds-tooltip-text-color);
   gap: var(--igds-tooltip-content-gap);

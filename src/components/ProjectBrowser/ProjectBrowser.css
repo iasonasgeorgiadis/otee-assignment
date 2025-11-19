@@ -116,6 +116,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: var(--igds-space-8);
+  border-top: solid 1px var(--igds-color-border-neutral-grey-light);
 }
 
 .project-browser__section-item {
@@ -148,10 +150,7 @@
 }
 
 .project-browser__menu-item .igds-menu-item__label {
-  font-family: var(--igds-project-browser-section-font-family);
-  font-size: var(--igds-project-browser-section-font-size);
-  font-weight: var(--igds-project-browser-section-font-weight);
-  line-height: var(--igds-project-browser-section-line-height);
+  /* Keep MenuItem typography rules intact, only adjust visual theme */
   color: var(--igds-project-browser-section-text-color);
 }
 

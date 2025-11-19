@@ -21,5 +21,6 @@ export * from './ListChat';
 export * from './PlainFilesList';
 export * from './ProjectBrowser';
 export * from './RadioButton';
+export * from './RightRail';
 export * from './Tabs';
 export * from './Tooltip';
