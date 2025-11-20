@@ -15,7 +15,7 @@ A React-based web application built with Vite and TypeScript.
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/iasonasgeorgiadis/otee-assignment.git
 cd otee-assignment
 ```
 
