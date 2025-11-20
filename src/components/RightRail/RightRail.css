@@ -35,6 +35,9 @@
 
 .right-rail--selected {
   background: var(--igds-right-rail-background-selected);
+  border: none;
+  border: 1px solid var(--igds-right-rail-border-color);
+  border-radius: var(--igds-right-rail-border-radius);
 }
 
 /* =============================================================================
