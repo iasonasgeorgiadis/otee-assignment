@@ -45,6 +45,15 @@
 
 .otee-assignment__sidebar {
   width: var(--assignment-sidebar-width);
+  display: flex;
+}
+
+.otee-assignment__sidebar .project-browser {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
 }
 
 .otee-assignment__canvas {

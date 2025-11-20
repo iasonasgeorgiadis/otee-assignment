@@ -48,9 +48,8 @@ export const UploadView: FC<UploadViewProps> = ({
           renderContent={() => (
             <>
               <MaterialIcon
-                name="upload"
+                name="upload_file"
                 size={64}
-                variant="outlined"
                 className="ai-kb-upload__dropzone-icon"
               />
               <span className="ai-kb-upload__dropzone-title">
