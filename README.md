@@ -51,6 +51,14 @@ npm run preview
 
 This serves the production build locally for testing before deployment.
 
+### 6. Storybook
+
+```bash
+npm run storybook
+```
+
+The Storybook contains all the components used for the implementation.
+
 ## Additional Commands
 
 ```bash
