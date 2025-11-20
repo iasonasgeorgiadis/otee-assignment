@@ -35,23 +35,7 @@ npm run dev
 
 The application will start on `http://localhost:5173` (or another port if 5173 is in use). The development server includes hot module replacement (HMR) for a smooth development experience.
 
-### 4. Build for Production
-
-```bash
-npm run build
-```
-
-This creates an optimized production build in the `dist/` directory.
-
-### 5. Preview Production Build
-
-```bash
-npm run preview
-```
-
-This serves the production build locally for testing before deployment.
-
-### 6. Storybook
+### 4. Storybook
 
 ```bash
 npm run storybook
