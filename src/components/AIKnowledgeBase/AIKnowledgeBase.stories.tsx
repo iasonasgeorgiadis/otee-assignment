@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from '@storybook/test';
 import { AIKnowledgeBase } from './AIKnowledgeBase';
 import { UploadView } from './UploadView';
 
@@ -33,12 +32,12 @@ type Story = StoryObj<typeof meta>;
 export const Upload: Story = {
   args: {
     initialScreen: 'upload',
-    onFilesSelected: fn(),
-    onAnalyze: fn(),
-    onMessageSend: fn(),
-    onDeleteFile: fn(),
-    onEditConversationTitle: fn(),
-    onSelectThread: fn(),
+    onFilesSelected: () => {},
+    onAnalyze: () => {},
+    onMessageSend: () => {},
+    onDeleteFile: () => {},
+    onEditConversationTitle: () => {},
+    onSelectThread: () => {},
   },
 };
 
@@ -48,7 +47,7 @@ export const Upload: Story = {
 export const UploadViewStory: StoryObj<typeof UploadView> = {
   render: () => (
     <div style={{ width: '100%', maxWidth: '800px', height: '600px', background: '#fff', borderRadius: '16px', padding: '24px' }}>
-      <UploadView onFilesSelected={fn()} />
+      <UploadView onFilesSelected={() => {}} />
     </div>
   ),
   name: 'Upload View (Isolated)',
@@ -67,12 +66,12 @@ export const UploadViewStory: StoryObj<typeof UploadView> = {
 export const Empty: Story = {
   args: {
     initialScreen: 'empty',
-    onFilesSelected: fn(),
-    onAnalyze: fn(),
-    onMessageSend: fn(),
-    onDeleteFile: fn(),
-    onEditConversationTitle: fn(),
-    onSelectThread: fn(),
+    onFilesSelected: () => {},
+    onAnalyze: () => {},
+    onMessageSend: () => {},
+    onDeleteFile: () => {},
+    onEditConversationTitle: () => {},
+    onSelectThread: () => {},
   },
 };
 
@@ -87,12 +86,12 @@ export const FilesList: Story = {
       { id: '2', name: 'report.docx', size: 512000, uploadedAt: new Date().toISOString() },
       { id: '3', name: 'data.csv', size: 256000, uploadedAt: new Date().toISOString() },
     ],
-    onFilesSelected: fn(),
-    onAnalyze: fn(),
-    onMessageSend: fn(),
-    onDeleteFile: fn(),
-    onEditConversationTitle: fn(),
-    onSelectThread: fn(),
+    onFilesSelected: () => {},
+    onAnalyze: () => {},
+    onMessageSend: () => {},
+    onDeleteFile: () => {},
+    onEditConversationTitle: () => {},
+    onSelectThread: () => {},
   },
 };
 
@@ -115,11 +114,11 @@ export const Chat: Story = {
     sidebarFiles: [
       { id: '1', name: 'document.pdf' },
     ],
-    onFilesSelected: fn(),
-    onAnalyze: fn(),
-    onMessageSend: fn(),
-    onDeleteFile: fn(),
-    onEditConversationTitle: fn(),
-    onSelectThread: fn(),
+    onFilesSelected: () => {},
+    onAnalyze: () => {},
+    onMessageSend: () => {},
+    onDeleteFile: () => {},
+    onEditConversationTitle: () => {},
+    onSelectThread: () => {},
   },
 };

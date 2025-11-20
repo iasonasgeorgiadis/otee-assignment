@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import './App.css';
-import { ProjectWorkspace } from './pages/ProjectWorkspace';
+import { OTeeAssignment } from './pages/OTeeAssignment';
 
 const App: FC = () => {
-  return <ProjectWorkspace />;
+  return <OTeeAssignment />;
 };
 
 export default App;

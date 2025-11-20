@@ -1,0 +1,119 @@
+@import '../styles/tokens.css';
+
+.otee-assignment {
+  --assignment-sidebar-width: var(--igds-project-browser-expanded-width);
+  --assignment-rail-width: var(--igds-space-88, 88px);
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--igds-color-background-neutral-grey-lighter, #f4f6fb);
+  overflow: hidden;
+}
+
+.otee-assignment--sidebar-collapsed {
+  --assignment-sidebar-width: var(--igds-project-browser-collapsed-width);
+}
+
+.otee-assignment__main {
+  flex: 1;
+  width: 100%;
+  padding: var(--igds-space-16, 16px);
+  box-sizing: border-box;
+  display: flex;
+  min-height: 0;
+}
+
+.otee-assignment__grid {
+  display: grid;
+  grid-template-columns: var(--assignment-sidebar-width) minmax(0, 1fr) var(--assignment-rail-width);
+  gap: var(--igds-space-16, 16px);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.otee-assignment__sidebar,
+.otee-assignment__canvas,
+.otee-assignment__rail {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.otee-assignment__sidebar {
+  width: var(--assignment-sidebar-width);
+}
+
+.otee-assignment__canvas {
+  display: flex;
+}
+
+.otee-assignment__canvas-inner {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.otee-assignment__canvas-inner > * {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.otee-assignment__rail {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: var(--assignment-rail-width);
+}
+
+.otee-assignment__footer {
+  width: 100%;
+  flex-shrink: 0;
+  border-top: 1px solid var(--igds-color-border-neutral-grey-light, #dadcdd);
+  background: var(--igds-color-background-neutral-white, #fff);
+}
+
+@media (max-width: 1200px) {
+  .otee-assignment__grid {
+    grid-template-columns: minmax(var(--assignment-sidebar-width), 28vw) minmax(0, 1fr) var(--assignment-rail-width);
+  }
+}
+
+@media (max-width: 900px) {
+  .otee-assignment {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .otee-assignment__main {
+    padding: var(--igds-space-12, 12px);
+  }
+
+  .otee-assignment__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .otee-assignment__rail {
+    justify-content: flex-start;
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .otee-assignment__main {
+    padding: var(--igds-space-8, 8px);
+  }
+
+  .otee-assignment__grid {
+    gap: var(--igds-space-12, 12px);
+  }
+}

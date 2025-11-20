@@ -1511,7 +1511,7 @@
   --igds-right-rail-border-radius: var(--igds-radius-xl);
 
   /* Container - Selected State */
-  --igds-right-rail-background-selected: var(--igds-color-background-neutral-white-lighter);
+  --igds-right-rail-background-selected: var(--igds-color-background-neutral-white-light);
 
   /* Icon Buttons */
   --igds-right-rail-icon-size: var(--igds-space-40);
