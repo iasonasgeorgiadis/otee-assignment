@@ -1,44 +1,65 @@
-# IG Design System
+# OTee Assignment
 
 **Author:** Iasonas Georgiadis
 
-A scalable design system built with React and Vite, featuring a flexible token architecture and component library.
+A React-based web application built with Vite and TypeScript.
 
-## Technology Stack
+## Prerequisites
 
-- React 19 + Vite 7
-- TypeScript
-- Storybook
-- ESLint
+- Node.js (version 16 or higher)
+- npm (comes with Node.js)
+- Git
 
 ## Getting Started
 
-### Prerequisites
+### 1. Clone the Repository
 
-Make sure you have Node.js installed on your machine.
+```bash
+git clone <repository-url>
+cd otee-assignment
+```
 
-### Installation
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Development
+This will install all required dependencies including React, Vite, TypeScript, and other packages.
+
+### 3. Run the Development Server
 
 ```bash
-npm run dev          # Start development server
-npm run storybook    # Launch Storybook for component development
+npm run dev
 ```
 
-### Build
+The application will start on `http://localhost:5173` (or another port if 5173 is in use). The development server includes hot module replacement (HMR) for a smooth development experience.
+
+### 4. Build for Production
 
 ```bash
-npm run build        # Build for production
-npm run lint         # Run ESLint
+npm run build
 ```
 
-## Project Structure
+This creates an optimized production build in the `dist/` directory.
 
-- `src/components/` - Reusable UI components
-- `src/styles/` - Design tokens and styling utilities
-- `public/` - Static assets
+### 5. Preview Production Build
+
+```bash
+npm run preview
+```
+
+This serves the production build locally for testing before deployment.
+
+## Additional Commands
+
+```bash
+npm run lint         # Run ESLint to check code quality
+```
+
+## Technology Stack
+
+- React 19
+- Vite 7
+- TypeScript
+- ESLint
