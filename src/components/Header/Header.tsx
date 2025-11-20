@@ -43,7 +43,7 @@ export const Header: FC<HeaderProps> = ({
                 variant="neutral"
                 label=""
                 className="otee-header__icon-button"
-                iconLead={<MaterialIcon name="assignment_turned_in" variant="outlined" size={ICON_SIZE} />}
+                iconLead={<MaterialIcon name="inventory" variant="outlined" size={ICON_SIZE} />}
                 onClick={onClipboardClick}
               />
             </Tooltip>
@@ -53,7 +53,7 @@ export const Header: FC<HeaderProps> = ({
                 variant="neutral"
                 label=""
                 className="otee-header__icon-button"
-                iconLead={<MaterialIcon name="apps" variant="outlined" size={ICON_SIZE} />}
+                iconLead={<MaterialIcon name="developer_board" variant="outlined" size={ICON_SIZE} />}
                 onClick={onGridClick}
               />
             </Tooltip>
